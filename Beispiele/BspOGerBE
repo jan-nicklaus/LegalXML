@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<court_decision>
+  <metadata>
+    <court name="Obergericht des Kantons Bern" chamber="2. Zivilkammer" [cite: 1] />
+    <case_number>ZK 22 354</case_number> [cite: 7]
+    <date>2023-05-05</date> [cite: 8]
+    <location>Bern</location> [cite: 8]
+    <legal_effect>definitive Rechtsöffnung</legal_effect> [cite: 22]
+    <subject>Beschwerde gegen den Entscheid des Regionalgerichts Oberland vom 2. August 2022 (CIV 22 926)</subject> [cite: 23]
+  </metadata>
+
+  <composition>
+    <judge role="Referent">Oberrichter Schlup</judge> [cite: 11]
+    <judge>Oberrichterin Falkner</judge> [cite: 11]
+    <judge>Oberrichterin Grütter</judge> [cite: 11]
+    <clerk>Gerichtsschreiberin Bank</clerk> [cite: 12]
+  </composition>
+
+  <parties>
+    <appellant role="Gesuchsgegner">
+      <name>[Name unterdrückt]</name>
+      <location>USA</location> [cite: 13]
+      <representative>Rechtsanwalt [Name unterdrückt]</representative> [cite: 14]
+    </appellant>
+    <respondent role="Gesuchstellerin">
+      <name>R</name> [cite: 17]
+      <location>USA</location> [cite: 19]
+      <representative>[Name unterdrückt]</representative> [cite: 18]
+    </respondent>
+  </parties>
+
+  <background>
+    <summary>
+      Das Regionalgericht Oberland anerkannte ein kalifornisches Urteil ("Amended Judgment") und erteilte die definitive Rechtsöffnung für Schadenersatz, Anwaltskosten und Gerichtskosten, schloss jedoch "Punitive Damages" aufgrund des Ordre public aus. [cite: 30, 31, 94, 95]
+    </summary>
+    <previous_instance decision_date="2022-08-02">Regionalgericht Oberland (CIV 22 926)</previous_instance> [cite: 23]
+  </background>
+
+  <reasoning>
+    <legal_basis>
+      <statute>Art. 80 SchKG (Definitive Rechtsöffnung)</statute> [cite: 191]
+      <statute>Art. 25 ff. IPRG (Anerkennung ausländischer Entscheide)</statute> [cite: 196, 207]
+      <statute>Art. 319 ff. ZPO (Beschwerde)</statute> [cite: 149]
+    </legal_basis>
+    <argumentation>
+      <point id="1">Die Beschwerde ist zulässig, erfüllt aber nur knapp die Begründungsanforderungen. [cite: 147, 169]</point>
+      <point id="2">Es gilt ein striktes Novenverbot; neue Beweismittel und die Behauptung von Prozessbetrug sind unzulässig. [cite: 177, 183, 186]</point>
+      <point id="3">Das kalifornische Urteil ist authentisch und rechtskräftig; eine beglaubigte Kopie ist nicht zwingend, wenn die Echtheit nicht substantiiert bestritten wird. [cite: 285, 295, 301]</point>
+      <point id="4">Kein Verstoss gegen den materiellen Ordre public durch Compensatory Damages, Attorneys' Fees oder den Zinssatz von 10%. [cite: 240, 243, 312]</point>
+    </argumentation>
+  </reasoning>
+
+  <dispositive_legal_provisions>
+    <ruling section="1">Die Beschwerde wird abgewiesen.</ruling> [cite: 367]
+    <ruling section="2">Die oberinstanzlichen Gerichtskosten von CHF 4'000.00 werden dem Beschwerdeführer auferlegt.</ruling> [cite: 368]
+    <ruling section="3">Der Beschwerdeführer hat der Beschwerdegegnerin eine Parteientschädigung von CHF 4'500.00 zu bezahlen.</ruling> [cite: 369]
+  </dispositive_legal_provisions>
+
+  <instruction_on_legal_remedies>
+    <remedy>Beschwerde in Zivilsachen beim Bundesgericht</remedy> [cite: 383]
+    <deadline>30 Tage</deadline> [cite: 382]
+    <value_in_dispute unit="CHF">über 30'000.00</value_in_dispute> [cite: 385]
+  </instruction_on_legal_remedies>
+</court_decision>
