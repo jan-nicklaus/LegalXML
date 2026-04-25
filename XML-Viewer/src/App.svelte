@@ -67,8 +67,9 @@
     <h2>Dispositiv</h2>
 
     <h2>Rubrum</h2>
-    {#each xmlTree.getElementsByTagName("Rubrum")[0].getelementsByTagName("Section") as sec}
-    <div class={`mt-4 relative rounded-md p-4 bg-${}`}
+    {#each xmlTree.getElementsByTagName("Rubrum")[0].getElementsByTagName("Section") as sec}
+    <div class={`mt-4 relative rounded-md p-4 bg-${""}`}></div>
+    {/each}
 
     <h2>Begründung</h2>
     {#each ["Prozessuales", "Formelles", "Materielles"] as h}
