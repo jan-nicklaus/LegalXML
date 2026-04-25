@@ -52,10 +52,20 @@
             <Petition type="main" current="true" phase="first-instance">Die Beklagte sei zu verurteilen, an den Kläger CHF 15'000.00 zu zahlen.</Petition>
             <Petition type="cost" current="true" phase="first-instance">Alles unter Kosten- und Entschädigungsfolge.</Petition>
         </Petitions>
-        <Section title="Anspruch des Klägers">
-            <Paragraph id="abc">
-                <p><Attach id="def">Die Beklagte hat die Pflicht selbst anerkannt.</Attach> Sie ist daher antragsgemäss zu verurteilen.</p>
-            </Paragraph>
-        </Section>
+        <Facts>
+            <Section title="Anspruch des Klägers">
+                <Paragraph id="abc">
+                    <p><Attach id="def">Die Beklagte hat die Pflicht selbst anerkannt.</Attach> Sie ist daher antragsgemäss zu verurteilen.</p>
+                </Paragraph>
+            </Section>
+        </Facts>
+        <Considerations>
+            <Section title="Anspruch des Klägers">
+                <Paragraph id="abc">
+                    <p><Attach id="def">Die Beklagte hat die Pflicht selbst anerkannt.</Attach> Sie ist daher antragsgemäss zu verurteilen.</p>
+                </Paragraph>
+            </Section>
+        </Considerations>
+        
     </Main>
 </xml>
