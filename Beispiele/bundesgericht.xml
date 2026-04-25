@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urteil xmlns="https://lorentzo.ch/bger/v1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://lorentzo.ch/bger/v1 bundesgericht.xsd"
+        sprache="de"
+        schema-version="1.0"
+        quelle="https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&amp;type=show_document&amp;highlight_docid=aza://10-04-2026-8C_103-2026">
+
+  <metadaten>
+    <gericht>Bundesgericht</gericht>
+    <abteilung kuerzel="8C">IV. öffentlich-rechtliche Abteilung</abteilung>
+    <verfahrensnummer>8C_103/2026</verfahrensnummer>
+    <verfahrenstyp>Beschwerde-oeR</verfahrenstyp>
+    <urteilsdatum>2026-04-10</urteilsdatum>
+    <urteilsort>Luzern</urteilsort>
+    <zur-publikation-vorgesehen>false</zur-publikation-vorgesehen>
+  </metadaten>
+
+  <besetzung>
+    <praesidium rolle="praesident" geschlecht="f" id="viscione">
+      <nachname>Viscione</nachname>
+    </praesidium>
+    <mitglied geschlecht="m" id="maillard">
+      <nachname>Maillard</nachname>
+    </mitglied>
+    <mitglied geschlecht="f" id="bollinger">
+      <nachname>Bollinger</nachname>
+    </mitglied>
+    <gerichtsschreiber geschlecht="f">
+      <nachname>Aliu</nachname>
+    </gerichtsschreiber>
+    <vereinfachtes-verfahren>false</vereinfachtes-verfahren>
+    <oeffentliche-beratung>false</oeffentliche-beratung>
+  </besetzung>
+
+  <parteien>
+    <beschwerdefuehrer rolle="natuerliche-person" anonymisiert="true">
+      <bezeichnung>A.________</bezeichnung>
+      <vertretung typ="rechtsanwalt" geschlecht="f">
+        <vorname>Diane</vorname>
+        <nachname>Günthart</nachname>
+      </vertretung>
+    </beschwerdefuehrer>
+    <beschwerdegegner rolle="institution">
+      <bezeichnung>IV-Stelle des Kantons Zürich</bezeichnung>
+      <institution typ="iv-stelle" kanton="ZH">IV-Stelle des Kantons Zürich</institution>
+      <adresse>
+        <strasse>Röntgenstrasse 17</strasse>
+        <plz>8005</plz>
+        <ort>Zürich</ort>
+      </adresse>
+    </beschwerdegegner>
+  </parteien>
+
+  <gegenstand>
+    <kurzbezeichnung>Invalidenversicherung (Arbeitsfähigkeit; Invalidenrente)</kurzbezeichnung>
+    <rechtsgebiet primaer="true" code="SVR-IV">Invalidenversicherung</rechtsgebiet>
+    <stichwort>Arbeitsfähigkeit</stichwort>
+    <stichwort>Invalidenrente</stichwort>
+    <stichwort>Beweiswert RAD-Beurteilung</stichwort>
+    <stichwort>Valideneinkommen</stichwort>
+    <stichwort>Leidensabzug</stichwort>
+    <stichwort>Pauschalabzug Art. 26bis IVV</stichwort>
+  </gegenstand>
+
+  <vorinstanz>
+    <gericht>Sozialversicherungsgericht des Kantons Zürich</gericht>
+    <kanton>ZH</kanton>
+    <urteilsdatum>2025-12-18</urteilsdatum>
+    <geschaeftsnummer>IV.2025.00140</geschaeftsnummer>
+    <ergebnis>abgewiesen</ergebnis>
+  </vorinstanz>
+
+  <antraege>
+    <hauptantrag quelle="natuerliche-person">
+      <text>Aufhebung des vorinstanzlichen Urteils und Rückweisung zur ergänzenden medizinischen Abklärung, insbesondere zur Einholung eines externen polydisziplinären Gutachtens, an die Vorinstanz</text>
+      <art>aufhebung</art>
+    </hauptantrag>
+    <eventualantrag quelle="natuerliche-person">
+      <text>Rückweisung an die IV-Stelle</text>
+      <art>rueckweisung</art>
+    </eventualantrag>
+  </antraege>
+
+  <sachverhalt>
+    <abschnitt id="A">Der 1988 geborene A.________ absolvierte im Kosovo einen Studiengang in Management und Informatik. Nach Einreise in die Schweiz im November 2019 arbeitete er von April bis November 2020 im Gleisbau und war danach ab <datum-referenz datum="2021-03-22" ereignis="Arbeitsbeginn">22. März 2021</datum-referenz> als Lüftungsmonteur bei der B.________ GmbH in einem 100%-Pensum tätig. Am <datum-referenz datum="2021-04-08" ereignis="Unfall">8. April 2021</datum-referenz> stürzte er aus zweieinhalb Metern Höhe und erlitt eine Frontobasisfraktur. […] Nach abschliessender Stellungnahme des Regionalen Ärztlichen Dienstes vom <datum-referenz datum="2024-11-06" ereignis="RAD-Stellungnahme">6. November 2024</datum-referenz> verfügte die IV-Stelle am <datum-referenz datum="2025-02-07" ereignis="Verfuegung-IV">7. Februar 2025</datum-referenz>, dass kein Anspruch auf eine Invalidenrente bestehe.</abschnitt>
+    <abschnitt id="B">Die dagegen erhobene Beschwerde wies das Sozialversicherungsgericht des Kantons Zürich mit Urteil vom 18. Dezember 2025 ab.</abschnitt>
+    <abschnitt id="C">A.________ lässt Beschwerde in öffentlich-rechtlichen Angelegenheiten führen und beantragen, in Aufhebung des vorinstanzlichen Urteils sei die Sache zur ergänzenden medizinischen Abklärung an die Vorinstanz zurückzuweisen.</abschnitt>
+  </sachverhalt>
+
+  <erwaegungen praeambel="Erwägungen:">
+    <erwaegung nummer="1" art="formell">
+      <erwaegung nummer="1.1">
+        <text>Mit der Beschwerde in öffentlich-rechtlichen Angelegenheiten kann eine Rechtsverletzung nach <gesetzeszitat erlass="BGG" sr-nummer="173.110" artikel="95">Art. 95 f. BGG</gesetzeszitat> gerügt werden. […] (<gesetzeszitat erlass="BGG" artikel="42" absatz="1">Art. 42 Abs. 1 und 2 BGG</gesetzeszitat>; <bge-zitat band="145" abteilung="V" seite="57" erwaegung="4.2" ref="bge:145-V-57/e:4.2">BGE 145 V 57 E. 4.2</bge-zitat> mit Hinweis). Es legt seinem Urteil den Sachverhalt zugrunde, den die Vorinstanz festgestellt hat (<gesetzeszitat erlass="BGG" artikel="105" absatz="1">Art. 105 Abs. 1 BGG</gesetzeszitat>; zum Ganzen: <bge-zitat band="148" abteilung="V" seite="209" erwaegung="2.2" ref="bge:148-V-209/e:2.2">BGE 148 V 209 E. 2.2</bge-zitat>; <bge-zitat band="147" abteilung="I" seite="73" erwaegung="2" ref="bge:147-I-73/e:2">147 I 73 E. 2</bge-zitat>).</text>
+      </erwaegung>
+      <erwaegung nummer="1.2">
+        <text>Die Sachverhaltsfeststellung und Beweiswürdigung der Vorinstanz ist nicht schon dann offensichtlich unrichtig (willkürlich), wenn sich Zweifel anmelden, sondern erst, wenn sie eindeutig und augenfällig unzutreffend ist. […] Solche Mängel sind in der Beschwerde aufgrund des strengen Rügeprinzips (<gesetzeszitat erlass="BGG" artikel="106" absatz="2">Art. 106 Abs. 2 BGG</gesetzeszitat>) klar und detailliert aufzuzeigen (<bge-zitat band="144" abteilung="V" seite="50" erwaegung="4.2" ref="bge:144-V-50/e:4.2">BGE 144 V 50 E. 4.2</bge-zitat>).</text>
+      </erwaegung>
+    </erwaegung>
+
+    <erwaegung nummer="2" art="materiell">
+      <erwaegung nummer="2.1">
+        <streitgegenstand>Streitig und zu prüfen ist, ob die Vorinstanz Bundesrecht verletzte, indem sie in Bestätigung der Verfügung der Beschwerdegegnerin vom 7. Februar 2025 einen Rentenanspruch des Beschwerdeführers verneinte. Letztinstanzlich ist insbesondere die Arbeitsfähigkeit in einer leidensangepassten Tätigkeit streitig.</streitgegenstand>
+      </erwaegung>
+      <erwaegung nummer="2.2">
+        <text>Das kantonale Gericht legte die Bestimmungen und Grundsätze zu den am 1. Januar 2022 revidierten Bestimmungen im IVG, zur Invalidität (<gesetzeszitat erlass="ATSG" sr-nummer="830.1" artikel="8" absatz="1">Art. 8 Abs. 1 ATSG</gesetzeszitat>), zur Erwerbsunfähigkeit (<gesetzeszitat erlass="ATSG" artikel="7">Art. 7 ATSG</gesetzeszitat>) und zum Rentenanspruch (<gesetzeszitat erlass="IVG" sr-nummer="831.20" artikel="28">Art. 28 IVG</gesetzeszitat>) richtig dar. Ebenfalls zutreffend wiedergegeben ist die Rechtsprechung zum Beweiswert und zur Beweiswürdigung medizinischer Berichte (<bge-zitat band="134" abteilung="V" seite="231" erwaegung="5.1" ref="bge:134-V-231/e:5.1">BGE 134 V 231 E. 5.1</bge-zitat>; <bge-zitat band="125" abteilung="V" seite="351" erwaegung="3a" ref="bge:125-V-351/e:3a">125 V 351 E. 3a</bge-zitat>). Darauf kann verwiesen werden.</text>
+      </erwaegung>
+    </erwaegung>
+
+    <erwaegung nummer="3" art="materiell">
+      <text>Nach sorgfältiger Würdigung der medizinischen Akten erachtete die Vorinstanz die RAD-Stellungnahme vom 6. November 2024 als schlüssig und nachvollziehbar begründet. Mittels Einkommensvergleichs ermittelte die Vorinstanz einen Invaliditätsgrad von gerundet 12 %.</text>
+    </erwaegung>
+
+    <erwaegung nummer="4" art="materiell">
+      <erwaegung nummer="4.1">
+        <ratio-decidendi>Die Vorinstanz berücksichtigte in ihrer Beweiswürdigung alle wesentlichen medizinischen Akten und stellte bundesrechtskonform fest, im zeitlichen Verlauf würden die medizinischen Akten dokumentieren, dass der Beschwerdeführer nach erheblicher Kopfverletzung wieder über eine alters- und ausbildungsadäquate kognitive Leistungsfähigkeit verfüge. Dass die RAD-Ärztin angesichts dieser Gegebenheiten ab dem Zeitpunkt der Eingliederung eine 100%ige Arbeitsfähigkeit in leidensangepassten Tätigkeiten für erreicht erachtete, überzeuge.</ratio-decidendi>
+        <text>Stattdessen kritisiert er das Ergebnis der vorinstanzlichen Beweiswürdigung in appellatorischer Weise, ohne dabei das strenge Rügeprinzip zu beachten, was nicht genügt (<bge-zitat band="148" abteilung="V" seite="366" erwaegung="3.3" ref="bge:148-V-366/e:3.3">BGE 148 V 366 E. 3.3</bge-zitat>).</text>
+      </erwaegung>
+      <erwaegung nummer="4.2">
+        <text>Des Weiteren vermag der Beschwerdeführer aus dem von ihm zitierten <bge-zitat band="142" abteilung="V" seite="58" ref="bge:142-V-58">BGE 142 V 58</bge-zitat> ebenfalls nichts zu seinen Gunsten abzuleiten, zumal der medizinische Sachverhalt nicht mit dem vorliegenden vergleichbar ist. Nach dem Gesagten (<querverweis ziel-erwaegung="4.1" richtung="rueckwaerts">E. 4.1 hiervor</querverweis>) ergeben die vorliegenden medizinischen Akten ein kohärentes, widerspruchsfreies Bild.</text>
+      </erwaegung>
+      <erwaegung nummer="4.3">
+        <text>Eine Verletzung des Anspruchs auf rechtliches Gehör (<gesetzeszitat erlass="BV" sr-nummer="101" artikel="29" absatz="2">Art. 29 Abs. 2 BV</gesetzeszitat>) ist nicht ersichtlich (<bge-zitat band="150" abteilung="III" seite="1" erwaegung="4.5" ref="bge:150-III-1/e:4.5">BGE 150 III 1 E. 4.5</bge-zitat>; <bge-zitat band="149" abteilung="V" seite="156" erwaegung="6.1" ref="bge:149-V-156/e:6.1">149 V 156 E. 6.1</bge-zitat>).</text>
+      </erwaegung>
+    </erwaegung>
+
+    <erwaegung nummer="5" art="materiell">
+      <erwaegung nummer="5.1">
+        <text>Zunächst moniert der Beschwerdeführer eine bundesrechtswidrige Festlegung des Valideneinkommens. Entgegen seinen Einwänden stellte die Vorinstanz bei der Ermittlung des Valideneinkommens nicht auf einen statistischen Tabellenlohn ab. Demzufolge sei es überwiegend wahrscheinlich (<bge-zitat band="150" abteilung="II" seite="321" erwaegung="3.6.3" ref="bge:150-II-321/e:3.6.3">BGE 150 II 321 E. 3.6.3</bge-zitat>), dass er die bisherige Tätigkeit fortgesetzt hätte.</text>
+      </erwaegung>
+      <erwaegung nummer="5.2">
+        <text>Gegen die vorinstanzliche Berechnung des Invalideneinkommens wendet der Beschwerdeführer nichts ein. Einwände bestehen jedoch gegen das vorinstanzliche Vorgehen betreffend die vom Bundesgericht frei überprüfbare Rechtsfrage zur Gewährung eines Leidensabzugs (<bge-zitat band="148" abteilung="V" seite="174" erwaegung="6.5" ref="bge:148-V-174/e:6.5">BGE 148 V 174 E. 6.5</bge-zitat>; <bge-zitat band="146" abteilung="V" seite="16" erwaegung="4.2" ref="bge:146-V-16/e:4.2">146 V 16 E. 4.2</bge-zitat>; <bger-zitat verfahrensnummer="9C_188/2025" urteilsdatum="2025-07-31" erwaegung="8.2" ref="bger:9C_188/2025/e:8.2">Urteil 9C_188/2025 vom 31. Juli 2025 E. 8.2</bger-zitat>). Entgegen seiner Ansicht gewährte die Vorinstanz dem Beschwerdeführer den gemäss <gesetzeszitat erlass="IVV" sr-nummer="831.201" artikel="26bis" absatz="3">Art. 26bis Abs. 3 IVV</gesetzeszitat> ab 1. Januar 2024 vorzunehmenden Abzug in der Höhe von 10 %.</text>
+      </erwaegung>
+    </erwaegung>
+
+    <erwaegung nummer="6" art="materiell">
+      <text>Nach dem Gesagten ist insgesamt keine Bundesrechtsverletzung zu erblicken, weshalb es beim vorinstanzlichen Urteil sein Bewenden hat.</text>
+    </erwaegung>
+
+    <erwaegung nummer="7" art="kosten">
+      <text>Der unterliegende Beschwerdeführer trägt die Gerichtskosten (<gesetzeszitat erlass="BGG" artikel="66" absatz="1">Art. 66 Abs. 1 BGG</gesetzeszitat>).</text>
+    </erwaegung>
+  </erwaegungen>
+
+  <dispositiv>
+    <praeambel>Demnach erkennt das Bundesgericht:</praeambel>
+    <ziffer nummer="1" art="hauptdispositiv">
+      <text>Die Beschwerde wird abgewiesen.</text>
+      <ergebnis>abgewiesen</ergebnis>
+    </ziffer>
+    <ziffer nummer="2" art="kosten">
+      <text>Die Gerichtskosten von Fr. 800.- werden dem Beschwerdeführer auferlegt.</text>
+      <gerichtskosten waehrung="CHF" schuldner="natuerliche-person">800</gerichtskosten>
+    </ziffer>
+    <ziffer nummer="3" art="mitteilung">
+      <text>Dieses Urteil wird den Parteien, dem Sozialversicherungsgericht des Kantons Zürich und dem Bundesamt für Sozialversicherungen schriftlich mitgeteilt.</text>
+      <mitteilung adressat-typ="parteien">Parteien</mitteilung>
+      <mitteilung adressat-typ="vorinstanz">Sozialversicherungsgericht des Kantons Zürich</mitteilung>
+      <mitteilung adressat-typ="bundesamt">Bundesamt für Sozialversicherungen</mitteilung>
+    </ziffer>
+    <ergebnis-aggregat>abgewiesen</ergebnis-aggregat>
+  </dispositiv>
+
+  <unterschriften>
+    <praesidium id="viscione" anrede="Die Präsidentin">Viscione</praesidium>
+    <gerichtsschreiber anrede="Die Gerichtsschreiberin">Aliu</gerichtsschreiber>
+  </unterschriften>
+
+  <annotationen generator="lorentzo-1.0" generator-datum="2026-04-25T14:00:00+02:00">
+    <streitgegenstand-quotient>0.0</streitgegenstand-quotient>
+    <erfolgsquoten-anteil>0.0</erfolgsquoten-anteil>
+    <anzahl-zitierte-bge>11</anzahl-zitierte-bge>
+    <anzahl-zitierte-bger>1</anzahl-zitierte-bger>
+    <dissens>false</dissens>
+    <leitentscheid>false</leitentscheid>
+    <rechtsfortbildung>false</rechtsfortbildung>
+  </annotationen>
+</urteil>
