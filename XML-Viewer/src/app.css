@@ -4,3 +4,4 @@
 @plugin "daisyui/theme/index.js" {
   name: "coffee";
 }
+@plugin "@tailwindcss/typography";
