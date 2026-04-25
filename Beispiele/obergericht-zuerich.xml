@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Beispielinstanz Obergericht Zürich, II. Zivilkammer
+  Geschäfts-Nr. PS260092-O/U  (Beschwerde gegen Konkurseröffnung)
+  Urteil vom 13. März 2026, Beschwerde gutgeheissen.
+  Demonstriert: kompakter Beschwerdeentscheid mit kollegialer Besetzung,
+  Doppel-Rolle (Schuldnerin und Beschwerdeführerin), Anweisungen an
+  Konkursamt, Mitteilungen an Handelsregister/Betreibungsamt,
+  vollständige Rechtsmittelbelehrung.
+-->
+<entscheid xmlns="https://lorentzo.ch/oger-zh/v1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://lorentzo.ch/oger-zh/v1 obergericht-zuerich.xsd"
+           sprache="de"
+           schema-version="1.0">
+
+  <metadaten>
+    <gericht>Obergericht des Kantons Zürich</gericht>
+    <kammer>II. Zivilkammer</kammer>
+    <geschaeftsnummer>
+      <vollformat>PS260092-O/U</vollformat>
+      <prefix>PS</prefix>
+      <jahr>2026</jahr>
+      <nummer>92</nummer>
+      <suffix>O/U</suffix>
+    </geschaeftsnummer>
+    <spruchart>urteil</spruchart>
+    <entscheiddatum>2026-03-13</entscheiddatum>
+    <entscheidort>Zürich</entscheidort>
+    <zur-publikation-vorgesehen>false</zur-publikation-vorgesehen>
+  </metadaten>
+
+  <mitwirkende>
+    <vorsitz rolle="vorsitzende" geschlecht="f" id="bantli-keller">
+      <nachname>Bantli Keller</nachname>
+      <vorname-initial>R.</vorname-initial>
+      <titel>lic. iur.</titel>
+    </vorsitz>
+    <mitglied rolle="oberrichter" geschlecht="f" id="lichti-aschwanden">
+      <nachname>Lichti Aschwanden</nachname>
+      <vorname-initial>E.</vorname-initial>
+      <titel>lic. iur.</titel>
+    </mitglied>
+    <mitglied rolle="oberrichter" geschlecht="m" id="pahud">
+      <nachname>Pahud</nachname>
+      <vorname-initial>E.</vorname-initial>
+      <titel>Dr. iur.</titel>
+    </mitglied>
+    <gerichtsschreiber geschlecht="f">
+      <nachname>Götschi</nachname>
+      <vorname-initial>A.</vorname-initial>
+      <titel>lic. iur.</titel>
+    </gerichtsschreiber>
+    <einzelrichter>false</einzelrichter>
+  </mitwirkende>
+
+  <parteien>
+    <partei anonymisiert="true" reihenfolge="1">
+      <bezeichnung>A._____ AG</bezeichnung>
+      <rolle>schuldner</rolle>
+      <rolle>beschwerdefuehrer</rolle>
+    </partei>
+    <partei reihenfolge="2">
+      <bezeichnung>Schweizerische Eidgenossenschaft</bezeichnung>
+      <rolle>glaeubiger</rolle>
+      <rolle>beschwerdegegner</rolle>
+      <institution typ="bundesbehoerde">Eidgenössische Steuerverwaltung (ESTV)</institution>
+      <vertretung typ="behoerden-vertretung">
+        <nachname>Eidgenössische Steuerverwaltung (ESTV)</nachname>
+      </vertretung>
+    </partei>
+  </parteien>
+
+  <gegenstand>
+    <kurzbezeichnung>Konkurseröffnung</kurzbezeichnung>
+    <rechtsgebiet primaer="true" code="SchKG">Schuldbetreibung und Konkurs</rechtsgebiet>
+    <stichwort>Konkurseröffnung</stichwort>
+    <stichwort>Tilgung der Forderung</stichwort>
+    <stichwort>Art. 174 Abs. 2 SchKG</stichwort>
+  </gegenstand>
+
+  <vorinstanz>
+    <gericht>Konkursgericht des Bezirksgerichtes Zürich</gericht>
+    <gerichtstyp>konkursgericht</gerichtstyp>
+    <entscheiddatum>2026-03-05</entscheiddatum>
+    <geschaeftsnummer>EK252500</geschaeftsnummer>
+    <ergebnis>Konkurseröffnung über die Schuldnerin</ergebnis>
+  </vorinstanz>
+
+  <prozessgeschichte>
+    <schritt nummer="1.1">Mit Urteil vom <datum-referenz datum="2026-03-05" ereignis="erstinstanzl-Urteil">5. März 2026</datum-referenz> (<akten-referenz typ="act" nummer="3">act. 3</akten-referenz>) eröffnete das Konkursgericht des Bezirksgerichts Zürich (nachfolgend: Vorinstanz) den Konkurs über die Schuldnerin und Beschwerdeführerin für eine Forderung der Gläubigerin und Beschwerdegegnerin von Fr. 12'473.35 nebst Zins zu 4.5 % seit 1. Januar 2025, Fr. 758.75 und Fr. 253.- Betreibungskosten.</schritt>
+    <schritt nummer="1.2">Dagegen erhob die Schuldnerin mit Eingabe vom <datum-referenz datum="2026-03-07" ereignis="Beschwerde-Einreichung">7. März 2026</datum-referenz> (<akten-referenz typ="act" nummer="2">act. 2</akten-referenz>, Datum des Poststempels) Beschwerde und reichte Beilagen ein. Am <datum-referenz datum="2026-03-09" ereignis="Beschwerdeergaenzung">9. März 2026</datum-referenz> reichte sie zudem eine Beschwerdeergänzung (<akten-referenz typ="act" nummer="7">act. 7</akten-referenz>) ein.</schritt>
+    <schritt nummer="1.3">Die vorinstanzlichen Akten wurden von Amtes wegen beigezogen (<akten-referenz typ="vi-act" nummer="11/1-24">act. 11/1-24</akten-referenz>). Mit Verfügung vom 9. März 2026 (<akten-referenz typ="act" nummer="9">act. 9</akten-referenz>) wurde der Beschwerde aufschiebende Wirkung erteilt.</schritt>
+  </prozessgeschichte>
+
+  <erwaegungen praeambel="Erwägungen:">
+    <erwaegung nummer="2" art="materiell">
+      <erwaegung nummer="2.1">
+        <text>Gemäss <gesetzeszitat erlass="SchKG" sr-nummer="281.1" artikel="174" absatz="2">Art. 174 Abs. 2 SchKG</gesetzeszitat> kann die Rechtsmittelinstanz die Konkurseröffnung aufheben, wenn der Schuldner mit der Einlegung des Rechtsmittels seine Zahlungsfähigkeit glaubhaft macht und durch Urkunden beweist, dass die Forderung samt Zinsen und Kosten getilgt oder der geschuldete Betrag bei der Rechtsmittelinstanz hinterlegt worden ist. Die Tilgung muss innert der Beschwerdefrist nachgewiesen werden (<bge-zitat band="143" abteilung="III" seite="167" erwaegung="2.2" ref="bge:143-III-167/e:2.2">BGE 143 III 167 E. 2.2</bge-zitat>).</text>
+      </erwaegung>
+      <erwaegung nummer="2.2">
+        <text>Gemäss Auskunft der Gläubigerin vom 19. Januar 2026 wurde die Forderung samt Zinsen und Kosten beglichen (<akten-referenz typ="act" nummer="14">act. 14</akten-referenz>). Damit ist die Tilgung urkundlich nachgewiesen.</text>
+      </erwaegung>
+      <erwaegung nummer="2.3">
+        <ratio-decidendi>Nach dem Gesagten ist die Beschwerde gutzuheissen, das angefochtene Urteil aufzuheben und das Konkursbegehren abzuweisen.</ratio-decidendi>
+      </erwaegung>
+    </erwaegung>
+
+    <erwaegung nummer="3" art="kosten">
+      <erwaegung nummer="3.1">
+        <text>Gestützt auf das Verursacherprinzip (<gesetzeszitat erlass="ZPO" sr-nummer="272" artikel="108">Art. 108 ZPO</gesetzeszitat>) sind die Kosten beider Instanzen der Schuldnerin aufzuerlegen, da sie den Konkursgrund erst während der Rechtsmittelfrist beseitigt hat.</text>
+      </erwaegung>
+      <erwaegung nummer="3.2">
+        <text>Die Kosten der ersten Instanz hat die Schuldnerin beim Konkursamt sicherzustellen.</text>
+      </erwaegung>
+      <erwaegung nummer="3.3">
+        <text>Das Konkursamt ist anzuweisen, von dem bei ihm einbezahlten Totalbetrag von Fr. 2'600.- die im Dispositiv verfügten Beträge auszuzahlen.</text>
+      </erwaegung>
+      <erwaegung nummer="3.4">
+        <text>Unter diesen Umständen hat die Schuldnerin keinen Anspruch auf eine Parteientschädigung.</text>
+      </erwaegung>
+    </erwaegung>
+  </erwaegungen>
+
+  <dispositiv-urteil>
+    <praeambel>Es wird erkannt:</praeambel>
+    <ziffer nummer="1" art="hauptdispositiv">
+      <text>In Gutheissung der Beschwerde wird das angefochtene Urteil des Konkursgerichtes des Bezirksgerichtes Zürich vom 5. März 2026 aufgehoben. Das Konkursbegehren wird abgewiesen.</text>
+      <ergebnis>gutgeheissen</ergebnis>
+    </ziffer>
+    <ziffer nummer="2" art="kosten">
+      <text>Die zweitinstanzliche Entscheidgebühr wird auf Fr. 750.- festgesetzt, der Schuldnerin auferlegt und mit dem von ihr geleisteten Kostenvorschuss verrechnet. Die von der Gläubigerin bezogene erstinstanzliche Entscheidgebühr von Fr. 400.- wird bestätigt und der Schuldnerin auferlegt.</text>
+      <entscheidgebuehr waehrung="CHF" schuldner="schuldner" aus-vorschuss-bezogen="true">750</entscheidgebuehr>
+      <entscheidgebuehr waehrung="CHF" schuldner="schuldner">400</entscheidgebuehr>
+    </ziffer>
+    <ziffer nummer="3" art="anweisung">
+      <text>Die Vorinstanz wird angewiesen, der Schuldnerin den von ihr einbezahlten und noch nicht bereits zurückerstatteten Betrag von Fr. 200.- zurückzuerstatten.</text>
+      <anweisung adressat="Vorinstanz" art="rueckzahlung">Rückerstattung Fr. 200.- an Schuldnerin</anweisung>
+    </ziffer>
+    <ziffer nummer="4" art="anweisung">
+      <text>Das Konkursamt Aussersihl-Zürich wird angewiesen, von dem bei ihm einbezahlten Totalbetrag von Fr. 2'600.- (Fr. 1'200.- Zahlung der Schuldnerin sowie Fr. 1'400.- Rest des von der Gläubigerin dem Konkursgericht geleisteten Vorschusses) der Gläubigerin Fr. 1'800.- und der Schuldnerin einen nach Abzug seiner Kosten allfällig verbleibenden Restbetrag auszuzahlen.</text>
+      <anweisung adressat="Konkursamt Aussersihl-Zürich" art="auszahlung">Fr. 1'800.- an Gläubigerin, Restbetrag an Schuldnerin</anweisung>
+    </ziffer>
+    <ziffer nummer="5" art="parteientschaedigung">
+      <text>Parteientschädigungen werden keine zugesprochen.</text>
+    </ziffer>
+    <ziffer nummer="6" art="mitteilung">
+      <text>Schriftliche Mitteilung an die Parteien, an die Gläubigerin unter Beilage von Kopien der Beschwerdeeingaben (act. 2 und 7), sowie an das Konkursgericht des Bezirksgerichtes Zürich (unter Rücksendung der erstinstanzlichen Akten) und das Konkursamt Aussersihl-Zürich, ferner im Urteils-Dispositiv an das Handelsregisteramt des Kantons Zürich und an das Betreibungsamt Zürich 4, je gegen Empfangsschein.</text>
+      <mitteilung adressat-typ="parteien" zustellart="empfangsschein">Parteien</mitteilung>
+      <mitteilung adressat-typ="vorinstanz" zustellart="empfangsschein" beilagen="erstinstanzliche Akten">Konkursgericht des Bezirksgerichtes Zürich</mitteilung>
+      <mitteilung adressat-typ="konkursamt" zustellart="empfangsschein">Konkursamt Aussersihl-Zürich</mitteilung>
+      <mitteilung adressat-typ="dispositiv-mitteilung" zustellart="empfangsschein">Handelsregisteramt des Kantons Zürich</mitteilung>
+      <mitteilung adressat-typ="dispositiv-mitteilung" zustellart="empfangsschein">Betreibungsamt Zürich 4</mitteilung>
+    </ziffer>
+    <ergebnis-aggregat>gutgeheissen</ergebnis-aggregat>
+  </dispositiv-urteil>
+
+  <rechtsmittelbelehrung>
+    <rechtsmittel>Beschwerde</rechtsmittel>
+    <zielinstanz>Schweizerisches Bundesgericht</zielinstanz>
+    <frist-tage>30</frist-tage>
+    <rechtsgrundlage>Art. 72 ff. BGG (Beschwerde in Zivilsachen) oder Art. 113 ff. BGG (subsidiäre Verfassungsbeschwerde) i.V.m. Art. 42 BGG</rechtsgrundlage>
+    <endentscheid>true</endentscheid>
+    <vermoegensrechtlich>true</vermoegensrechtlich>
+    <aufschiebende-wirkung-vermutung>false</aufschiebende-wirkung-vermutung>
+    <hinweis>Es handelt sich um einen Entscheid des Konkurs- oder Nachlassrichters im Sinne von Art. 74 Abs. 2 lit. d BGG.</hinweis>
+    <hinweis>Die Beschwerde an das Bundesgericht hat keine aufschiebende Wirkung.</hinweis>
+  </rechtsmittelbelehrung>
+
+  <unterschriften>
+    <gerichtsschreiber anrede="Die Gerichtsschreiberin">lic. iur. A. Götschi</gerichtsschreiber>
+  </unterschriften>
+
+  <versand>
+    <versanddatum>2026-03-16</versanddatum>
+  </versand>
+
+  <annotationen generator="lorentzo-1.0" generator-datum="2026-04-25T15:00:00+02:00">
+    <anzahl-zitierte-bge>1</anzahl-zitierte-bge>
+    <anzahl-zitierte-bger>0</anzahl-zitierte-bger>
+    <anzahl-zitierte-kantonale>0</anzahl-zitierte-kantonale>
+    <anzahl-aktenreferenzen>6</anzahl-aktenreferenzen>
+    <leitentscheid-zr-publiziert>false</leitentscheid-zr-publiziert>
+    <dauer-verfahren-tage>6</dauer-verfahren-tage>
+  </annotationen>
+</entscheid>
