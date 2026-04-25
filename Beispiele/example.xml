@@ -45,6 +45,9 @@
         <Attachment type="document" filename="abc.pdf" id="def">Schreiben der Beklagten vom 1. Januar 2024</Attachment>
     </Attachments>
     <Main>
+        <Rubrum>
+
+        </Rubrum>
         <Petitions>
             <Petition type="main" current="true" phase="first-instance">Die Beklagte sei zu verurteilen, an den Kläger CHF 15'000.00 zu zahlen.</Petition>
             <Petition type="cost" current="true" phase="first-instance">Alles unter Kosten- und Entschädigungsfolge.</Petition>
