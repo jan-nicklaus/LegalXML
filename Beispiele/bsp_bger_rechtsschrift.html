@@ -1,12 +1,12 @@
 <xml>
     <Rubrum>
         <Aktenzeichen></Aktenzeichen>  // optional: Wenn, dann Aktenzeichen des Obergerichts
-        <Rechtsmittel>Beschwerde in Strafsachen</Rechtsmittel> // vgl. EntscheidTyp
-        <RechtsmittelDatum></RechtsmittelDatum> // vgl. EntscheidDatum
+        <DokumentTyp>Beschwerde in Strafsachen</DokumentTyp> // vgl. EntscheidTyp
+        <Datum></Datum> // ... der Rechtsschrift; vgl. EntscheidDatum
         <Spruchkoerper>
-            <Gericht>Schweizerisches Bundesgericht</Gericht> // auch als Metadaten: Kanton Bern und Obergericht
+            <Gericht>Schweizerisches Bundesgericht</Gericht> // Kann auch Schlichtungsbehörde sein
             <Adresse>Av. du Tribunal federal 29, 1000 Lausanne 14</Adresse> // TBD
-            <Kammer>2. Strafkammer</Kammer>
+            <!-- <Kammer></Kammer> --> // Weiss man nicht bei Eingabe der Rechtsschrift
             <!-- <Zusammensetzung> // ist bei Eingabe der Beschwerde noch nicht bekannt
                 <Mitglied role="judge">Mustermann</Mitglied>
             </Zusammensetzung> -->
@@ -21,18 +21,19 @@
                 <Stellvertretung></Stellvertretung> // optional: gesetzliche Vertreter oder Organ
                 <Rechtsvertretung>Rechtsanwältin Angelina Grossenbacher-Milenina</Rechtsvertretung> // // durch die unterzeichnende Rechtsanwältin
             </Partei>
-            <Partei> // Streng genommen hat das unterlegene Obergericht keine Parteistellung, weshalb es im Beschwerdeverfahren 
-                <Rollen>
-                    <Rolle>Beschwerdegegnerin</Rolle> // abhängig vom Verfahrensstadium, kann auch sein Kläger bei Klage erster Instanz
-                    <Rolle>Vorinstanz</Rolle> // abhängig vom Verfahrensstadium, kann auch sein Kläger bei Klage erster Instanz
-                </Rollen>
-                <Name>Obergericht des Kantons Bern, 2 . Strafkammer</Name>
-                <Anschrift>Hochschulstrasse 17, 3001 Bern</Anschrift>
-                <Stellvertretung></Stellvertretung>
-                <Rechtsvertretung></Rechtsvertretung>
-            </Partei>
         </Parteien>
+        <Vorinstanz>
+            <Rollen>
+                <Rolle>Vorinstanz</Rolle> // abhängig vom Verfahrensstadium, kann auch sein Kläger bei Klage erster Instanz
+            </Rollen>
+            <Name>Obergericht des Kantons Bern, 2 . Strafkammer</Name>
+            <Anschrift>Hochschulstrasse 17, 3001 Bern</Anschrift>
+            <Stellvertretung></Stellvertretung>
+            <Rechtsvertretung></Rechtsvertretung>
+        </Partei>
+        </Vorinstanz>
     </Rubrum>
+
     <Main>
         <Rechtsbegehren> // anstatt Dispositiv; "Rechtsbegehrten wird zum Dispositiv erhoben"
             <Heading>I. Rechtsbegehren</Heading>
@@ -41,7 +42,9 @@
                 <Absatz>Dem Beschwerdeführer sei für das erstinstanzliche Verfahren eine Entschädigung von CHF 10'459.30 inkl. Auslagen und MWSt. zuzusprechen;</Absatz>
                 <Absatz>Dem Beschwerdeführer sei für das oberinstanzliche Verfahren eine Entschädigung von CHF 3'850.20 inkl . Auslagen und MWSt. zuzusprechen;</Absatz>
                 <Absatz role="Eventualiter">Eventualiter seien die Ziffern II . 1 und II. 2 des Urteils des Obergerichts des Kantons Bern vom 23. April 2025 im Verfahren ■■■■■■ aufzuheben und die Sache sei zur Neubeurteilung an die Vorinstanz zurückzuweisen.</Absatz>
+
                 <Postfix>unter Kosten- und Entschädigungsfolge.</Postfix>
+                
             <Section>
         </Rechtsbegehren>
 
