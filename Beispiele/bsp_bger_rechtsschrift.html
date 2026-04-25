@@ -1,11 +1,12 @@
 <xml>
     <Rubrum>
-        <Aktenzeichen></Aktenzeichen>
-        <EntscheidTyp>Urteil</EntscheidTyp>
-        <EntscheidDatum></EntscheidDatum>
+        <Aktenzeichen></Aktenzeichen>  // optional: Wenn, dann Aktenzeichen des Obergerichts
+        <Rechtsmittel>Beschwerde in Strafsachen</Rechtsmittel> // vgl. EntscheidTyp
+        <RechtsmittelDatum></RechtsmittelDatum> // vgl. EntscheidDatum
         <Spruchkoerper>
-            <Gericht></Gericht>
-            <Kammer></Kammer>
+            <Gericht>Obergericht des Kantons Bern</Gericht> // auch als Metadaten: Kanton Bern und Obergericht
+            <Adresse>Hochschulstrasse 17, 3001 Bern</Adresse> // TBD
+            <Kammer>2. Strafkammer</Kammer>
             <Zusammensetzung>
                 <Mitglied role="judge">Mustermann</Mitglied>
             </Zusammensetzung>
@@ -13,11 +14,20 @@
         <Parteien>
             <Partei>
                 <Rollen>
-                    <Rolle>Gesuchsteller</Rolle>
-                    <Rolle>Beschwerdeführer</Rolle>
+                    <Rolle>Beschwerdeführer</Rolle> // kann auch Gesuchsteller (z.B. um Eintragung eines dinglichen Rechts)/Kläger (z.B. auf Herausgabe) sein oder hängt davon ab wer in welcher Instanz unterlegen ist (abhängig vom Verfahrensstadium)
                 </Rollen>
-                <Name></Name>
-                <Anschrift></Anschrift>
+                <Name>ANONYM</Name>
+                <Anschrift>ANONYM</Anschrift>
+                <Stellvertretung></Stellvertretung> // optional: gesetzliche Vertreter oder Organ
+                <Rechtsvertretung></Rechtsvertretung> // // durch die unterzeichnende Rechtsanwältin
+            </Partei>
+            <Partei>
+                <Rollen>
+                    <Rolle>Beschwerdegegnerin</Rolle> // abhängig vom Verfahrensstadium, kann auch sein Kläger bei Klage erster Instanz
+                    <Rolle>Vorinstanz</Rolle> // abhängig vom Verfahrensstadium, kann auch sein Kläger bei Klage erster Instanz
+                </Rollen>
+                <Name>Obergericht des Kantons Bern, 2 . Strafkammer</Name>
+                <Anschrift>Hochschulstrasse 17, 3001 Bern</Anschrift>
                 <Stellvertretung></Stellvertretung>
                 <Rechtsvertretung></Rechtsvertretung>
             </Partei>
