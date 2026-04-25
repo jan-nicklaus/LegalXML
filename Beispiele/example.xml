@@ -1,50 +1,58 @@
-<Metadata>
-    <Authors>
-        <Author>Jan Reinhardt</Author>
-    </Authors>
-    <Case>
-        <CaseNumber>4C_537/24</CaseNumber>
-        <Parties>
-            <Party>
-                <Name>Jan Reinhardt</Name>
-                <Adress>ABC-Strasse 123, 8002 Zürich</Adress>
-                <Roles>
-                    <Role>Kläger</Role>
-                    <Role>Beschwerdeführer</Role>
-                </Roles>
-                <Representation>
-                    <Representative type="lawyer">Maja Mustermann, DEF-Strasse 1, 8002 Zürich</Representative>
-                    <Representative type="previous-lawyer">Max Mustermann, DEF-Strasse 1, 8002 Zürich</Representation>
-                </Representation>
-            </Party>
-            <Party>
-                <Name>ABC GmbH</Name>
-                <Adress>ABC-Strasse 321, 8002 Zürich</Adress>
-                <Roles>
-                    <Role>Beklagte</Role>
-                    <Role>Beschwerdegegnerin</Role>
-                </Roles>
-                <Representation>
-                    <Representative type="legal-representative">ABC</Representative>
-                    <Representative type="lawyer">DEF</Representative>
-                </Representation>
-            </Party>
-        </Parties>
+<xml type="Rechtsschrift">
+    <Metadata>
+        <Case>
+
+        </Case>
+        <Document>
+
+        </Document>
+        <Authors>
+            <Author>Jan Reinhardt</Author>
+        </Authors>
+        <Case>
+            <CaseNumber>4C_537/24</CaseNumber>
+            <Parties>
+                <Party>
+                    <Name>Jan Reinhardt</Name>
+                    <Adress>ABC-Strasse 123, 8002 Zürich</Adress>
+                    <Roles>
+                        <Role>Kläger</Role>
+                        <Role>Beschwerdeführer</Role>
+                    </Roles>
+                    <Representation>
+                        <Representative type="lawyer">Maja Mustermann, DEF-Strasse 1, 8002 Zürich</Representative>
+                        <Representative type="previous-lawyer">Max Mustermann, DEF-Strasse 1, 8002 Zürich</Representation>
+                    </Representation>
+                </Party>
+                <Party>
+                    <Name>ABC GmbH</Name>
+                    <Adress>ABC-Strasse 321, 8002 Zürich</Adress>
+                    <Roles>
+                        <Role>Beklagte</Role>
+                        <Role>Beschwerdegegnerin</Role>
+                    </Roles>
+                    <Representation>
+                        <Representative type="legal-representative">ABC</Representative>
+                        <Representative type="lawyer">DEF</Representative>
+                    </Representation>
+                </Party>
+            </Parties>
+        </Case>
+        <Variables>
+        </Variables>
+    </Metadata>
+    <Attachments>
+        <Attachment type="document" filename="abc.pdf" id="def">Schreiben der Beklagten vom 1. Januar 2024</Attachment>
+    </Attachments>
+    <Main>
         <Petitions>
             <Petition type="main" current="true" phase="first-instance">Die Beklagte sei zu verurteilen, an den Kläger CHF 15'000.00 zu zahlen.</Petition>
             <Petition type="cost" current="true" phase="first-instance">Alles unter Kosten- und Entschädigungsfolge.</Petition>
         </Petitions>
-    </Case>
-    <Variables>
-    </Variables>
-</Metadata>
-<Attachments>
-    <Attachment type="document" filename="abc.pdf" id="def">Schreiben der Beklagten vom 1. Januar 2024</Attachment>
-</Attachments>
-<Main>
-    <Section title="Anspruch des Klägers">
-        <Paragraph id="abc">
-            <p><Attach id="def">Die Beklagte hat die Pflicht selbst anerkannt.</Attach> Sie ist daher antragsgemäss zu verurteilen.</p>
-        </Paragraph>
-    </Section>
-</Main>
+        <Section title="Anspruch des Klägers">
+            <Paragraph id="abc">
+                <p><Attach id="def">Die Beklagte hat die Pflicht selbst anerkannt.</Attach> Sie ist daher antragsgemäss zu verurteilen.</p>
+            </Paragraph>
+        </Section>
+    </Main>
+</xml>
