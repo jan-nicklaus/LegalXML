@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entscheid>
+    <Rubrum>
+        <!-- http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F26-11-2025-6B_650-2025&lang=de&type=show_document -->
+        <Aktenzeichen>6B_650/2025</Aktenzeichen>
+        <EntscheidTyp>Urteil</EntscheidTyp>
+        <EntscheidDatum>26. November 2025</EntscheidDatum>
+        <Spruchkoerper>
+            <Gericht>Bundesgericht</Gericht>
+            <Kammer>I. strafrechtliche Abteilung</Kammer>
+            <Zusammensetzung>
+                <Mitglied role="presiding judge">Muschietti</Mitglied>
+                <Mitglied role="judge">Rüedi</Mitglied>
+                <Mitglied role="judge">Guidon</Mitglied>
+                <Mitglied role="clerk">Matt</Mitglied>
+            </Zusammensetzung>
+        </Spruchkoerper>
+        <Parteien>
+            <Partei>
+                <Rollen>
+                    <Rolle>Beschwerdeführer</Rolle>
+                </Rollen>
+                <Name>ANONYM</Name>
+                <Anschrift></Anschrift>
+                <Stellvertretung></Stellvertretung>
+                <Rechtsvertretung>Rechtsanwältin Angelina Grossenbacher</Rechtsvertretung>
+            </Partei>
+            <Partei>
+                <Rollen>
+                    <Rolle>Beschwerdegegnerin</Rolle>
+                </Rollen>
+                <Name>Generalstaatsanwaltschaft des Kantons Bern</Name>
+                <Anschrift>Nordring 8, Postfach, 3001 Bern</Anschrift>
+                <Stellvertretung></Stellvertretung>
+                <Rechtsvertretung></Rechtsvertretung>
+            </Partei>
+        </Parteien>
+    </Rubrum>
+    <Main>
+        <Dispositiv ziffer="1">Die Beschwerde wird abgewiesen, soweit darauf eingetreten wird.</Dispositiv> <!-- Sachentscheid -->
+        <Dispositiv ziffer="2">Der Beschwerdeführer trägt die Gerichtskosten von Fr. 3'000.--.</Dispositiv> <!-- Kostenentscheid -->
+        <Dispositiv ziffer="3">Dieses Urteil wird den Parteien und dem Obergericht des Kantons Bern, 2. Strafkammer, schriftlich mitgeteilt.</Dispositiv> <!-- Eröffnung -->
+        <Eroeffnung></Eroeffnung>
+        <Begruendung>
+            <Prozessuales>
+                <Section> <!-- Sachverhalt -->
+                    <Absatz nummer="A">Am 28. Februar 2024 sprach das Regionalgericht Berner Jura-Seeland B.________ von den Vorwürfen der Veruntreuung und der Irreführung der Rechtspflege frei und seinem amtlichen Verteidiger, Rechtsanwalt A.________, eine Entschädigung von Fr. 10'459.30 zu. Das Obergericht des Kantons Bern, welches die Berufung der Generalstaatsanwaltschaft abwies, reduzierte die erstinstanzliche amtliche Entschädigung am 23. April 2025 auf Fr. 7'170.45. Die Entschädigung im Berufungsverfahren setzte es auf Fr. 2'904.30 fest.</Absatz>
+                    <Absatz nummer="B">Mit Beschwerde in Strafsachen beantragt Rechtsanwalt A.________, ihm seien für das erstinstanzliche Verfahren eine Entschädigung von Fr. 10'459.30 und für das Berufungsverfahren eine solche von Fr. 3'850.20 zuzusprechen. Eventualiter sei die Sache zu neuer Entscheidung an das Obergericht zurückzuweisen.</Absatz>
+                </Section>
+            </Prozessuales> <!-- Erwägungen -->
+            <Formelles>
+                <Section>
+                    <Absatz nummer="1">Die Beschwerde richtet sich gegen einen kantonal letztinstanzlichen Endentscheid (Art. 80 und Art. 90 BGG), worin die Vorinstanz (auch) über die Höhe der amtlichen Entschädigung in beiden kantonalen Verfahren befunden hat. Gemäss Art. 135 Abs. 3 StPO in der am 1. Januar 2024 in Kraft getretenen Fassung kann die amtliche Verteidigung gegen den Entschädigungsentscheid das Rechtsmittel ergreifen, das gegen den Endentscheid zulässig ist. Es handelt sich somit um eine Angelegenheit im Sinne von Art. 78 Abs. 1 BGG. wogegen die Beschwerde in Strafsachen zulässig ist. Der bisherige aArt. 135 Abs. 3 lit. b StPO, welcher zu einer Gabelung des Instanzenzugs führen konnte (vgl. BGE 140 IV 213 E. 1.7), wurde aufgehoben (vgl. Botschaft zur Änderung der Strafprozessordnung vom 28. August 2019, BBl. 2019 6697 S. 6733). Auf die Beschwerde ist - unter Vorbehalt der genügenden Begründung (Art. 42 Abs. 1 und 2 BGG) - einzutreten.</Absatz>
+                    <Absatz nummer="2">Der Beschwerdeführer rügt, die erstinstanzliche Entschädigung sei nicht mehr Gegenstand des Berufungsverfahrens gewesen, sodass die Vorinstanz darüber nicht habe befinden dürfen. Zudem habe sie das Honorar zu Unrecht nach Art. 135 StPO zu einem tieferen Stundensatz anstatt wie die Erstinstanz nach Art. 429 Abs. 1 lit. a StPO festgesetzt. In diesem Zusammenhang habe die Vorinstanz ferner sein rechtliches Gehör verletzt.</Absatz>
+                </Section>
+            </Formelles>
+            <Materielles>
+                <Section type="ruege">
+                    <Absatz nummer="2.1.1">Im Berufungsverfahren gilt grundsätzlich die Dispositionsmaxime und das Berufungsgericht überprüft das erstinstanzliche Urteil nur in den angefochtenen Punkten (Art. 404 Abs. 1 StPO). Soweit die Einschränkung der Berufung auf einzelne Punkte eindeutig und der Grundsatz der Untrennbarkeit oder inneren Einheit nicht verletzt ist, muss die Einschränkung durch das Berufungsgericht respektiert werden (BGE 147 IV 93 E. 1.5.2; Urteil 6B_1143/2021 vom 11. März 2022 E. 2.2.2; je mit Hinweisen).</Absatz>
+                    <Absatz nummer="2.1.2-2.3.3">(...)</Absatz>
+                </Section>
+            </Materielles>
+        </Begruendung>
+        <Entscheidung>Die Beschwerde ist abzuweisen, soweit darauf einzutreten ist. Ausgangsgemäss hat der Beschwerdeführer die Gerichtskosten zu tragen (Art. 66 Abs. 1 BGG).</Entscheidung>
+    </Main>
+</Entscheid>
