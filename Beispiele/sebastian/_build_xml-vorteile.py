@@ -113,6 +113,35 @@ story.append(Paragraph(
     BODY,
 ))
 
+# Sinn und Zweck (Motivation)
+story.append(Paragraph("Sinn und Zweck", H2))
+story.append(Paragraph(
+    "Rechtsschriften und Urteile bestehen mehrheitlich aus Text. Im Verlauf "
+    "eines Verfahrens werden diese Texte zwischen den Beteiligten ausgetauscht; "
+    "es wird wechselseitig auf sie Bezug genommen — und zwar nicht auf "
+    "beliebige Stellen, sondern auf solche, die einen engeren inhaltlichen "
+    "Bezug haben. Sachverhaltselemente korrespondieren mit anderen "
+    "Sachverhaltselementen, rechtliche Argumente werden gegenüber anderen "
+    "rechtlichen Argumenten erwidert.",
+    BODY,
+))
+story.append(Paragraph(
+    "Für diesen Austausch eignen sich strukturierte Daten. Dabei ist "
+    "unerheblich, ob die Daten originär strukturiert entstehen oder ob sie "
+    "aus anderen Formaten wie PDF abgeleitet werden. Entscheidend ist, dass "
+    "die typischen Bezüge maschinell nachvollziehbar werden — und damit auch, "
+    "dass die Strukturierung <b>bewusst minimal</b> ausgestaltet wird: gerade "
+    "so präzise wie nötig, nicht so detailliert wie möglich.",
+    BODY,
+))
+story.append(Paragraph(
+    "Hinzu kommt, dass Rechtsschriften regelmässig auf <i>externe Ressourcen</i> "
+    "verweisen — Beweismittel, Akten, Urkunden, Gutachten —, die ihrerseits in "
+    "unterschiedlichen Formaten vorliegen. Auch solche Verweise müssen "
+    "strukturiert abgebildet werden, damit sie sich automatisch auflösen lassen.",
+    BODY,
+))
+
 # Vergleich-Tabelle
 story.append(Spacer(1, 8))
 story.append(Paragraph("Drei Formate auf einen Blick", H2))
@@ -156,6 +185,43 @@ story.append(Paragraph(
     "Datenformat — kein Layoutformat.",
     CALLOUT,
 ))
+
+# Warum PDF nicht reicht
+story.append(Paragraph("Warum PDF nicht reicht", H2))
+story.append(Paragraph(
+    "PDF ist heute das Standardformat für die Übergabe von Rechtsschriften und "
+    "Urteilen. Im Hinblick auf die maschinelle Weiterverarbeitung hat es jedoch "
+    "eine Reihe systematischer Schwächen:",
+    BODY,
+))
+
+pdf_schwaechen = [
+    ("Doppelte Schichten — Textlayer und Bildlayer",
+     "Sogenannte «Sandwich-PDFs» enthalten ein Bild des Originals und eine "
+     "darunterliegende, automatisch erkannte Textschicht. Die Qualität dieser "
+     "Textschicht hängt vom OCR-Verfahren ab; Diskrepanzen zwischen sichtbarem "
+     "Bild und auswertbarem Text bleiben in der Regel unbemerkt."),
+    ("Darstellung im Vordergrund, Inhalt im Hintergrund",
+     "PDF beschreibt, wo Glyphen auf der Seite stehen — nicht, was sie "
+     "bedeuten. Die Information «das ist Erwägung Nr. 3» ergibt sich nur aus "
+     "visuellen Hinweisen wie Einrückung und Nummerierung. Diese Hinweise "
+     "müssen maschinell rekonstruiert werden und variieren je nach Verfasserin."),
+    ("Unschärfe in der Spezifikation",
+     "PDF ist ein umfangreicher Standard, in dem dieselbe Information auf "
+     "vielfältige Weise dargestellt werden kann. Eine inhaltliche Validierung — "
+     "stimmt das Format der Geschäftsnummer, ist die Rechtsmittelbelehrung "
+     "vorhanden — ist nicht vorgesehen."),
+    ("Hoher Metadaten-Anteil",
+     "PDF bringt eigene Metadaten mit (eingebettete Schriftarten, Formularfelder, "
+     "Sicherheitseinstellungen, Rendering-Hinweise), die für die juristische "
+     "Auswertung irrelevant sind, aber beim Verarbeiten mitgeführt werden. XML "
+     "ist demgegenüber ein flaches Textformat mit minimalem Overhead."),
+]
+for titel, text in pdf_schwaechen:
+    story.append(KeepTogether([
+        Paragraph(titel, H3),
+        Paragraph(text, BODY),
+    ]))
 
 # Sieben Hauptvorteile
 story.append(Paragraph("Sieben praktische Vorteile", H2))

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Konvertiert aus Beispiele/bsp_bger_rechtsschrift.html (Jans Entwurf):
+     Wohlgeformtheits-Probleme behoben, Inhalt 1:1 erhalten. -->
+<Rechtsschrift>
+    <Rubrum>
+        <Aktenzeichen></Aktenzeichen> <!-- optional: Wenn, dann Aktenzeichen des Obergerichts -->
+        <Rechtsmittel>Beschwerde in Strafsachen</Rechtsmittel> <!-- vgl. EntscheidTyp -->
+        <RechtsmittelDatum></RechtsmittelDatum> <!-- vgl. EntscheidDatum -->
+        <Spruchkoerper>
+            <Gericht>Schweizerisches Bundesgericht</Gericht> <!-- auch als Metadaten: Kanton Bern und Obergericht -->
+            <Adresse>Av. du Tribunal federal 29, 1000 Lausanne 14</Adresse> <!-- TBD -->
+            <Kammer>2. Strafkammer</Kammer>
+            <!-- <Zusammensetzung>  ist bei Eingabe der Beschwerde noch nicht bekannt
+                <Mitglied role="judge">Mustermann</Mitglied>
+            </Zusammensetzung> -->
+        </Spruchkoerper>
+        <Parteien>
+            <Partei>
+                <Rollen>
+                    <Rolle>Beschwerdeführer</Rolle> <!-- kann auch Gesuchsteller (z.B. um Eintragung eines dinglichen Rechts) / Kläger (z.B. auf Herausgabe) sein oder hängt davon ab wer in welcher Instanz unterlegen ist (abhängig vom Verfahrensstadium) -->
+                </Rollen>
+                <Name>■■■■■■</Name>
+                <Anschrift>■■■■■■</Anschrift>
+                <Stellvertretung></Stellvertretung> <!-- optional: gesetzliche Vertreter oder Organ -->
+                <Rechtsvertretung>Rechtsanwältin Angelina Grossenbacher-Milenina</Rechtsvertretung> <!-- durch die unterzeichnende Rechtsanwältin -->
+            </Partei>
+            <Partei>
+                <!-- Streng genommen hat das unterlegene Obergericht keine Parteistellung, weshalb es im Beschwerdeverfahren -->
+                <Rollen>
+                    <Rolle>Beschwerdegegnerin</Rolle> <!-- abhängig vom Verfahrensstadium, kann auch sein Kläger bei Klage erster Instanz -->
+                    <Rolle>Vorinstanz</Rolle> <!-- abhängig vom Verfahrensstadium, kann auch sein Kläger bei Klage erster Instanz -->
+                </Rollen>
+                <Name>Obergericht des Kantons Bern, 2. Strafkammer</Name>
+                <Anschrift>Hochschulstrasse 17, 3001 Bern</Anschrift>
+                <Stellvertretung></Stellvertretung>
+                <Rechtsvertretung></Rechtsvertretung>
+            </Partei>
+        </Parteien>
+    </Rubrum>
+    <Main>
+        <Rechtsbegehren> <!-- anstatt Dispositiv; "Rechtsbegehren wird zum Dispositiv erhoben" -->
+            <Heading>I. Rechtsbegehren</Heading>
+            <Section>
+                <Absatz>Die Ziffern II. 1 und II. 2 des Urteils des Obergerichts des Kantons Bern vom 23. April 2025 im Verfahren ■■■■■■ seien aufzuheben;</Absatz>
+                <Absatz>Dem Beschwerdeführer sei für das erstinstanzliche Verfahren eine Entschädigung von CHF 10'459.30 inkl. Auslagen und MWSt. zuzusprechen;</Absatz>
+                <Absatz>Dem Beschwerdeführer sei für das oberinstanzliche Verfahren eine Entschädigung von CHF 3'850.20 inkl. Auslagen und MWSt. zuzusprechen;</Absatz>
+                <Absatz role="Eventualiter">Eventualiter seien die Ziffern II. 1 und II. 2 des Urteils des Obergerichts des Kantons Bern vom 23. April 2025 im Verfahren ■■■■■■ aufzuheben und die Sache sei zur Neubeurteilung an die Vorinstanz zurückzuweisen.</Absatz>
+                <Postfix>unter Kosten- und Entschädigungsfolge.</Postfix>
+            </Section>
+        </Rechtsbegehren>
+
+        <Begruendung> <!-- ... des Entscheids / bei Rechtsschrift: Parteibehauptungen, gehören zu Materielles -->
+            <Formelles>
+                <Heading>II. Formelles</Heading>
+                <Section>
+                    <Absatz>Mit Urteil des Obergerichts des Kantons Bern vom 23. April 2025 wurde das amtliche Honorar des Beschwerdeführers für das erstinstanzliche und das oberinstanzliche Verfahren bestimmt (Urteilsdispositiv OGer BE vom 23.04.2025, Beilage 1). Die Urteilsbegründung vom 24. Juni 2025 ging am 25. Juni 2025 beim Beschwerdeführer ein (Urteilsbegründung OGer BE vom 24.06.2025, Beilage 2; Briefumschlag und Sendungsverfolgung, Beilage 3).</Absatz>
+                    <Absatz>Gegen den Entschädigungsentscheid kann die amtliche Verteidigung das Rechtsmittel ergreifen, das gegen den Endentscheid zulässig ist (Art. 135 Abs. 3 StPO). Beim angefochtenen Entscheid handelt es sich um ein Urteil der letzten kantonalen Instanz. Die Beschwerde in Strafsachen ist gemäss Art. 78 Abs. 1 i.V.m. Art. 80 Abs. 1 und Art. 90 BGG zulässig.</Absatz>
+                    <TableOfEvidence>
+                        <!-- <Evidence>Die Genannten</Evidence>  Voreinstellung (damit nichts vergessen geht); sollte erst nach Section(n+1) auftauchen (zuvor werden keine Beweismittel genannt) -->
+                        <Evidence>Beweismittel n: </Evidence>
+                        <Evidence>Beweismittel n: </Evidence>
+                        <Evidence>Beweismittel n: </Evidence>
+                    </TableOfEvidence>
+                </Section>
+            </Formelles>
+
+            <Ruegegruende> <!-- Spezifisch für Beschwerde (2. Instanz) -->
+                <Heading>III. Rügegründe</Heading> <!-- Möglichkeiten: Rechtsanwendung, Sachverhaltsfeststellung, Unangemessenheit -->
+                <Section>
+                    <Absatz>Mit Beschwerde in Strafsachen kann die Verletzung von Bundesrecht gerügt werden (Art. 95 lit. a BGG). Der Beschwerdeführer rügt eine Verletzung von Art. 404 Abs. 1 und Abs. 2 StPO, Art. 429 Abs. 1 lit. a StPO sowie von Art. 29 Abs. 2 BV.</Absatz>
+                    <TableOfEvidence>
+                        <Evidence>Die Genannten</Evidence>
+                        <Evidence>Beweismittel n: </Evidence>
+                    </TableOfEvidence>
+                </Section>
+            </Ruegegruende>
+
+            <Prozessuales>
+                <Heading>IV. Sachverhalt / Prozessgeschichte</Heading> <!-- 1. Instanz: Tatsachenbehauptung; 2. Instanz: Sachverhalt / Prozessgeschichte -->
+                <Section>
+                    <Absatz>Mit Verfügung vom 06. Dezember 2022 wurde der Beschwerdeführer durch die Staatsanwaltschaft Berner Jura-Seeland als amtlicher Verteidiger von ■■■■■■ eingesetzt. ■■■■■■ wurde mit Strafbefehl vom 02. August 2023 wegen diverser Delikte verurteilt. Gegen diesen Strafbefehl erhob ■■■■■■ - vertreten durch den Beschwerdeführer - Einsprache. Die Staatsanwaltschaft hielt am Strafbefehl fest und überwies die Akten dem Regionalgericht Berner Jura-Seeland zur Durchführung des Hauptverfahrens. Die Hauptverhandlung fand am 28. Februar 2024 statt. Das Regionalgericht Berner Jura-Seeland sprach ■■■■■■ vollumfänglich frei und setzte die amtliche Entschädigung für die Vertretung durch den Beschwerdeführer auf CHF 10'459.30 fest (vgl. Ziff. I.2. des Urteilsdispositivs RG BJS vom 28.02.2024, Beilage 5). Die Staatsanwaltschaft Berner Jura-Seeland, welche die Anklage nicht persönlich vor Gericht vertrat, meldete am 06. März 2024 Berufung gegen das Urteil vom 28. Februar 2024 an.</Absatz>
+                    <TableOfEvidence>
+                        <Evidence>Die Genannten</Evidence>
+                        <Evidence>Beweismittel n: </Evidence>
+                    </TableOfEvidence>
+                </Section>
+            </Prozessuales>
+
+            <Materielles>
+                <Heading>V. Materielles</Heading>
+                <Section type="ruege">
+                    <Heading>Art. 1 - Kognition der Vorinstanz betreffend Neufestsetzung des erstinstanzlichen Honorars</Heading> <!-- Zwischentitel, kein Einfluss auf Hierarchie -->
+
+                    <Absatz>Die Vorinstanz führt in der Urteilsbegründung, Ziff. I. 5. (Beilage 2) zum Verfahrensgegenstand und Kognition der Kammer aus, ...</Absatz>
+                    <Absatz>Mit dieser Argumentation führt die Vorinstanz zwei sich ...</Absatz>
+
+                    <SubSection>Ad Kognition infolge vollumfänglicher Anfechtung des erstinstanzlichen Urteils</SubSection> <!-- Zwischentitel, kein Einfluss auf Hierarchie -->
+
+                    <Absatz>...</Absatz>
+
+                    <TableOfEvidence>
+                        <Evidence>Die Genannten</Evidence>
+                        <Evidence>Beweismittel n: </Evidence>
+                    </TableOfEvidence>
+                </Section>
+
+                <Section type="ruege">
+                    <Heading>Art. 2 - Festlegung des Honorars für das erstinstanzliche Verfahren</Heading> <!-- Zwischentitel, kein Einfluss auf Hierarchie -->
+                    <Absatz>...</Absatz>
+
+                    <SubSection>...</SubSection> <!-- Zwischentitel, kein Einfluss auf Hierarchie -->
+
+                    <Absatz>...</Absatz>
+
+                    <TableOfEvidence>
+                        <Evidence>Die Genannten</Evidence>
+                        <Evidence>Beweismittel n: </Evidence>
+                    </TableOfEvidence>
+                </Section>
+            </Materielles>
+        </Begruendung>
+
+        <!-- <Eroeffnung></Eroeffnung>  Gibt es nicht bei der Rechtsschrift und ist nicht Sache der Parteien -->
+
+        <Postfix>Damit ist die Beschwerde hinreichend begründet und es wird höflich um Gutheissung ersucht.</Postfix> <!-- Boilerplate, in jeder Beschwerde gleich -->
+    </Main>
+    <Attachments>
+        <Attachment>Beilage 1: Urteilsdispositiv OGer BE vom 23.04.2025</Attachment>
+        <Attachment>Beilage 2</Attachment>
+        <Attachment>Beilage 3</Attachment>
+        <Attachment>Beilage 4</Attachment>
+        <Attachment>Beilage 5: Urteilsdispositiv RG BJS vom 28.02.2024</Attachment>
+        <Attachment>Beilage 6: Urteilsbegründung RG BJS vom 03.04.2024</Attachment>
+        <Attachment>Beilage 7: Honorarnote 1. Instanz vom 28.02.2024</Attachment>
+    </Attachments>
+</Rechtsschrift>
