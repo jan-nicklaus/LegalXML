@@ -1,4 +1,6 @@
 <script>
+    import { get } from "svelte/store";
+
   let testXML = `<xml type="judgment">
     <meta id="doctype">Judgment</meta>
     <Rubrum>
@@ -58,9 +60,15 @@
   let docType = xmlTree.getElementById("doctype").textContent.trim();
   let xmlMain = xmlTree.getElementsByTagName("Main")[0]; //Main muss existieren
 </script>
+
+
 <div class="prose prose-lg m-4 w-full">
     {#if docType === "Judgment"}
     <h2>Dispositiv</h2>
+
+    <h2>Rubrum</h2>
+    {#each xmlTree.getElementsByTagName("Rubrum")[0].getelementsByTagName("Section") as sec}
+    <div class={`mt-4 relative rounded-md p-4 bg-${}`}
 
     <h2>Begründung</h2>
     {#each ["Prozessuales", "Formelles", "Materielles"] as h}
