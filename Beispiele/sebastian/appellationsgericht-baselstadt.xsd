@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  appellationsgericht-baselstadt.xsd  —  XML-Schema für Urteile und
+                                          Beschlüsse des Appellations-
+                                          gerichts Basel-Stadt.
+  Version: 2.0   |   Sprache: de
+  Standard: XSD 1.1
+
+  Wichtig: Basel-Stadt verwendet die Bezeichnung "Appellationsgericht".
+  Es ist als Drei-Funktionen-Gericht organisiert: Zivil-, Straf- UND
+  Verwaltungsrecht (BS hat kein separates Verwaltungsgericht).
+
+  Bindet common-ch.xsd via xs:include ein. Enthält daher nur die
+  BS-spezifischen Teile:
+
+   1) <gericht> enum: nur "Appellationsgericht Basel-Stadt".
+   2) <abteilung> mit Sachgebieten (Zivil/Straf/Verwaltung/Sozialvers.).
+   3) <besetzungstyp> als orthogonaler Aspekt (Drei-/Fünfergericht /
+      Ausschuss / Präsidial / Plenum) — BS-spezifisch.
+   4) <geschaeftsnummer> im Format "{kuerzel}.{jahr}.{nummer}",
+      z.B. "ZB.2024.34", "VD.2024.12". Jahr 4-stellig.
+   5) <vorinstanz> mit BS-Erstinstanzen (Zivil-/Strafgericht,
+      Sozialvers.gericht, Departement). KEINE Bezirksgerichte.
+   6) <annotationen> mit BS-Fundstelle (BJM).
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="https://lorentzo.ch/appger-bs/v1"
+           targetNamespace="https://lorentzo.ch/appger-bs/v1"
+           elementFormDefault="qualified"
+           vc:minVersion="1.1"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+
+  <xs:include schemaLocation="common-ch.xsd"/>
+
+  <!-- ================================================================== -->
+  <!--  Wurzelelement                                                      -->
+  <!-- ================================================================== -->
+  <xs:element name="entscheid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="metadaten" type="MetadatenTyp"/>
+        <xs:element name="mitwirkende" type="MitwirkendeTyp"/>
+        <xs:element name="parteien" type="ParteienTyp"/>
+        <xs:element name="gegenstand" type="GegenstandTyp"/>
+        <xs:element name="vorinstanz" type="VorinstanzTyp" minOccurs="0"/>
+        <xs:element name="rechtsbegehren" type="RechtsbegehrenTyp" minOccurs="0"/>
+        <xs:element name="prozessgeschichte" type="ProzessgeschichteTyp" minOccurs="0"/>
+        <xs:element name="erwaegungen" type="ErwaegungenTyp" minOccurs="0"/>
+        <xs:element name="dispositiv-beschluss" type="DispositivTyp" minOccurs="0"/>
+        <xs:element name="dispositiv-urteil" type="DispositivTyp" minOccurs="0"/>
+        <xs:element name="rechtsmittelbelehrung" type="RechtsmittelbelehrungTyp" minOccurs="0"/>
+        <xs:element name="unterschriften" type="UnterschriftenTyp" minOccurs="0"/>
+        <xs:element name="versand" type="VersandTyp" minOccurs="0"/>
+        <xs:element name="annotationen" type="AnnotationenTyp" minOccurs="0"/>
+        <xs:element name="volltext" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="schema-version" type="xs:string" fixed="2.0"/>
+      <xs:attribute name="sprache" type="xs:string" fixed="de"/>
+      <xs:attribute name="quelle" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ================================================================== -->
+  <!--  Metadaten                                                          -->
+  <!-- ================================================================== -->
+  <xs:complexType name="MetadatenTyp">
+    <xs:sequence>
+      <xs:element name="gericht" type="GerichtTyp"/>
+      <xs:element name="abteilung" type="AbteilungTyp"/>
+      <xs:element name="besetzungstyp" type="BesetzungsTypTyp"/>
+      <xs:element name="geschaeftsnummer" type="GeschaeftsnummerTyp"/>
+      <xs:element name="spruchart" type="SpruchartTyp"/>
+      <xs:element name="entscheiddatum" type="xs:date"/>
+      <xs:element name="entscheidort" type="xs:string" default="Basel" minOccurs="0"/>
+      <xs:element name="zur-publikation-vorgesehen" type="xs:boolean"
+                  default="false" minOccurs="0"/>
+      <xs:element name="weiterzug" type="WeiterzugTyp" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="GerichtTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Appellationsgericht Basel-Stadt"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="AbteilungTyp">
+    <xs:annotation><xs:documentation>
+      Drei-Funktionen-Gericht: Zivil-, Straf- und Verwaltungsrecht.
+      Sozialversicherungsrechtliche Abteilung als vierte. Zusätzlich
+      die Aufsichtsbehörden (SchKG, Anwaltschaft).
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Zivilrecht"/>
+      <xs:enumeration value="Strafrecht"/>
+      <xs:enumeration value="Verwaltungsrecht"/>
+      <xs:enumeration value="Sozialversicherungsrecht"/>
+      <xs:enumeration value="Aufsichtsbehoerde-SchKG"/>
+      <xs:enumeration value="Anwaltsaufsichtsbehoerde"/>
+      <xs:enumeration value="Plenum"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BesetzungsTypTyp">
+    <xs:annotation><xs:documentation>
+      BS-spezifisch: Sitzungen werden nach Grösse organisiert. Anders
+      als ZH/BE/LU ist die Besetzungsgrösse ein eigener Aspekt neben
+      der Abteilungs-Zuteilung.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="dreiergericht"/>
+      <xs:enumeration value="fuenfergericht"/>
+      <xs:enumeration value="ausschuss"/>
+      <xs:enumeration value="praesidial"/>
+      <xs:enumeration value="plenum"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="GeschaeftsnummerTyp">
+    <xs:annotation><xs:documentation>
+      Format: "{kuerzel}.{jahr}.{nummer}".
+      Beispiele: "ZB.2024.34", "SB.2024.45", "VD.2024.12".
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="vollformat" type="xs:string"/>
+      <xs:element name="kuerzel" type="GeschaeftsnummerKuerzelTyp"/>
+      <xs:element name="jahr" type="xs:gYear"/>
+      <xs:element name="nummer" type="xs:positiveInteger"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="GeschaeftsnummerKuerzelTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ZB"/>    <!-- Zivilrecht Berufung -->
+      <xs:enumeration value="ZK"/>    <!-- Zivilrecht Beschwerde -->
+      <xs:enumeration value="ZG"/>    <!-- Zivilrecht (allg.) -->
+      <xs:enumeration value="SB"/>    <!-- Strafrecht Berufung -->
+      <xs:enumeration value="BES"/>   <!-- Strafrecht Beschwerde -->
+      <xs:enumeration value="HB"/>    <!-- Haftbeschwerde -->
+      <xs:enumeration value="VD"/>    <!-- Verwaltungsrecht -->
+      <xs:enumeration value="BV"/>    <!-- Verwaltungsbeschwerde -->
+      <xs:enumeration value="SV"/>    <!-- Sozialversicherung -->
+      <xs:enumeration value="IV"/>    <!-- IV-spezifisch -->
+      <xs:enumeration value="ABS"/>   <!-- Aufsicht SchKG -->
+      <xs:enumeration value="AAB"/>   <!-- Anwaltsaufsicht -->
+      <xs:enumeration value="ANDERE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Mitwirkende                                                        -->
+  <!-- ================================================================== -->
+  <xs:complexType name="MitwirkendeTyp">
+    <xs:sequence>
+      <xs:element name="vorsitz" type="RichterTyp" minOccurs="0"/>
+      <xs:element name="referent" type="RichterTyp" minOccurs="0"/>
+      <xs:element name="mitglied" type="RichterTyp" minOccurs="0" maxOccurs="6"/>
+      <xs:element name="ersatzrichter" type="RichterTyp" minOccurs="0" maxOccurs="3"/>
+      <xs:element name="gerichtsschreiber" type="GerichtsschreiberTyp"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ================================================================== -->
+  <!--  Vorinstanz — BS: Stadt-Kanton, keine Bezirksgerichte               -->
+  <!-- ================================================================== -->
+  <xs:complexType name="VorinstanzTyp">
+    <xs:sequence>
+      <xs:element name="gericht" type="xs:string"/>
+      <xs:element name="abteilung" type="xs:string" minOccurs="0"/>
+      <xs:element name="gerichtstyp" type="VorinstanzGerichtstypTyp"/>
+      <xs:element name="entscheiddatum" type="xs:date" minOccurs="0"/>
+      <xs:element name="geschaeftsnummer" type="xs:string" minOccurs="0"/>
+      <xs:element name="ergebnis" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="VorinstanzGerichtstypTyp">
+    <xs:annotation><xs:documentation>
+      BS hat als Stadt-Kanton keine Bezirksgerichte. Erstinstanzliche
+      Gerichte sind: Zivilgericht BS, Strafgericht BS, Sozial-
+      versicherungsgericht BS. Verwaltungsrechtliche Sachen kommen
+      direkt aus den Departementen ans AppGer.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="zivilgericht"/>
+      <xs:enumeration value="strafgericht"/>
+      <xs:enumeration value="sozialversicherungsgericht"/>
+      <xs:enumeration value="schlichtungsbehoerde"/>
+      <xs:enumeration value="staatsanwaltschaft"/>
+      <xs:enumeration value="departement"/>
+      <xs:enumeration value="dienststelle"/>
+      <xs:enumeration value="kantonale-kommission"/>
+      <xs:enumeration value="andere"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Annotationen — BS-Fundstelle                                       -->
+  <!-- ================================================================== -->
+  <xs:complexType name="AnnotationenTyp">
+    <xs:sequence>
+      <xs:element name="anzahl-zitierte-bge" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="anzahl-zitierte-bger" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="anzahl-zitierte-kantonale" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="anzahl-aktenreferenzen" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="laenge-erwaegungen-zeichen" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="leitentscheid-bjm-publiziert" type="xs:boolean"
+                  default="false" minOccurs="0"/>
+      <xs:element name="dauer-verfahren-tage" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="generator" type="xs:string"/>
+    <xs:attribute name="generator-datum" type="xs:dateTime"/>
+  </xs:complexType>
+
+</xs:schema>

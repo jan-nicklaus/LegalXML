@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  obergericht-bern.xsd  —  XML-Schema für Urteile und Beschlüsse
+                            des Obergerichts des Kantons Bern.
+  Version: 2.0   |   Sprache: de
+  Standard: XSD 1.1
+
+  Bindet common-ch.xsd via xs:include ein (Chameleon-Pattern). Enthält
+  daher nur die BE-spezifischen Teile:
+
+   1) <gericht> enum: deutsche und französische Bezeichnung
+      (BE ist amtlich zweisprachig).
+   2) <kammer> mit BE-Kammern (1./2. Zivil-, 1./2. Strafkammer,
+      Beschwerdekammern, ABS, AAB).
+   3) <geschaeftsnummer> in zwei BE-Formaten: "ZK 22 354" / "100.2024.0123".
+   4) <vorinstanz> mit den vier Regionalgerichten (Bern-Mittelland,
+      Berner Oberland, Berner Jura-Seeland, Emmental-Oberaargau).
+   5) <mitwirkende> mit eigenem <referent>-Element (BE-typisch für
+      die berichterstattende Person).
+   6) <annotationen> mit BE-Fundstellen-Flags (BVR, ZBJV).
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="https://lorentzo.ch/oger-be/v1"
+           targetNamespace="https://lorentzo.ch/oger-be/v1"
+           elementFormDefault="qualified"
+           vc:minVersion="1.1"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+
+  <xs:include schemaLocation="common-ch.xsd"/>
+
+  <!-- ================================================================== -->
+  <!--  Wurzelelement                                                      -->
+  <!-- ================================================================== -->
+  <xs:element name="entscheid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="metadaten" type="MetadatenTyp"/>
+        <xs:element name="mitwirkende" type="MitwirkendeTyp"/>
+        <xs:element name="parteien" type="ParteienTyp"/>
+        <xs:element name="gegenstand" type="GegenstandTyp"/>
+        <xs:element name="vorinstanz" type="VorinstanzTyp" minOccurs="0"/>
+        <xs:element name="rechtsbegehren" type="RechtsbegehrenTyp" minOccurs="0"/>
+        <xs:element name="prozessgeschichte" type="ProzessgeschichteTyp" minOccurs="0"/>
+        <xs:element name="erwaegungen" type="ErwaegungenTyp" minOccurs="0"/>
+        <xs:element name="dispositiv-beschluss" type="DispositivTyp" minOccurs="0"/>
+        <xs:element name="dispositiv-urteil" type="DispositivTyp" minOccurs="0"/>
+        <xs:element name="rechtsmittelbelehrung" type="RechtsmittelbelehrungTyp" minOccurs="0"/>
+        <xs:element name="unterschriften" type="UnterschriftenTyp" minOccurs="0"/>
+        <xs:element name="versand" type="VersandTyp" minOccurs="0"/>
+        <xs:element name="annotationen" type="AnnotationenTyp" minOccurs="0"/>
+        <xs:element name="volltext" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="schema-version" type="xs:string" fixed="2.0"/>
+      <xs:attribute name="sprache" type="SpracheTyp" default="de"/>
+      <xs:attribute name="quelle" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="SpracheTyp">
+    <xs:annotation><xs:documentation>
+      BE ist offiziell zweisprachig (DE/FR). Die meisten Entscheide
+      ergehen in Deutsch, eine Minderheit (Berner Jura) in Französisch.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="de"/>
+      <xs:enumeration value="fr"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Metadaten                                                          -->
+  <!-- ================================================================== -->
+  <xs:complexType name="MetadatenTyp">
+    <xs:sequence>
+      <xs:element name="gericht" type="GerichtTyp"/>
+      <xs:element name="kammer" type="KammerTyp"/>
+      <xs:element name="geschaeftsnummer" type="GeschaeftsnummerTyp"/>
+      <xs:element name="spruchart" type="SpruchartTyp"/>
+      <xs:element name="entscheiddatum" type="xs:date"/>
+      <xs:element name="entscheidort" type="xs:string" default="Bern" minOccurs="0"/>
+      <xs:element name="zur-publikation-vorgesehen" type="xs:boolean"
+                  default="false" minOccurs="0"/>
+      <xs:element name="weiterzug" type="WeiterzugTyp" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="GerichtTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Obergericht des Kantons Bern"/>
+      <xs:enumeration value="Cour suprême du canton de Berne"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="KammerTyp">
+    <xs:annotation><xs:documentation>
+      Kammerstruktur OGer BE (Stand 2024+). Anders als ZH gibt es kein
+      Handelsgericht; Verwaltungsstreitigkeiten gehen ans separate
+      Verwaltungsgericht (nicht in diesem Schema).
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1. Zivilkammer"/>
+      <xs:enumeration value="2. Zivilkammer"/>
+      <xs:enumeration value="Beschwerdekammer in Zivilsachen"/>
+      <xs:enumeration value="1. Strafkammer"/>
+      <xs:enumeration value="2. Strafkammer"/>
+      <xs:enumeration value="Beschwerdekammer in Strafsachen"/>
+      <xs:enumeration value="Aufsichtsbehoerde-SchKG"/>
+      <xs:enumeration value="Anwaltsaufsichtsbehoerde"/>
+      <xs:enumeration value="Plenum"/>
+      <xs:enumeration value="Verwaltungskommission"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="GeschaeftsnummerTyp">
+    <xs:annotation><xs:documentation>
+      Zwei BE-Formate:
+        a) Kurz: "ZK 22 354", "SK 22 35", "BK 22 12"
+        b) Lang: "100.2024.0123" (eher in Aufsichtssachen)
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="vollformat" type="xs:string"/>
+      <xs:element name="prefix" type="GeschaeftsnummerPrefixTyp" minOccurs="0"/>
+      <xs:element name="bereich" type="xs:string" minOccurs="0"/>
+      <xs:element name="jahr" type="xs:gYear"/>
+      <xs:element name="nummer" type="xs:positiveInteger"/>
+    </xs:sequence>
+    <xs:attribute name="format" type="GeschaeftsnummerFormatTyp" default="kurz"/>
+  </xs:complexType>
+
+  <xs:simpleType name="GeschaeftsnummerFormatTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="kurz"/>
+      <xs:enumeration value="lang"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="GeschaeftsnummerPrefixTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ZK"/>
+      <xs:enumeration value="SK"/>
+      <xs:enumeration value="BK"/>
+      <xs:enumeration value="ABS"/>
+      <xs:enumeration value="AAB"/>
+      <xs:enumeration value="ANDERE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Mitwirkende — BE hat eigenes <referent>-Element                    -->
+  <!-- ================================================================== -->
+  <xs:complexType name="MitwirkendeTyp">
+    <xs:sequence>
+      <xs:element name="vorsitz" type="RichterTyp" minOccurs="0"/>
+      <xs:element name="referent" type="RichterTyp" minOccurs="0"/>
+      <xs:element name="mitglied" type="RichterTyp" minOccurs="0" maxOccurs="6"/>
+      <xs:element name="ersatzrichter" type="RichterTyp" minOccurs="0" maxOccurs="3"/>
+      <xs:element name="gerichtsschreiber" type="GerichtsschreiberTyp"/>
+      <xs:element name="einzelrichter" type="xs:boolean" default="false" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ================================================================== -->
+  <!--  Vorinstanz — BE: Regionalgerichte                                  -->
+  <!-- ================================================================== -->
+  <xs:complexType name="VorinstanzTyp">
+    <xs:sequence>
+      <xs:element name="gericht" type="xs:string"/>
+      <xs:element name="abteilung" type="xs:string" minOccurs="0"/>
+      <xs:element name="gerichtstyp" type="VorinstanzGerichtstypTyp"/>
+      <xs:element name="region" type="RegionalgerichtTyp" minOccurs="0"/>
+      <xs:element name="entscheiddatum" type="xs:date" minOccurs="0"/>
+      <xs:element name="geschaeftsnummer" type="xs:string" minOccurs="0"/>
+      <xs:element name="ergebnis" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="VorinstanzGerichtstypTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="regionalgericht"/>
+      <xs:enumeration value="schlichtungsbehoerde"/>
+      <xs:enumeration value="staatsanwaltschaft"/>
+      <xs:enumeration value="generalstaatsanwaltschaft"/>
+      <xs:enumeration value="anwaltsaufsicht"/>
+      <xs:enumeration value="andere"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RegionalgerichtTyp">
+    <xs:annotation><xs:documentation>
+      Die vier Regionalgerichte des Kantons Bern (Justizreform 2011).
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Bern-Mittelland"/>
+      <xs:enumeration value="Berner Oberland"/>
+      <xs:enumeration value="Berner Jura-Seeland"/>
+      <xs:enumeration value="Emmental-Oberaargau"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Annotationen — BE-Fundstellen                                      -->
+  <!-- ================================================================== -->
+  <xs:complexType name="AnnotationenTyp">
+    <xs:sequence>
+      <xs:element name="anzahl-zitierte-bge" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="anzahl-zitierte-bger" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="anzahl-zitierte-kantonale" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="anzahl-aktenreferenzen" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="laenge-erwaegungen-zeichen" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="leitentscheid-zbjv-publiziert" type="xs:boolean"
+                  default="false" minOccurs="0"/>
+      <xs:element name="leitentscheid-bvr-publiziert" type="xs:boolean"
+                  default="false" minOccurs="0"/>
+      <xs:element name="dauer-verfahren-tage" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="generator" type="xs:string"/>
+    <xs:attribute name="generator-datum" type="xs:dateTime"/>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  kantonsgericht-luzern.xsd  —  XML-Schema für Urteile und Beschlüsse
+                                 des Kantonsgerichts Luzern.
+  Version: 2.0   |   Sprache: de
+  Standard: XSD 1.1
+
+  Wichtig: Luzern bezeichnet sein oberes kantonales Gericht als
+  "Kantonsgericht" (NICHT Obergericht).
+
+  Bindet common-ch.xsd via xs:include ein. Enthält daher nur die
+  LU-spezifischen Teile:
+
+   1) <gericht> enum: nur "Kantonsgericht Luzern".
+   2) <abteilung> mit Vier-Abteilungen-Modell (Zivil-, Straf-,
+      Sozialvers.-, Verwaltungsrecht). LU hat KEIN separates Verwaltungs-
+      oder Sozialversicherungsgericht — diese sind ans KGer angegliedert.
+   3) <geschaeftsnummer> im Format "{abt}{kennung} {jahr} {nr}",
+      z.B. "1B 23 45", "2N 23 12".
+   4) <vorinstanz> mit den vier Bezirksgerichten
+      (Luzern-Stadt, Hochdorf, Sursee, Willisau).
+   5) <mitwirkende> mit eigenem <instruktionsrichter>-Element.
+   6) <annotationen> mit LU-Fundstelle (LGVE).
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="https://lorentzo.ch/kger-lu/v1"
+           targetNamespace="https://lorentzo.ch/kger-lu/v1"
+           elementFormDefault="qualified"
+           vc:minVersion="1.1"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+
+  <xs:include schemaLocation="common-ch.xsd"/>
+
+  <!-- ================================================================== -->
+  <!--  Wurzelelement                                                      -->
+  <!-- ================================================================== -->
+  <xs:element name="entscheid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="metadaten" type="MetadatenTyp"/>
+        <xs:element name="mitwirkende" type="MitwirkendeTyp"/>
+        <xs:element name="parteien" type="ParteienTyp"/>
+        <xs:element name="gegenstand" type="GegenstandTyp"/>
+        <xs:element name="vorinstanz" type="VorinstanzTyp" minOccurs="0"/>
+        <xs:element name="rechtsbegehren" type="RechtsbegehrenTyp" minOccurs="0"/>
+        <xs:element name="prozessgeschichte" type="ProzessgeschichteTyp" minOccurs="0"/>
+        <xs:element name="erwaegungen" type="ErwaegungenTyp" minOccurs="0"/>
+        <xs:element name="dispositiv-beschluss" type="DispositivTyp" minOccurs="0"/>
+        <xs:element name="dispositiv-urteil" type="DispositivTyp" minOccurs="0"/>
+        <xs:element name="rechtsmittelbelehrung" type="RechtsmittelbelehrungTyp" minOccurs="0"/>
+        <xs:element name="unterschriften" type="UnterschriftenTyp" minOccurs="0"/>
+        <xs:element name="versand" type="VersandTyp" minOccurs="0"/>
+        <xs:element name="annotationen" type="AnnotationenTyp" minOccurs="0"/>
+        <xs:element name="volltext" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="schema-version" type="xs:string" fixed="2.0"/>
+      <xs:attribute name="sprache" type="xs:string" fixed="de"/>
+      <xs:attribute name="quelle" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ================================================================== -->
+  <!--  Metadaten                                                          -->
+  <!-- ================================================================== -->
+  <xs:complexType name="MetadatenTyp">
+    <xs:sequence>
+      <xs:element name="gericht" type="GerichtTyp"/>
+      <xs:element name="abteilung" type="AbteilungTyp"/>
+      <xs:element name="geschaeftsnummer" type="GeschaeftsnummerTyp"/>
+      <xs:element name="spruchart" type="SpruchartTyp"/>
+      <xs:element name="entscheiddatum" type="xs:date"/>
+      <xs:element name="entscheidort" type="xs:string" default="Luzern" minOccurs="0"/>
+      <xs:element name="zur-publikation-vorgesehen" type="xs:boolean"
+                  default="false" minOccurs="0"/>
+      <xs:element name="weiterzug" type="WeiterzugTyp" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="GerichtTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Kantonsgericht Luzern"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="AbteilungTyp">
+    <xs:annotation><xs:documentation>
+      Vier-Abteilungen-Modell des KGer LU (Stand 2024+). Sozial-
+      versicherungs- und Verwaltungsrecht sind hier integriert (anders
+      als ZH/BE, wo sie an separate Gerichte gehen).
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1. Abteilung"/>     <!-- Zivilrecht -->
+      <xs:enumeration value="2. Abteilung"/>     <!-- Strafrecht -->
+      <xs:enumeration value="3. Abteilung"/>     <!-- Sozialversicherungsrecht -->
+      <xs:enumeration value="4. Abteilung"/>     <!-- Verwaltungsrecht -->
+      <xs:enumeration value="Aufsichtsbehoerde-SchKG"/>
+      <xs:enumeration value="Justizkommission"/>
+      <xs:enumeration value="Plenum"/>
+      <xs:enumeration value="Verwaltungskommission"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="GeschaeftsnummerTyp">
+    <xs:annotation><xs:documentation>
+      Format: "{abt}{kennung} {jahr} {nr}".
+      Beispiele: "1B 23 45", "2N 23 12", "4V 23 89".
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="vollformat" type="xs:string"/>
+      <xs:element name="abteilungs-prefix" type="xs:string"/>
+      <xs:element name="kennung" type="VerfahrensKennungTyp"/>
+      <xs:element name="jahr" type="xs:gYear"/>
+      <xs:element name="nummer" type="xs:positiveInteger"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="VerfahrensKennungTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="B"/>     <!-- Berufung -->
+      <xs:enumeration value="N"/>     <!-- Neues Verfahren -->
+      <xs:enumeration value="H"/>     <!-- Hauptsache -->
+      <xs:enumeration value="F"/>     <!-- Familie -->
+      <xs:enumeration value="P"/>     <!-- Beschwerde -->
+      <xs:enumeration value="V"/>     <!-- Verwaltungsgerichtsbeschwerde -->
+      <xs:enumeration value="S"/>     <!-- Sozialversicherung -->
+      <xs:enumeration value="K"/>     <!-- Konkurs/SchKG -->
+      <xs:enumeration value="Z"/>     <!-- Zivil-Sondersache -->
+      <xs:enumeration value="ANDERE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Mitwirkende — LU: <instruktionsrichter>                            -->
+  <!-- ================================================================== -->
+  <xs:complexType name="MitwirkendeTyp">
+    <xs:sequence>
+      <xs:element name="vorsitz" type="RichterTyp" minOccurs="0"/>
+      <xs:element name="instruktionsrichter" type="RichterTyp" minOccurs="0"/>
+      <xs:element name="mitglied" type="RichterTyp" minOccurs="0" maxOccurs="6"/>
+      <xs:element name="ersatzrichter" type="RichterTyp" minOccurs="0" maxOccurs="3"/>
+      <xs:element name="gerichtsschreiber" type="GerichtsschreiberTyp"/>
+      <xs:element name="einzelrichter" type="xs:boolean" default="false" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ================================================================== -->
+  <!--  Vorinstanz — LU: 4 Bezirksgerichte                                 -->
+  <!-- ================================================================== -->
+  <xs:complexType name="VorinstanzTyp">
+    <xs:sequence>
+      <xs:element name="gericht" type="xs:string"/>
+      <xs:element name="abteilung" type="xs:string" minOccurs="0"/>
+      <xs:element name="gerichtstyp" type="VorinstanzGerichtstypTyp"/>
+      <xs:element name="bezirk" type="BezirksgerichtTyp" minOccurs="0"/>
+      <xs:element name="entscheiddatum" type="xs:date" minOccurs="0"/>
+      <xs:element name="geschaeftsnummer" type="xs:string" minOccurs="0"/>
+      <xs:element name="ergebnis" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="VorinstanzGerichtstypTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="bezirksgericht"/>
+      <xs:enumeration value="schlichtungsbehoerde"/>
+      <xs:enumeration value="staatsanwaltschaft"/>
+      <xs:enumeration value="iv-stelle"/>
+      <xs:enumeration value="suva"/>
+      <xs:enumeration value="ausgleichskasse"/>
+      <xs:enumeration value="krankenversicherer"/>
+      <xs:enumeration value="kantonale-behoerde"/>
+      <xs:enumeration value="gemeinde"/>
+      <xs:enumeration value="andere"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BezirksgerichtTyp">
+    <xs:annotation><xs:documentation>
+      Die vier Bezirksgerichte des Kantons Luzern (per 2010 reduziert
+      von elf Ämtern auf vier Bezirke).
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Luzern-Stadt"/>
+      <xs:enumeration value="Hochdorf"/>
+      <xs:enumeration value="Sursee"/>
+      <xs:enumeration value="Willisau"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Annotationen — LU-Fundstelle                                       -->
+  <!-- ================================================================== -->
+  <xs:complexType name="AnnotationenTyp">
+    <xs:sequence>
+      <xs:element name="anzahl-zitierte-bge" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="anzahl-zitierte-bger" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="anzahl-zitierte-kantonale" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="anzahl-aktenreferenzen" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="laenge-erwaegungen-zeichen" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:element name="leitentscheid-lgve-publiziert" type="xs:boolean"
+                  default="false" minOccurs="0"/>
+      <xs:element name="dauer-verfahren-tage" type="xs:nonNegativeInteger" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="generator" type="xs:string"/>
+    <xs:attribute name="generator-datum" type="xs:dateTime"/>
+  </xs:complexType>
+
+</xs:schema>

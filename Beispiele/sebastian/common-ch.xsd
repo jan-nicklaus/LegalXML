@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  common-ch.xsd  —  Gemeinsame Bausteine für Schweizer Gerichts-
+                     entscheid-Schemas (BGer + Kantone).
+  Version: 1.0   |   Sprache: de
+  Standard: XSD 1.1
+
+  Zweck: Eliminieren von Code-Duplikation zwischen den kantonalen
+  Schemas (oger-zh, oger-be, kger-lu, appger-bs) und dem Bundes-
+  gerichts-Schema. Enthält alle Typen, die strukturell oder inhaltlich
+  kantonsübergreifend identisch sind.
+
+  CHAMELEON-PATTERN: Diese Datei hat KEINEN targetNamespace. Sie wird
+  per <xs:include> in kantonale Schemas eingebunden und übernimmt
+  dabei deren Namespace. Vorteil: XML-Dokumente bleiben einnamespacig
+  (kein Präfix-Mix wie "<c:partei>"). Nachteil: jedes einbindende
+  Schema hat effektiv eine "eigene Kopie" der common-Typen — Multi-
+  Kanton-Dokumente sind damit nicht direkt validierbar (für unseren
+  Use Case irrelevant).
+
+  Designentscheidungen:
+
+   1) Vereinigte Enumerationen statt kantonsspezifischer Restriktion.
+      Z.B. <ParteiRolleTyp> enthält ALLE Rollen aller Kantone (kläger,
+      beklagte, ..., appellant, rekurrent, versicherter, ...). Vorteil:
+      Nutzende Schemas können den Typ direkt übernehmen ohne Erweiterung.
+      Nachteil: das Schema validiert nicht, ob ein bestimmter Wert für
+      einen bestimmten Kanton "üblich" ist — das wäre Aufgabe einer
+      separaten Schematron-Schicht.
+   2) GerichtTyp, KammerTyp/AbteilungTyp, GeschaeftsnummerTyp und
+      VorinstanzTyp sind NICHT in common, weil sie kantonsspezifisch
+      bleiben sollen (genau das ist der Punkt der einzelnen Schemas).
+   3) GesetzeszitatTyp ist hier in einer Basisform (sr-nummer + artikel)
+      definiert mit generischem Attribut "kantonal" für Verweise auf
+      kantonale Sammlungen (BSG/SRL/SG-BS/LS). Kantone, die nominell
+      unterschiedliche Attribute brauchen, definieren eine eigene
+      Variante in ihrem Schema.
+   4) AnnotationenTyp und das <entscheid>-Wurzelelement sind NICHT in
+      common, weil dort kantonsspezifische Fundstellen-Felder
+      auftauchen.
+
+  Verwendung in einem einbindenden Schema:
+
+      <xs:schema xmlns:xs="..."
+                 xmlns="https://lorentzo.ch/oger-be/v1"
+                 targetNamespace="https://lorentzo.ch/oger-be/v1"
+                 elementFormDefault="qualified">
+        <xs:include schemaLocation="common-ch.xsd"/>
+        ...
+        <xs:element name="parteien" type="ParteienTyp"/>
+        ...
+      </xs:schema>
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           vc:minVersion="1.1"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+
+  <!-- ================================================================== -->
+  <!--  Personen, Adressen, Geschlecht                                     -->
+  <!-- ================================================================== -->
+  <xs:simpleType name="GeschlechtTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="m"/>
+      <xs:enumeration value="f"/>
+      <xs:enumeration value="d"/>
+      <xs:enumeration value="unbekannt"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="AkademischerTitelTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="lic. iur."/>
+      <xs:enumeration value="MLaw"/>
+      <xs:enumeration value="Dr. iur."/>
+      <xs:enumeration value="Prof. Dr. iur."/>
+      <xs:enumeration value="Dr."/>
+      <xs:enumeration value="Prof."/>
+      <xs:enumeration value="ohne"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="AdresseTyp">
+    <xs:sequence>
+      <xs:element name="strasse" type="xs:string" minOccurs="0"/>
+      <xs:element name="postfach" type="xs:string" minOccurs="0"/>
+      <xs:element name="plz" type="xs:string" minOccurs="0"/>
+      <xs:element name="ort" type="xs:string" minOccurs="0"/>
+      <xs:element name="land" type="xs:string" default="CH" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ================================================================== -->
+  <!--  Mitwirkende (Richter:innen, Gerichtsschreiber:innen)               -->
+  <!-- ================================================================== -->
+  <xs:complexType name="RichterTyp">
+    <xs:sequence>
+      <xs:element name="nachname" type="xs:string"/>
+      <xs:element name="vorname-initial" type="xs:string" minOccurs="0"/>
+      <xs:element name="titel" type="AkademischerTitelTyp" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="rolle" type="RichterRolleTyp"/>
+    <xs:attribute name="geschlecht" type="GeschlechtTyp"/>
+    <xs:attribute name="id" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:simpleType name="RichterRolleTyp">
+    <xs:annotation><xs:documentation>
+      Vereinigte Liste aller Richterrollen über CH-Gerichte.
+      Kanton-Mapping (Auswahl):
+        ZH/BE  → oberrichter, ersatzoberrichter
+        LU     → kantonsrichter, ersatzkantonsrichter
+        BS     → appellationsgerichtspraesident, appellationsgerichtsmitglied
+        BGer   → bundesrichter, bundesrichterin
+        Alle   → praesident, vizepraesident, vorsitzende, referent,
+                 instruktionsrichter, handelsrichter
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="praesident"/>
+      <xs:enumeration value="vizepraesident"/>
+      <xs:enumeration value="vorsitzende"/>
+      <xs:enumeration value="referent"/>
+      <xs:enumeration value="instruktionsrichter"/>
+      <xs:enumeration value="oberrichter"/>
+      <xs:enumeration value="ersatzoberrichter"/>
+      <xs:enumeration value="kantonsrichter"/>
+      <xs:enumeration value="ersatzkantonsrichter"/>
+      <xs:enumeration value="appellationsgerichtspraesident"/>
+      <xs:enumeration value="appellationsgerichtsmitglied"/>
+      <xs:enumeration value="ersatzmitglied"/>
+      <xs:enumeration value="nebenamtlich"/>
+      <xs:enumeration value="bundesrichter"/>
+      <xs:enumeration value="ersatz-bundesrichter"/>
+      <xs:enumeration value="handelsrichter"/>
+      <xs:enumeration value="laienrichter"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="GerichtsschreiberTyp">
+    <xs:sequence>
+      <xs:element name="nachname" type="xs:string"/>
+      <xs:element name="vorname-initial" type="xs:string" minOccurs="0"/>
+      <xs:element name="titel" type="AkademischerTitelTyp" minOccurs="0"/>
+      <xs:element name="initialen" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="geschlecht" type="GeschlechtTyp"/>
+  </xs:complexType>
+
+  <!-- ================================================================== -->
+  <!--  Parteien                                                           -->
+  <!-- ================================================================== -->
+  <xs:complexType name="ParteienTyp">
+    <xs:sequence>
+      <xs:element name="partei" type="ParteiTyp" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ParteiTyp">
+    <xs:sequence>
+      <xs:element name="bezeichnung" type="xs:string"/>
+      <xs:element name="rolle" type="ParteiRolleTyp" maxOccurs="3"/>
+      <xs:element name="institution" type="InstitutionTyp" minOccurs="0"/>
+      <xs:element name="adresse" type="AdresseTyp" minOccurs="0"/>
+      <xs:element name="vertretung" type="VertretungTyp"
+                  minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="verteidigung" type="VerteidigungTyp"
+                  minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="zustelladresse" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="anonymisiert" type="xs:boolean" default="false"/>
+    <xs:attribute name="reihenfolge" type="xs:positiveInteger"/>
+    <xs:attribute name="berufungs-rolle" type="BerufungsRolleTyp"/>
+  </xs:complexType>
+
+  <xs:simpleType name="ParteiRolleTyp">
+    <xs:annotation><xs:documentation>
+      Vereinigte Rollenliste über alle CH-Verfahrensarten.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <!-- Materielle Zivilrollen -->
+      <xs:enumeration value="klaeger"/>
+      <xs:enumeration value="beklagte"/>
+      <xs:enumeration value="gesuchsteller"/>
+      <xs:enumeration value="gesuchsgegner"/>
+      <xs:enumeration value="schuldner"/>
+      <xs:enumeration value="glaeubiger"/>
+      <!-- Strafrollen -->
+      <xs:enumeration value="beschuldigter"/>
+      <xs:enumeration value="ankläger"/>
+      <xs:enumeration value="privatklaeger"/>
+      <xs:enumeration value="geschaedigter"/>
+      <xs:enumeration value="opfer"/>
+      <xs:enumeration value="staatsanwaltschaft"/>
+      <xs:enumeration value="oberstaatsanwaltschaft"/>
+      <xs:enumeration value="generalstaatsanwaltschaft"/>
+      <!-- Rechtsmittel-Rollen -->
+      <xs:enumeration value="berufungskläger"/>
+      <xs:enumeration value="berufungsbeklagter"/>
+      <xs:enumeration value="beschwerdefuehrer"/>
+      <xs:enumeration value="beschwerdegegner"/>
+      <xs:enumeration value="rekurrent"/>
+      <xs:enumeration value="rekursgegner"/>
+      <xs:enumeration value="appellant"/>
+      <xs:enumeration value="appellatin"/>
+      <!-- Verwaltungs-/Sozialversicherungsrollen -->
+      <xs:enumeration value="versicherter"/>
+      <xs:enumeration value="versicherer"/>
+      <xs:enumeration value="behoerde"/>
+      <xs:enumeration value="aufsichtsbehoerde"/>
+      <!-- Sonstiges -->
+      <xs:enumeration value="erbengemeinschaft"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BerufungsRolleTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="I"/>
+      <xs:enumeration value="II"/>
+      <xs:enumeration value="III"/>
+      <xs:enumeration value="IV"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="InstitutionTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="typ" type="InstitutionTypEnum"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="InstitutionTypEnum">
+    <xs:annotation><xs:documentation>
+      Vereinigte Liste aller Institutionstypen über alle Schemas.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <!-- Strafverfolgung -->
+      <xs:enumeration value="staatsanwaltschaft"/>
+      <xs:enumeration value="oberstaatsanwaltschaft"/>
+      <xs:enumeration value="generalstaatsanwaltschaft"/>
+      <!-- Erstinstanzliche Gerichte -->
+      <xs:enumeration value="bezirksgericht"/>
+      <xs:enumeration value="regionalgericht"/>
+      <xs:enumeration value="zivilgericht"/>
+      <xs:enumeration value="strafgericht"/>
+      <xs:enumeration value="sozialversicherungsgericht"/>
+      <xs:enumeration value="konkursgericht"/>
+      <xs:enumeration value="schlichtungsbehoerde"/>
+      <!-- Behörden -->
+      <xs:enumeration value="betreibungsamt"/>
+      <xs:enumeration value="konkursamt"/>
+      <xs:enumeration value="handelsregisteramt"/>
+      <xs:enumeration value="steuerverwaltung"/>
+      <xs:enumeration value="bundesbehoerde"/>
+      <xs:enumeration value="kantonale-behoerde"/>
+      <xs:enumeration value="departement"/>
+      <xs:enumeration value="gemeinde"/>
+      <!-- Sozialversicherung -->
+      <xs:enumeration value="ausgleichskasse"/>
+      <xs:enumeration value="iv-stelle"/>
+      <xs:enumeration value="suva"/>
+      <xs:enumeration value="krankenversicherer"/>
+      <!-- Privat -->
+      <xs:enumeration value="versicherung"/>
+      <xs:enumeration value="bank"/>
+      <xs:enumeration value="andere"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="VertretungTyp">
+    <xs:sequence>
+      <xs:element name="vorname-initial" type="xs:string" minOccurs="0"/>
+      <xs:element name="nachname" type="xs:string"/>
+      <xs:element name="titel" type="AkademischerTitelTyp" minOccurs="0"/>
+      <xs:element name="kanzlei" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="typ" type="VertretungstypTyp" default="rechtsanwalt"/>
+    <xs:attribute name="geschlecht" type="GeschlechtTyp"/>
+  </xs:complexType>
+
+  <xs:simpleType name="VertretungstypTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="rechtsanwalt"/>
+      <xs:enumeration value="rechtsagent"/>
+      <xs:enumeration value="fuersprech"/>
+      <xs:enumeration value="advokat"/>
+      <xs:enumeration value="behoerden-vertretung"/>
+      <xs:enumeration value="laienvertretung"/>
+      <xs:enumeration value="hauseigene-anwaltschaft"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="VerteidigungTyp">
+    <xs:sequence>
+      <xs:element name="vorname-initial" type="xs:string" minOccurs="0"/>
+      <xs:element name="nachname" type="xs:string"/>
+      <xs:element name="titel" type="AkademischerTitelTyp" minOccurs="0"/>
+      <xs:element name="kanzlei" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="typ" type="VerteidigungstypTyp" default="erbeten"/>
+    <xs:attribute name="geschlecht" type="GeschlechtTyp"/>
+    <xs:attribute name="hauptverteidigung" type="xs:boolean" default="true"/>
+  </xs:complexType>
+
+  <xs:simpleType name="VerteidigungstypTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="erbeten"/>
+      <xs:enumeration value="amtlich"/>
+      <xs:enumeration value="notwendig"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Gegenstand / Streitwert / Rechtsgebiete                            -->
+  <!-- ================================================================== -->
+  <xs:complexType name="GegenstandTyp">
+    <xs:sequence>
+      <xs:element name="kurzbezeichnung" type="xs:string"/>
+      <xs:element name="rechtsgebiet" type="RechtsgebietTyp" maxOccurs="3"/>
+      <xs:element name="streitwert" type="StreitwertTyp" minOccurs="0"/>
+      <xs:element name="stichwort" type="xs:string"
+                  minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="rueckweisung-bger" type="xs:boolean"
+                  default="false" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RechtsgebietTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="primaer" type="xs:boolean" default="false"/>
+        <xs:attribute name="code" type="RechtsgebietCodeTyp" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="RechtsgebietCodeTyp">
+    <xs:annotation><xs:documentation>
+      Vereinigte Liste aller Rechtsgebiets-Codes.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <!-- Zivilrecht -->
+      <xs:enumeration value="ZIV-OR"/>
+      <xs:enumeration value="ZIV-ZGB-Familie"/>
+      <xs:enumeration value="ZIV-ZGB-Erbrecht"/>
+      <xs:enumeration value="ZIV-ZGB-Sachenrecht"/>
+      <xs:enumeration value="ZIV-Miete"/>
+      <xs:enumeration value="ZIV-Arbeit"/>
+      <xs:enumeration value="ZIV-IPR"/>
+      <xs:enumeration value="SchKG"/>
+      <xs:enumeration value="HANDEL"/>
+      <xs:enumeration value="GES-AG"/>
+      <xs:enumeration value="GES-GmbH"/>
+      <xs:enumeration value="UWG"/>
+      <!-- Strafrecht -->
+      <xs:enumeration value="STR-StGB"/>
+      <xs:enumeration value="STR-StPO"/>
+      <xs:enumeration value="STR-Nebenstrafrecht"/>
+      <xs:enumeration value="STR-Wirtschaftsstrafrecht"/>
+      <xs:enumeration value="STR-Jugendstrafrecht"/>
+      <xs:enumeration value="STR-Massnahmen"/>
+      <!-- Sozialversicherungsrecht -->
+      <xs:enumeration value="SOZIALVERS-AHV"/>
+      <xs:enumeration value="SOZIALVERS-IV"/>
+      <xs:enumeration value="SOZIALVERS-UVG"/>
+      <xs:enumeration value="SOZIALVERS-KVG"/>
+      <xs:enumeration value="SOZIALVERS-BVG"/>
+      <xs:enumeration value="SOZIALVERS-EL"/>
+      <!-- Verwaltungsrecht -->
+      <xs:enumeration value="VERWALT-Steuer"/>
+      <xs:enumeration value="VERWALT-Bau-Planung"/>
+      <xs:enumeration value="VERWALT-Auslaender"/>
+      <xs:enumeration value="VERWALT-Sozialhilfe"/>
+      <xs:enumeration value="VERWALT-Bildung"/>
+      <xs:enumeration value="VERWALT-Polizei"/>
+      <xs:enumeration value="VERWALT-Personal"/>
+      <xs:enumeration value="VERWALT-Vergabe"/>
+      <!-- Sonstiges -->
+      <xs:enumeration value="VERFAHREN"/>
+      <xs:enumeration value="ANWALTSAUFSICHT"/>
+      <xs:enumeration value="ANDERE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="StreitwertTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:attribute name="waehrung" type="xs:string" default="CHF"/>
+        <xs:attribute name="vermoegensrechtlich" type="xs:boolean" default="true"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- ================================================================== -->
+  <!--  Spruchart, Weiterzug                                               -->
+  <!-- ================================================================== -->
+  <xs:simpleType name="SpruchartTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="urteil"/>
+      <xs:enumeration value="beschluss"/>
+      <xs:enumeration value="urteil-und-beschluss"/>
+      <xs:enumeration value="verfuegung"/>
+      <xs:enumeration value="entscheid"/>
+      <xs:enumeration value="zirkulationsbeschluss"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="WeiterzugTyp">
+    <xs:annotation><xs:documentation>
+      Information über einen allfälligen Weiterzug ans Bundesgericht.
+      Sinnvoll für kantonale Schemas; im BGer-Schema irrelevant.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="bger-verfahrensnummer" type="xs:string" minOccurs="0"/>
+      <xs:element name="bger-urteilsdatum" type="xs:date" minOccurs="0"/>
+      <xs:element name="bger-ergebnis" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ================================================================== -->
+  <!--  Rechtsbegehren                                                     -->
+  <!-- ================================================================== -->
+  <xs:complexType name="RechtsbegehrenTyp">
+    <xs:sequence>
+      <xs:element name="block" type="RechtsbegehrenBlockTyp" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RechtsbegehrenBlockTyp">
+    <xs:sequence>
+      <xs:element name="quelle" type="xs:string"/>
+      <xs:element name="aktenstelle" type="xs:string" minOccurs="0"/>
+      <xs:element name="antrag" type="AntragTyp" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="von" type="ParteiRolleTyp" use="required"/>
+    <xs:attribute name="phase" type="VerfahrensphaseTyp" default="oberinstanz"/>
+  </xs:complexType>
+
+  <xs:simpleType name="VerfahrensphaseTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="erste-instanz"/>
+      <xs:enumeration value="oberinstanz"/>
+      <xs:enumeration value="berufungsantwort"/>
+      <xs:enumeration value="anschlussberufung"/>
+      <xs:enumeration value="rekursantwort"/>
+      <xs:enumeration value="replik"/>
+      <xs:enumeration value="duplik"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="AntragTyp">
+    <xs:sequence>
+      <xs:element name="text" type="xs:string"/>
+      <xs:element name="art" type="AntragsArtTyp" minOccurs="0"/>
+      <xs:element name="streitwert" type="StreitwertTyp" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="nummer" type="xs:string" use="required"/>
+    <xs:attribute name="haupt-eventual" type="HauptEventualTyp" default="haupt"/>
+  </xs:complexType>
+
+  <xs:simpleType name="AntragsArtTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="aufhebung"/>
+      <xs:enumeration value="rueckweisung"/>
+      <xs:enumeration value="reformatorisch"/>
+      <xs:enumeration value="feststellung"/>
+      <xs:enumeration value="leistung"/>
+      <xs:enumeration value="unterlassung"/>
+      <xs:enumeration value="kosten-entschaedigung"/>
+      <xs:enumeration value="aufschiebende-wirkung"/>
+      <xs:enumeration value="urp"/>
+      <xs:enumeration value="prozessual"/>
+      <xs:enumeration value="anderer"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="HauptEventualTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="haupt"/>
+      <xs:enumeration value="eventual"/>
+      <xs:enumeration value="subeventual"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Prozessgeschichte                                                  -->
+  <!-- ================================================================== -->
+  <xs:complexType name="ProzessgeschichteTyp">
+    <xs:sequence>
+      <xs:element name="schritt" type="ProzessSchrittTyp" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProzessSchrittTyp" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="datum-referenz" type="DatumReferenzTyp"/>
+      <xs:element name="akten-referenz" type="AktenReferenzTyp"/>
+    </xs:choice>
+    <xs:attribute name="nummer" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="DatumReferenzTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="datum" type="xs:date" use="required"/>
+        <xs:attribute name="ereignis" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AktenReferenzTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="typ" type="AktenTypEnum" default="act"/>
+        <xs:attribute name="nummer" type="xs:string" use="required"/>
+        <xs:attribute name="seite" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="AktenTypEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="act"/>
+      <xs:enumeration value="urk"/>
+      <xs:enumeration value="pag"/>
+      <xs:enumeration value="rod"/>
+      <xs:enumeration value="vi-act"/>
+      <xs:enumeration value="d-akten"/>
+      <xs:enumeration value="beilage"/>
+      <xs:enumeration value="prot"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Erwägungen                                                         -->
+  <!-- ================================================================== -->
+  <xs:complexType name="ErwaegungenTyp">
+    <xs:sequence>
+      <xs:element name="erwaegung" type="ErwaegungTyp" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="praeambel" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="ErwaegungTyp" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="text" type="ErwaegungsTextTyp"/>
+      <xs:element name="erwaegung" type="ErwaegungTyp"/>
+      <xs:element name="bge-zitat" type="BGEZitatTyp"/>
+      <xs:element name="bger-zitat" type="BGerZitatTyp"/>
+      <xs:element name="kantonal-zitat" type="KantonalZitatTyp"/>
+      <xs:element name="gesetzeszitat" type="GesetzeszitatTyp"/>
+      <xs:element name="doktrin-zitat" type="DoktrinZitatTyp"/>
+      <xs:element name="vorinstanz-zitat" type="VorinstanzZitatTyp"/>
+      <xs:element name="akten-referenz" type="AktenReferenzTyp"/>
+      <xs:element name="streitgegenstand" type="xs:string"/>
+      <xs:element name="ratio-decidendi" type="xs:string"/>
+      <xs:element name="querverweis" type="QuerverweisTyp"/>
+    </xs:choice>
+    <xs:attribute name="nummer" type="xs:string" use="required"/>
+    <xs:attribute name="art" type="ErwaegungsArtTyp" default="materiell"/>
+  </xs:complexType>
+
+  <xs:complexType name="ErwaegungsTextTyp" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="bge-zitat" type="BGEZitatTyp"/>
+      <xs:element name="bger-zitat" type="BGerZitatTyp"/>
+      <xs:element name="kantonal-zitat" type="KantonalZitatTyp"/>
+      <xs:element name="gesetzeszitat" type="GesetzeszitatTyp"/>
+      <xs:element name="doktrin-zitat" type="DoktrinZitatTyp"/>
+      <xs:element name="vorinstanz-zitat" type="VorinstanzZitatTyp"/>
+      <xs:element name="akten-referenz" type="AktenReferenzTyp"/>
+      <xs:element name="querverweis" type="QuerverweisTyp"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:simpleType name="ErwaegungsArtTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="formell"/>
+      <xs:enumeration value="prozessual"/>
+      <xs:enumeration value="materiell"/>
+      <xs:enumeration value="kosten"/>
+      <xs:enumeration value="urp"/>
+      <xs:enumeration value="vorbemerkung"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="QuerverweisTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="ziel-erwaegung" type="xs:string" use="required"/>
+        <xs:attribute name="richtung" type="QuerverweisRichtungTyp"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="QuerverweisRichtungTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="vorwaerts"/>
+      <xs:enumeration value="rueckwaerts"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Zitate                                                             -->
+  <!-- ================================================================== -->
+  <xs:complexType name="BGEZitatTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="band" type="xs:positiveInteger" use="required"/>
+        <xs:attribute name="abteilung" type="xs:string" use="required"/>
+        <xs:attribute name="seite" type="xs:positiveInteger" use="required"/>
+        <xs:attribute name="erwaegung" type="xs:string"/>
+        <xs:attribute name="ref" type="xs:anyURI"/>
+        <xs:attribute name="ziel-id" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="BGerZitatTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="verfahrensnummer" type="xs:string" use="required"/>
+        <xs:attribute name="urteilsdatum" type="xs:date"/>
+        <xs:attribute name="erwaegung" type="xs:string"/>
+        <xs:attribute name="ref" type="xs:anyURI"/>
+        <xs:attribute name="ziel-id" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="KantonalZitatTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="gericht" type="xs:string"/>
+        <xs:attribute name="geschaeftsnummer" type="xs:string"/>
+        <xs:attribute name="urteilsdatum" type="xs:date"/>
+        <xs:attribute name="fundstelle" type="xs:string"/>
+        <xs:attribute name="erwaegung" type="xs:string"/>
+        <xs:attribute name="ref" type="xs:anyURI"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="GesetzeszitatTyp">
+    <xs:annotation><xs:documentation>
+      Basisform für Gesetzes-Zitate. Enthält die typischen Bundes-
+      Attribute (sr-nummer, artikel) und ein generisches "kantonal"-
+      Attribut für Verweise auf kantonale Sammlungen
+      (z.B. "BSG 211.1", "SRL 260", "SG-BS 211.100", "LS 211").
+
+      Wer kantonsspezifische, nominell unterschiedliche Attribute
+      braucht (lex-zh, bsg, srl, sg-bs), kann diesen Typ erweitern
+      oder eine eigene Variante im kantonalen Schema definieren.
+    </xs:documentation></xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="erlass" type="xs:string" use="required"/>
+        <xs:attribute name="sr-nummer" type="xs:string"/>
+        <xs:attribute name="kantonal" type="xs:string"/>
+        <!-- Generisches Feld für kantonale Sammlungs-Nr. -->
+        <xs:attribute name="artikel" type="xs:string"/>
+        <xs:attribute name="paragraph" type="xs:string"/>
+        <xs:attribute name="absatz" type="xs:string"/>
+        <xs:attribute name="lit" type="xs:string"/>
+        <xs:attribute name="ziff" type="xs:string"/>
+        <xs:attribute name="ref" type="xs:anyURI"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="VorinstanzZitatTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="erwaegung" type="xs:string"/>
+        <xs:attribute name="seite" type="xs:string"/>
+        <xs:attribute name="aktenstelle" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DoktrinZitatTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="autor" type="xs:string"/>
+        <xs:attribute name="werk" type="xs:string"/>
+        <xs:attribute name="auflage" type="xs:string"/>
+        <xs:attribute name="jahr" type="xs:gYear"/>
+        <xs:attribute name="seite" type="xs:string"/>
+        <xs:attribute name="rz" type="xs:string"/>
+        <xs:attribute name="kommentar-bezugsstelle" type="xs:string"/>
+        <xs:attribute name="ref" type="xs:anyURI"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- ================================================================== -->
+  <!--  Dispositiv                                                         -->
+  <!-- ================================================================== -->
+  <xs:complexType name="DispositivTyp">
+    <xs:sequence>
+      <xs:element name="praeambel" type="xs:string" minOccurs="0"/>
+      <xs:element name="rechtskraftfeststellung" type="RechtskraftFeststellungTyp"
+                  minOccurs="0"/>
+      <xs:element name="ziffer" type="DispositivZifferTyp" maxOccurs="unbounded"/>
+      <xs:element name="ergebnis-aggregat" type="ErgebnisTyp"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RechtskraftFeststellungTyp">
+    <xs:sequence>
+      <xs:element name="vorinstanz-bezeichnung" type="xs:string"/>
+      <xs:element name="vorinstanz-datum" type="xs:date"/>
+      <xs:element name="rechtskraefig-ziffer" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="zitiertes-dispositiv" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DispositivZifferTyp" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="text" type="xs:string"/>
+      <xs:element name="ergebnis" type="ErgebnisTyp"/>
+      <xs:element name="entscheidgebuehr" type="GeldbetragTyp"/>
+      <xs:element name="parteientschaedigung" type="GeldbetragTyp"/>
+      <xs:element name="schuldspruch" type="SchuldspruchTyp"/>
+      <xs:element name="strafmass" type="StrafmassTyp"/>
+      <xs:element name="urp-gewaehrung" type="UrpTyp"/>
+      <xs:element name="mitteilung" type="MitteilungTyp"/>
+      <xs:element name="kostentraeger" type="KostentraegerTyp"/>
+      <xs:element name="anweisung" type="AnweisungTyp"/>
+      <xs:element name="versicherungsleistung" type="VersicherungsleistungTyp"/>
+    </xs:choice>
+    <xs:attribute name="nummer" type="xs:string" use="required"/>
+    <xs:attribute name="art" type="DispositivArtTyp"/>
+  </xs:complexType>
+
+  <xs:simpleType name="DispositivArtTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="hauptdispositiv"/>
+      <xs:enumeration value="kosten"/>
+      <xs:enumeration value="parteientschaedigung"/>
+      <xs:enumeration value="urp"/>
+      <xs:enumeration value="schuldspruch"/>
+      <xs:enumeration value="freispruch"/>
+      <xs:enumeration value="strafmass"/>
+      <xs:enumeration value="massnahme"/>
+      <xs:enumeration value="zivilforderung"/>
+      <xs:enumeration value="genugtuung"/>
+      <xs:enumeration value="beschlagnahme"/>
+      <xs:enumeration value="einziehung"/>
+      <xs:enumeration value="anweisung"/>
+      <xs:enumeration value="mitteilung"/>
+      <xs:enumeration value="aufschiebende-wirkung"/>
+      <xs:enumeration value="versicherungsleistung"/>
+      <xs:enumeration value="rente"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ErgebnisTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="gutgeheissen"/>
+      <xs:enumeration value="teilweise-gutgeheissen"/>
+      <xs:enumeration value="abgewiesen"/>
+      <xs:enumeration value="nicht-eingetreten"/>
+      <xs:enumeration value="zurueckgewiesen"/>
+      <xs:enumeration value="bestaetigung"/>
+      <xs:enumeration value="aufhebung"/>
+      <xs:enumeration value="reformiert"/>
+      <xs:enumeration value="abgeschrieben"/>
+      <xs:enumeration value="gegenstandslos"/>
+      <xs:enumeration value="schuldigsprechung"/>
+      <xs:enumeration value="freispruch"/>
+      <xs:enumeration value="einstellung"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="GeldbetragTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:attribute name="waehrung" type="xs:string" default="CHF"/>
+        <xs:attribute name="rappen" type="xs:integer" default="0"/>
+        <xs:attribute name="schuldner" type="ParteiRolleTyp"/>
+        <xs:attribute name="empfaenger" type="ParteiRolleTyp"/>
+        <xs:attribute name="aus-vorschuss-bezogen" type="xs:boolean"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="SchuldspruchTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="tatbestand" type="xs:string" use="required"/>
+        <xs:attribute name="erlass" type="xs:string"/>
+        <xs:attribute name="artikel" type="xs:string"/>
+        <xs:attribute name="beschuldigter-id" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="StrafmassTyp">
+    <xs:sequence>
+      <xs:element name="art" type="StrafartTyp"/>
+      <xs:element name="dauer-tage" type="xs:integer" minOccurs="0"/>
+      <xs:element name="dauer-monate" type="xs:integer" minOccurs="0"/>
+      <xs:element name="dauer-jahre" type="xs:integer" minOccurs="0"/>
+      <xs:element name="bedingt" type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="probezeit-jahre" type="xs:integer" minOccurs="0"/>
+      <xs:element name="busse" type="GeldbetragTyp" minOccurs="0"/>
+      <xs:element name="ersatzfreiheitsstrafe-tage" type="xs:integer" minOccurs="0"/>
+      <xs:element name="anrechnung-haft-tage" type="xs:integer" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="beschuldigter-id" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:simpleType name="StrafartTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="freiheitsstrafe"/>
+      <xs:enumeration value="geldstrafe"/>
+      <xs:enumeration value="busse"/>
+      <xs:enumeration value="gemeinnuetzige-arbeit"/>
+      <xs:enumeration value="verwarnung"/>
+      <xs:enumeration value="freispruch"/>
+      <xs:enumeration value="einstellung"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="UrpTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="bewilligt" type="xs:boolean" use="required"/>
+        <xs:attribute name="rechtsbeistand-honorar" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="VersicherungsleistungTyp">
+    <xs:annotation><xs:documentation>
+      Sozialversicherungsrechtliche Leistungs-Anordnung im Dispositiv —
+      relevant für Sozialversicherungsabteilungen kantonaler Gerichte.
+    </xs:documentation></xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="art" type="VersicherungsleistungArtTyp" use="required"/>
+        <xs:attribute name="versicherer" type="xs:string"/>
+        <xs:attribute name="grad-prozent" type="xs:integer"/>
+        <xs:attribute name="ab-datum" type="xs:date"/>
+        <xs:attribute name="bis-datum" type="xs:date"/>
+        <xs:attribute name="hoehe-monatlich" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="VersicherungsleistungArtTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="iv-rente"/>
+      <xs:enumeration value="ahv-rente"/>
+      <xs:enumeration value="uvg-taggeld"/>
+      <xs:enumeration value="uvg-rente"/>
+      <xs:enumeration value="kvg-leistung"/>
+      <xs:enumeration value="bvg-leistung"/>
+      <xs:enumeration value="integritaets-entschaedigung"/>
+      <xs:enumeration value="hilflosenentschaedigung"/>
+      <xs:enumeration value="el"/>
+      <xs:enumeration value="andere"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="MitteilungTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="adressat-typ" type="MitteilungAdressatTyp"/>
+        <xs:attribute name="zustellart" type="ZustellartTyp"/>
+        <xs:attribute name="beilagen" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="MitteilungAdressatTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="parteien"/>
+      <xs:enumeration value="vorinstanz"/>
+      <xs:enumeration value="staatsanwaltschaft"/>
+      <xs:enumeration value="oberstaatsanwaltschaft"/>
+      <xs:enumeration value="generalstaatsanwaltschaft"/>
+      <xs:enumeration value="aufsichtsbehoerde"/>
+      <xs:enumeration value="handelsregisteramt"/>
+      <xs:enumeration value="betreibungsamt"/>
+      <xs:enumeration value="konkursamt"/>
+      <xs:enumeration value="iv-stelle"/>
+      <xs:enumeration value="suva"/>
+      <xs:enumeration value="ausgleichskasse"/>
+      <xs:enumeration value="departement"/>
+      <xs:enumeration value="gemeinde"/>
+      <xs:enumeration value="bundesamt"/>
+      <xs:enumeration value="dispositiv-mitteilung"/>
+      <xs:enumeration value="weitere"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ZustellartTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="empfangsschein"/>
+      <xs:enumeration value="einschreiben"/>
+      <xs:enumeration value="einfach"/>
+      <xs:enumeration value="elektronisch"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="KostentraegerTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="rolle" type="ParteiRolleTyp" use="required"/>
+        <xs:attribute name="anteil" type="xs:decimal"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AnweisungTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="adressat" type="xs:string" use="required"/>
+        <xs:attribute name="art" type="AnweisungsArtTyp"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="AnweisungsArtTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="rueckzahlung"/>
+      <xs:enumeration value="auszahlung"/>
+      <xs:enumeration value="freigabe"/>
+      <xs:enumeration value="loeschung"/>
+      <xs:enumeration value="eintragung"/>
+      <xs:enumeration value="rueckweisung-akten"/>
+      <xs:enumeration value="neue-verfuegung"/>
+      <xs:enumeration value="andere"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ================================================================== -->
+  <!--  Rechtsmittelbelehrung                                              -->
+  <!-- ================================================================== -->
+  <xs:complexType name="RechtsmittelbelehrungTyp">
+    <xs:sequence>
+      <xs:element name="rechtsmittel" type="xs:string" default="Beschwerde"/>
+      <xs:element name="zielinstanz" type="xs:string"
+                  default="Schweizerisches Bundesgericht"/>
+      <xs:element name="frist-tage" type="xs:integer" default="30"/>
+      <xs:element name="rechtsgrundlage" type="xs:string" minOccurs="0"/>
+      <xs:element name="endentscheid" type="xs:boolean" default="true" minOccurs="0"/>
+      <xs:element name="vermoegensrechtlich" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="streitwert-erreicht" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="aufschiebende-wirkung-vermutung" type="xs:boolean"
+                  default="false" minOccurs="0"/>
+      <xs:element name="hinweis" type="xs:string"
+                  minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ================================================================== -->
+  <!--  Unterschriften / Versand                                           -->
+  <!-- ================================================================== -->
+  <xs:complexType name="UnterschriftenTyp">
+    <xs:sequence>
+      <xs:element name="vorsitz" type="UnterschriftTyp" minOccurs="0"/>
+      <xs:element name="gerichtsschreiber" type="UnterschriftTyp" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UnterschriftTyp">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="anrede" type="xs:string"/>
+        <xs:attribute name="id" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="VersandTyp">
+    <xs:sequence>
+      <xs:element name="versanddatum" type="xs:date" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
