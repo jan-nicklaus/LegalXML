@@ -62,48 +62,60 @@
 </script>
 
 
-<div class="prose prose-lg m-4 w-full">
-    {#if docType === "Judgment"}
-    <h2>Dispositiv</h2>
+<div class="w-full flex flex-row h-screen p-4">
+  <div class="w-1/3 h-full">
+    <details class="collapse bg-base-100 border border-base-300" name="accordion-rubrum" open>
+          <summary class="collapse-title font-semibold">Rubrum</summary>
+          <div class="collapse-content"></div>
+    </details>
+    <details class="collapse bg-base-100 border border-base-300 mt-4" name="accordion-filter" open>
+          <summary class="collapse-title font-semibold">Filter</summary>
+          <div class="collapse-content"></div>
+    </details>
+  </div>
+  <div class="prose prose-lg flex-grow h-full overflow-y-auto ml-4">
+      {#if docType === "Judgment"}
+      <h2>Dispositiv</h2>
 
-    <h2>Rubrum</h2>
-    {#each xmlTree.getElementsByTagName("Rubrum")[0].getElementsByTagName("Section") as sec}
-    <div class={`mt-4 relative rounded-md p-4 bg-${""}`}></div>
-    {/each}
+      <h2>Rubrum</h2>
+      {#each xmlTree.getElementsByTagName("Rubrum")[0].getElementsByTagName("Section") as sec}
+      <div class={`mt-4 relative rounded-md p-4 bg-${""}`}></div>
+      {/each}
 
-    <h2>Begründung</h2>
-    {#each ["Prozessuales", "Formelles", "Materielles"] as h}
-      <details class="collapse bg-base-100 border border-base-300 mt-4" name={`accordion-${h}`} open>
-        <summary class="collapse-title font-semibold">{h}</summary>
-        <div class="collapse-content">
-          {#if xmlMain.getElementsByTagName(h)[0].getElementsByTagName("Section").length < 2}
-            {#each xmlMain.getElementsByTagName(h)[0].getElementsByTagName("Section")[0].getElementsByTagName("Absatz") as par}
-              <div>{@html par.innerHTML}</div>
-            {/each}
-          {:else}
-            {#each xmlMain.getElementsByTagName(h)[0].getElementsByTagName("Section") as sec, i}
-            <details class="collapse bg-base-100 border border-base-300 mt-4" name={`accordion-${h}-${i}`} open>
-              <summary class="collapse-title font-semibold">
-                {sec.hasAttribute("title") ? sec.getAttribute("title") : "Sektion"}
-                {#if sec.hasAttribute("type")}
-                  <div class="absolute top-2 right-2 badge badge-accent">
-                    {sec.getAttribute("type")}
+      <h2>Begründung</h2>
+      {#each ["Prozessuales", "Formelles", "Materielles"] as h}
+        <details class="collapse bg-base-100 border border-base-300 mt-4" name={`accordion-${h}`} open>
+          <summary class="collapse-title font-semibold">{h}</summary>
+          <div class="collapse-content">
+            {#if xmlMain.getElementsByTagName(h)[0].getElementsByTagName("Section").length < 2}
+              {#each xmlMain.getElementsByTagName(h)[0].getElementsByTagName("Section")[0].getElementsByTagName("Absatz") as par}
+                <div>{@html par.innerHTML}</div>
+              {/each}
+            {:else}
+              {#each xmlMain.getElementsByTagName(h)[0].getElementsByTagName("Section") as sec, i}
+              <details class="collapse bg-base-100 border border-base-300 mt-4" name={`accordion-${h}-${i}`} open>
+                <summary class="collapse-title font-semibold">
+                  {sec.hasAttribute("title") ? sec.getAttribute("title") : "Sektion"}
+                  {#if sec.hasAttribute("type")}
+                    <div class="absolute top-2 right-2 badge badge-accent">
+                      {sec.getAttribute("type")}
+                    </div>
+                  {/if}
+                </summary>
+                <div class="collapse-content">
+                  {#each sec.getElementsByTagName("Absatz") as par}
+                    <div>{@html par.innerHTML}</div>
+                  {/each}
                   </div>
-                {/if}
-              </summary>
-              <div class="collapse-content">
-                {#each sec.getElementsByTagName("Absatz") as par}
-                  <div>{@html par.innerHTML}</div>
-                {/each}
-                </div>
-            </details>
-            {/each}
-          {/if}
-        </div>
-      </details>
-    {/each}
-  {/if}
-</div>
+              </details>
+              {/each}
+            {/if}
+          </div>
+        </details>
+      {/each}
+    {/if}
+  </div>
 
+</div>
 
 
