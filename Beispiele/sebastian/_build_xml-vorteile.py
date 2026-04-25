@@ -99,17 +99,24 @@ story.append(Spacer(1, 4))
 
 # Kurzes Lead
 story.append(Paragraph(
-    "PDF und DOCX sind Layout-Formate. Sie speichern, wie ein Dokument aussieht — "
-    "nicht, was es bedeutet. XML ist ein Daten-Format. Es speichert die Struktur "
-    "eines Urteils oder einer Rechtsschrift mit der gleichen Präzision, mit der ein "
-    "Anwalt sie liest: Geschäftsnummer ist eine Geschäftsnummer, eine Erwägung ist "
-    "eine Erwägung, ein Verweis auf <i>Art. 18 OR</i> ist eine Norm-Referenz.",
+    "Die Frage ist nicht «XML ja oder nein» — DOCX ist intern ebenfalls XML "
+    "(ein ZIP-Container mit Office Open XML), und auch PDF lässt sich mit "
+    "XML-Beilagen anreichern. Die Frage ist, <b>welches XML / welches "
+    "Datenmodell</b> zur Aufgabe passt.",
     BODY,
 ))
 story.append(Paragraph(
-    "Daraus ergeben sich Vorteile, die in der Kanzlei wie in der Justizverwaltung "
-    "unmittelbar wirken — von der Qualitätssicherung über die Statistik bis zur "
-    "Langzeitarchivierung.",
+    "PDF beschreibt Pixel und Glyphen auf einer Seite. DOCX beschreibt "
+    "Textverarbeitungs-Layout (Absatz, Stilvorlage, Schriftart). Ein "
+    "<i>domänenspezifisches XML</i> für Rechtsdokumente beschreibt die Sache "
+    "selbst: Geschäftsnummer ist eine Geschäftsnummer, eine Erwägung ist eine "
+    "Erwägung, ein Verweis auf <i>Art. 18 OR</i> ist eine Norm-Referenz.",
+    BODY,
+))
+story.append(Paragraph(
+    "Erst dieses domänenspezifische Modell ermöglicht die Vorteile, die in der "
+    "Kanzlei wie in der Justizverwaltung unmittelbar wirken — von der "
+    "Qualitätssicherung über die Statistik bis zur Langzeitarchivierung.",
     BODY,
 ))
 
@@ -147,15 +154,15 @@ story.append(Spacer(1, 8))
 story.append(Paragraph("Drei Formate auf einen Blick", H2))
 
 tbl_data = [
-    ["", "PDF", "DOCX", "XML"],
-    ["Zweck",                "Druck / Anzeige",     "Bearbeitung",            "Datenstruktur"],
-    ["Speichert",            "Pixel und Glyphen",   "Layout + Stilvorlagen",  "Bedeutung der Inhalte"],
-    ["Maschinell auswertbar","Nur über OCR",        "Nur bei Stilvorlagen",   "Direkt, eindeutig"],
-    ["Validierbar",          "Nein",                "Eingeschränkt",          "Ja (XSD/Schematron)"],
-    ["Versionssichtbar",     "Nein",                "Binär",                  "Zeile für Zeile"],
-    ["Langzeitlesbar",       "Versionsabhängig",    "An Hersteller gebunden", "Offen, textbasiert"],
+    ["", "PDF", "DOCX", "Domänen-XML"],
+    ["Modelliert",            "Pixel / Glyphen",    "Textverarbeitung (XML)",  "Juristische Inhalte"],
+    ["Schema",                "—",                  "OOXML (Layout)",          "Eigen (Geschäftsnummer, Erwägung, …)"],
+    ["Was validierbar ist",   "—",                  "Layout-Struktur",         "Pflichtfelder, Formate"],
+    ["Maschinell auswertbar", "Nur über OCR",       "Über Stilvorlagen",       "Direkt, eindeutig"],
+    ["Versionssichtbar",      "Nein",               "Binär (ZIP)",             "Zeile für Zeile"],
+    ["Langzeitlesbar",        "Versionsabhängig",   "OOXML offen, breit",      "Offen, schmal"],
 ]
-tbl = Table(tbl_data, colWidths=[4.2*cm, 4*cm, 4*cm, 4*cm])
+tbl = Table(tbl_data, colWidths=[3.8*cm, 3.4*cm, 4.2*cm, 4.8*cm])
 tbl.setStyle(TableStyle([
     ("BACKGROUND", (0, 0), (-1, 0), ACCENT),
     ("TEXTCOLOR",  (0, 0), (-1, 0), white),
@@ -182,19 +189,22 @@ story.append(Spacer(1, 6))
 story.append(Paragraph(
     "Wer Rechtsdokumente nicht nur drucken, sondern auch <i>auswerten, "
     "wiederverwenden und maschinell prüfen</i> möchte, braucht ein "
-    "Datenformat — kein Layoutformat.",
+    "domänenspezifisches Datenformat — nicht nur ein Layout- oder "
+    "Textverarbeitungs-Format.",
     CALLOUT,
 ))
 
-# Warum PDF nicht reicht
-story.append(Paragraph("Warum PDF nicht reicht", H2))
+# Warum PDF und DOCX nicht reichen
+story.append(Paragraph("Warum PDF und DOCX nicht reichen", H2))
 story.append(Paragraph(
-    "PDF ist heute das Standardformat für die Übergabe von Rechtsschriften und "
-    "Urteilen. Im Hinblick auf die maschinelle Weiterverarbeitung hat es jedoch "
-    "eine Reihe systematischer Schwächen:",
+    "PDF ist das Standardformat für die Übergabe von Rechtsschriften und "
+    "Urteilen, DOCX das Standardformat für ihre Erstellung. Beide haben für "
+    "die maschinelle Weiterverarbeitung systematische Schwächen — wenn auch "
+    "unterschiedliche.",
     BODY,
 ))
 
+story.append(Paragraph("PDF — Layout statt Inhalt", H3))
 pdf_schwaechen = [
     ("Doppelte Schichten — Textlayer und Bildlayer",
      "Sogenannte «Sandwich-PDFs» enthalten ein Bild des Originals und eine "
@@ -214,12 +224,41 @@ pdf_schwaechen = [
     ("Hoher Metadaten-Anteil",
      "PDF bringt eigene Metadaten mit (eingebettete Schriftarten, Formularfelder, "
      "Sicherheitseinstellungen, Rendering-Hinweise), die für die juristische "
-     "Auswertung irrelevant sind, aber beim Verarbeiten mitgeführt werden. XML "
-     "ist demgegenüber ein flaches Textformat mit minimalem Overhead."),
+     "Auswertung irrelevant sind, aber beim Verarbeiten mitgeführt werden müssen."),
 ]
 for titel, text in pdf_schwaechen:
     story.append(KeepTogether([
-        Paragraph(titel, H3),
+        Paragraph("• " + titel, BULLET),
+        Paragraph(text, BODY),
+    ]))
+
+story.append(Spacer(1, 4))
+story.append(Paragraph("DOCX — XML, aber das falsche", H3))
+story.append(Paragraph(
+    "DOCX ist seit Office 2007 ein ZIP-Container mit XML-Dateien (Office Open "
+    "XML, ECMA-376). Es ist also bereits ein XML-Format — aber eines, das die "
+    "<i>Textverarbeitung</i> beschreibt, nicht die <i>Sache</i>:",
+    BODY,
+))
+
+docx_schwaechen = [
+    ("Generisches Layout-Modell",
+     "Das DOCX-Schema kennt Konzepte wie «Absatz», «Stilvorlage», «Tabelle» — "
+     "nicht aber «Erwägung», «Geschäftsnummer» oder «Rechtsbegehren». Die "
+     "juristische Bedeutung muss über Stilvorlagen-Konventionen hilfsweise "
+     "annotiert werden, was selten konsequent gelingt."),
+    ("Validierung greift zu kurz",
+     "Das OOXML-Schema validiert die Textverarbeitungs-Struktur (existieren "
+     "alle Tags korrekt?), nicht den juristischen Inhalt (hat der Schriftsatz "
+     "ein Rechtsbegehren? entspricht die Geschäftsnummer dem BGer-Format?)."),
+    ("ZIP-Container — nicht direkt diff-bar",
+     "Eine .docx ist ein gepacktes Archiv. Versionskontrollsysteme zeigen nur, "
+     "dass sich «irgendetwas geändert hat», nicht <i>was</i>. Erst nach dem "
+     "Entpacken liesse sich der Unterschied auf XML-Ebene lesen."),
+]
+for titel, text in docx_schwaechen:
+    story.append(KeepTogether([
+        Paragraph("• " + titel, BULLET),
         Paragraph(text, BODY),
     ]))
 
