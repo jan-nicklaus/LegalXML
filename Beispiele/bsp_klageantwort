@@ -39,7 +39,7 @@
     </Rubrum>
 
     <Main>
-        <Dispositiv> 
+        <Dispositiv> <!-- Eher Rechtsbegehren -->
             <DispositivZiffer type="hauptsache">1. Die Klage sei vollumfänglich abzuweisen, soweit darauf einzutreten ist.</DispositivZiffer>
             <DispositivZiffer type="widerklage">2. Die Klägerin sei zu verpflichten, der Beklagten ein Einsichtsrecht von Personen der Geschäftsleitung oder dem Vertrieb der Beklagten in die Dokumente der Klägerin zwecks Berechnung des Nettogewinns zu gewähren.</DispositivZiffer>
             <DispositivZiffer type="widerklage">3. Die Klägerin sei zu verpflichten, der Beklagten einen noch zu bestimmenden Betrag zu zahlen, aber nicht weniger als USD 7'800'000.-- nebst Zins zu 5% seit dem 31. März 2012.</DispositivZiffer>
