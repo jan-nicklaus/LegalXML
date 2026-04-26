@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dok doctype="rechtsschrift">
+    <Rubrum>
+        <Verfahren>
+            <Aktenzeichen>654321-2012</Aktenzeichen>
+            <Parteien>
+                <Partei id="klägerin-001">
+                    <Rollen>
+                        <Rolle>Klägerin / Widerbeklagte</Rolle>
+                    </Rollen>
+                    <Name>Industrial Clean OOO</Name>
+                    <Anschrift>Neglinnaya Street 42, 109012 Moscow, Russia</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>Moot Court Team 4</Rechtsvertretung>
+                </Partei>
+                <Partei id="beklagte-002">
+                    <Rollen>
+                        <Rolle>Beklagte / Widerklägerin</Rolle>
+                    </Rollen>
+                    <Name>Chemiewerke AG</Name>
+                    <Anschrift>Sibylla-Merian-Strasse 1, 45665 Recklinghausen, Deutschland</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>Moot Court Team 7</Rechtsvertretung>
+                </Partei>
+            </Parteien>
+            <Vorinstanz>
+                <Name></Name>
+                <Anschrift></Anschrift>
+            </Vorinstanz>
+        </Verfahren>
+        <Dokument>
+            <DokumentUeberschrift>Klageantwort und Widerklage</DokumentUeberschrift>
+            <Datum>2013-04-19</Datum>
+            <Spruchkoerper>
+                <Gericht>Zürcher Handelskammer (Swiss Rules)</Gericht>
+                <Adresse>Selnaustrasse 32, Postfach 3058, CH-8022 Zürich</Adresse>
+            </Spruchkoerper>
+        </Dokument>
+    </Rubrum>
+
+    <Main>
+        <Dispositiv> 
+            <DispositivZiffer type="hauptsache">1. Die Klage sei vollumfänglich abzuweisen, soweit darauf einzutreten ist.</DispositivZiffer>
+            <DispositivZiffer type="widerklage">2. Die Klägerin sei zu verpflichten, der Beklagten ein Einsichtsrecht von Personen der Geschäftsleitung oder dem Vertrieb der Beklagten in die Dokumente der Klägerin zwecks Berechnung des Nettogewinns zu gewähren.</DispositivZiffer>
+            <DispositivZiffer type="widerklage">3. Die Klägerin sei zu verpflichten, der Beklagten einen noch zu bestimmenden Betrag zu zahlen, aber nicht weniger als USD 7'800'000.-- nebst Zins zu 5% seit dem 31. März 2012.</DispositivZiffer>
+            <DispositivZiffer type="kosten">4. Unter Kosten- und Entschädigungsfolge (zzgl. MwSt.) zu Lasten der Klägerin.</DispositivZiffer>
+        </Dispositiv>
+
+        <Begruendung>
+            <Formelles>
+                <Section title="Zuständigkeit">
+                    <Absatz>Das Schiedsgericht ist gemäss Art. 34.3 des Distributionsvertrages für die Klage sowie die Widerklage zuständig. Die Bestimmung stellt eine gültige Schiedsabrede dar.</Absatz>
+                </Section>
+            </Formelles>
+
+            <Prozessuales> 
+                <Section title="Sachverhalt">
+                    <Absatz>Die Beklagte bestreitet die klägerische Darstellung der Vertragsverhandlungen. Die Preiserhöhungen waren aufgrund der massiven Rohstoffpreissteigerungen (Hardship) notwendig und vertraglich zulässig.</Absatz>
+                </Section>
+            </Prozessuales>
+
+            <Materielles> 
+                <Heading>V. Materielles</Heading>
+                
+                <Section type="abweisung" title="Abweisung der Klageforderung">
+                    <Absatz>Die Klägerin hat die Preiserhöhungen durch vorbehaltslose Zahlung akzeptiert. Ein Rückforderungsanspruch besteht nicht, da keine ungerechtfertigte Bereicherung vorliegt (Rz. 70 ff.).</Absatz>
+                </Section>
+
+                <Section type="widerklage" title="Begründung der Widerklage (Gewinnbeteiligung)">
+                    <Absatz>Gemäss Art. 3.1 des Distributionsvertrages steht der Beklagten die Hälfte des von der Klägerin in Russland erwirtschafteten Nettogewinns zu. Die Auslegung nach dem Vertrauensprinzip bestätigt diesen Anspruch (Rz. 115).</Absatz>
+                    <br/><br/>
+                    <b>Ad Auslegung von Art. 3.1 Distributionsvertrag</b>
+                    <br/><br/>
+                    <Absatz>Die Klägerin durfte und musste davon ausgehen, dass die Beklagte die hälftige Teilung ihres Nettogewinns verlangen wird. Der Einwand der fehlenden aktiven Mitwirkung ist unbeachtlich.</Absatz>
+                </Section>
+            </Materielles>
+        </Begruendung>
+        
+        <Postfix>Damit ist die Klage abzuweisen und der Widerklage stattzugeben.</Postfix>
+
+    </Main>
+    <Attachments>
+        <Attachment id="BB-01">Handelsregisterauszug Chemiewerke AG</Attachment>
+        <Attachment id="BB-02">Distributionsvertrag vom 01.04.2002</Attachment>
+        <Attachment id="BB-13">Interimsvereinbarung vom 04.06.2009</Attachment>
+    </Attachments>   
+</Dok>

@@ -92,8 +92,7 @@
         <!-- <Eroeffnung>
         </Eroeffnung> --> // Gibt es nicht bei der Rechtsschrift und ist nicht Sache der Parteien
         
-        <Postfix>Damit ist die Beschwerde hinreichend begründet und es wird höflich um Gutheissung ersucht.</Postfix> // Boilerplate, in jeder Beschwerde gleich
-
+        
     </Main>
     <Attachments>
         <Attachment id="d369ed98-85ef-42e3-b4d7-143eb890b95b">Urteilsdispositiv OGer BE vom 23.04.2025</Attachment>

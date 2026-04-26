@@ -161,7 +161,9 @@
                         {/if}  
                         {@html par.innerHTML}
                         {#if par.hasAttribute("ref")}
-                          <button class="btn btn-warning btn-sm" onclick={() => scrollAndMark(par.getAttribute("ref"))}>=></button>
+                          {#each par.getAttribute("ref").split(",") as ref}
+                            <button class="btn btn-warning btn-sm mx-2" onclick={() => scrollAndMark(ref)}>=></button>
+                          {/each}
                         {/if}
                         {#if reverse_ref_dict[par.getAttribute("id")]}
                           {#each reverse_ref_dict[par.getAttribute("id")] as id}
@@ -169,6 +171,13 @@
                           {/each}
                         {/if}
                       </p>
+                      {#if par.hasAttribute("evidence")}
+                        <div class="flex flex-row items-center">
+                          {#each par.getAttribute("evidence").split(",") as ev}
+                            <div class="badge badge-accent badge-sm">{ev}</div>
+                          {/each}
+                        </div>
+                      {/if}
                     {/each}
                   {:else}
                     {#each xmlMain.getElementsByTagName(child.tagName)[0].getElementsByTagName("Section") as sec, i}
@@ -184,8 +193,9 @@
                       <div class="collapse-content">
                         {#each [...sec.getElementsByTagName("Absatz")].filter(par => !par.hasAttribute("tag") || tag_filter[par.getAttribute("tag")]) as par}
                           <p id={par.getAttribute("id")} class="p-2 rounded-lg" class:bg-red-200={
-                            !par.hasAttribute("id") ||
-                            !reverse_ref_dict[par.getAttribute("id")]
+                            j === 0 &&
+                            (!par.hasAttribute("id") ||
+                            !reverse_ref_dict[par.getAttribute("id")])
                           }>
                           {#if par.hasAttribute("tag")}
                             <span class="badge badge-accent">
@@ -194,7 +204,9 @@
                           {/if}
                           {@html par.innerHTML}
                           {#if par.hasAttribute("ref")}
-                            <button class="btn btn-warning btn-sm" onclick={() => scrollAndMark(par.getAttribute("ref"))}>=></button>
+                            {#each par.getAttribute("ref").split(",") as ref}
+                              <button class="btn btn-warning btn-sm mx-2" onclick={() => scrollAndMark(ref)}>=></button>
+                            {/each}
                           {/if}
                           {#if reverse_ref_dict[par.getAttribute("id")]}
                           {#each reverse_ref_dict[par.getAttribute("id")] as id}
