@@ -9,4 +9,7 @@ Urteile und Rechtsschriften eignen sich deshalb sehr gut für eine Strukturierun
 *Was sich mit strukturierten Daten erreichen lässt*
 - Für Rechtsanwender: Bessere Auffindbarkeit durch Metadaten und einheitliche Identifier
 - Für Entwickler: Sauber strukturierte Dokumente, mit denen sich Applikation mit semantischer Funktionalität entwickeln lassen
-- Forschung: Saubere Metadaten liefern eine Datengrundlage für die Forschung. Siehe auch [Federal Supreme Court Dataset](https://zenodo.org/records/11092977)
+- Für die Forschung: Saubere Metadaten liefern eine Datengrundlage für die Forschung. Siehe auch [Federal Supreme Court Dataset](https://zenodo.org/records/11092977)
+
+*XML-Viewer Applikation*
+Mit dem XML-Viewer lassen sich die nützlichen von unnützlichen Informationen mit Hilfe von XML Tags/Elementen filtern und z.B. einer Klageantwort gegenüberstellen. 
