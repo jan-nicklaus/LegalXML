@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dok doctype="rechtsschrift">
+    <Rubrum>
+        <Verfahren>
+            <Aktenzeichen>654321-2012</Aktenzeichen>
+            <Parteien>
+                <Partei id="klägerin-001">
+                    <Rollen>
+                        <Rolle>Klägerin / Widerbeklagte</Rolle>
+                    </Rollen>
+                    <Name>Industrial Clean OOO</Name>
+                    <Anschrift>Neglinnaya Street 42, 109012 Moscow, Russia</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>Moot Court Team 10</Rechtsvertretung>
+                </Partei>
+                <Partei id="beklagte-002">
+                    <Rollen>
+                        <Rolle>Beklagte / Widerklägerin</Rolle>
+                    </Rollen>
+                    <Name>Chemiewerke AG</Name>
+                    <Anschrift>Sibylla-Merian-Strasse 1, 45665 Recklinghausen, Deutschland</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>Moot Court Team [...]</Rechtsvertretung>
+                </Partei>
+            </Parteien>
+            <Vorinstanz>
+                <Name></Name>
+                <Anschrift></Anschrift>
+            </Vorinstanz>
+        </Verfahren>
+        <Dokument>
+            <DokumentUeberschrift>Klageschrift</DokumentUeberschrift>
+            <Datum>2012-12-14</Datum>
+            <Spruchkoerper>
+                <Gericht>Zürcher Handelskammer (Swiss Rules)</Gericht>
+                <Adresse>Selnaustrasse 32, Postfach 3085, CH-8022 Zürich</Adresse>
+            </Spruchkoerper>
+        </Dokument>
+    </Rubrum>
+
+    <Main>
+        <Dispositiv> 
+            <DispositivZiffer type="hauptsache">Die Beklagte sei zu verpflichten, der Klägerin einen Betrag von USD 15'056'920.-- nebst Zins zu 5% seit dem 1. August 2006 zu bezahlen.</DispositivZiffer>
+            <DispositivZiffer type="hauptsache">Die Beklagte sei zu verpflichten, die Verträge, die sie seit dem 2. Quartal 2002 mit ihren Lieferanten geschlossen hat, offenzulegen.</DispositivZiffer>
+            <DispositivZiffer type="kosten">Unter Kosten- und Entschädigungsfolge zu Lasten der Beklagten.</DispositivZiffer>
+        </Dispositiv>
+
+        <Begruendung>
+            <Formelles>
+                <Section>
+                    <Absatz>Die Zuständigkeit des Schiedsgerichts ergibt sich aus der Schiedsklausel im Distributionsvertrag vom 1. April 2002.</Absatz>
+                </Section>
+            </Formelles>
+
+            <Prozessuales> 
+                <Section>
+                    <Absatz>Die Parteien schlossen am 1. April 2002 einen Distributionsvertrag über Isopropylalkohol (IPA). Im Jahr 2009 kam es zu Differenzen über Preiserhöhungen, woraufhin am 4. Juni 2009 eine Interimsvereinbarung in München getroffen wurde (KB-13).</Absatz>
+                </Section>
+            </Prozessuales>
+
+            <Materielles> 
+                <Heading>V. Materielles</Heading>
+                <Section type="forderung" title="Forderung aus ungerechtfertigter Preiserhöhung">
+                    <Absatz>Die Klägerin macht geltend, dass die von der Beklagten geforderten Aufschläge vertragswidrig waren. Die Zahlung der USD 110 pro Tonne erfolgte lediglich unter Protest, um die Lieferfähigkeit aufrechtzuerhalten.</Absatz>
+                    <br/><br/>
+                    <b>Verletzung des Distributionsvertrages</b>
+                    <br/><br/>
+                    <Absatz>Durch die einseitige Preiserhöhung hat die Beklagte gegen die vereinbarten Konditionen des Hauptvertrages verstossen...</Absatz>
+                </Section>
+            </Materielles>
+        </Begruendung>
+        
+        <Postfix>In diesem Sinne ersucht die Klägerin das Schiedsgericht um Gutheissung der Rechtsbegehren.</Postfix>
+
+    </Main>
+    <Attachments>
+        <Attachment id="KB-13">Vereinbarung zwischen Industrial Clean OOO und Chemiewerke AG vom 4. Juni 2009</Attachment>
+        <Attachment id="KB-14">Kündigungsschreiben der Chemiewerke AG vom 22. Dezember 2011</Attachment>
+    </Attachments>   
+</Dok>
