@@ -1,6 +1,10 @@
 # LegalXML
 
-Dieses Repository beinhaltet das Ergebnis der Challenge *Eigenes Dateiformat für Schweizer Rechtsschriften*.
+Dieses Repository beinhaltet das Ergebnis der Challenge *Eigenes Dateiformat für Schweizer Rechtsschriften*:
+- Viewer Applikation für Rechtsschriften und Urteile
+- 2 vollständige und referenzierte Dokumente im XML Format
+- Eine Definition des Standards für Rechtsschriften
+- Claude Skill für mühelose Umwandlung von PDF in XML (Entwurf)
 
 Rechtsschriften sind Eingaben an das Gericht, z.B. eine Klage oder Beschwerde. Ähnlich wie Urteile folgen sie einem einheitlichen Aufbau (Rechtsbegehren, Formelles, Prozessuales, Materielles). Im Gegensatz zu Urteilen sind sie jedoch nicht öffentlich einsehbar - es sei denn, sie werden privat publiziert.
 
