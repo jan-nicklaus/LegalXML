@@ -1,0 +1,15 @@
+﻿Strukturierte Rechtsdokumente — Argumentarium Lorentzo
+
+XML als Scharnier für den Abgleich von Rechtsdokumenten (Entscheide und Rechtsschriften)
+
+Sinn und Zweck, wieso ein strukturiertes Scharnierformat?
+
+Rechtsschriften und Urteile bestehen mehrheitlich aus Text. Im Verlauf eines Verfahrens werden diese
+Texte zwischen den Beteiligten ausgetauscht; es wird wechselseitig auf sie Textteile Bezug genommen — und
+zwar nicht auf beliebige Stellen, sondern auf solche, die einen engeren inhaltlichen Bezug haben.
+Sachverhaltselemente korrespondieren mit anderen Sachverhaltselementen, rechtliche Argumente
+werden gegenüber anderen rechtlichen Argumenten erwidert.
+
+Für diesen Austausch und den damit verbundenen Abgleich wird ein Mapping benötigt, für das Mapping wäre eine minimale Struktur hilfreich. Dabei ist unerheblich, ob die Texte bzw. Textteile originär strukturiert entstehen oder ob sie aus anderen Dateiformaten wie PDF-Formate abgeleitet werden. Entscheidend ist, dass die typischen Bezüge maschinell nachvollziehbar werden — und damit auch, dass die Strukturierung bewusst minimal ausgestaltet wird: gerade so präzise wie nötig, nicht so detailliert wie möglich. Das Ziel ist also nicht, Rechtsschriften und Entscheide vollständig in strukturierter Form abzubilden.
+
+
