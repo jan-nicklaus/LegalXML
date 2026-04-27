@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dok doctype="entscheid">
+    <Rubrum>
+        <Verfahren>
+            <Aktenzeichen>9C_702/2023</Aktenzeichen>
+            <Parteien>
+                <Partei id="6f2f6644-2902-4924-87c2-0dd8bf5a9d71">
+                    <Rollen>
+                        <Rolle>Beschwerdeführer</Rolle>
+                    </Rollen>
+                    <Name>[pseudonymisiert]</Name>
+                    <Anschrift>[pseudonymisiert]</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>Rechtsanwalt Sebastian Lorentz, Alderstrasse 40, 8008 Zürich</Rechtsvertretung>
+                </Partei>
+                <Partei id="53ded2d6-11a7-450a-9793-b47ef6886cd4">
+                    <Rollen>
+                        <Rolle>Beschwerdegegnerin</Rolle>
+                    </Rollen>
+                    <Name>[pseudonymisiert]</Name>
+                    <Anschrift>[pseudonymisiert]</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung></Rechtsvertretung>
+                </Partei>
+            </Parteien>
+        </Verfahren>
+        <Dokument>
+            <DokumentUeberschrift>Urteil – Krankenversicherung (Leistungspflicht, Wirksamkeit)</DokumentUeberschrift>
+            <Datum>2024-02-15</Datum>
+            <Spruchkoerper>
+                <Gericht>Bundesgericht</Gericht>
+                <Adresse>Schweizerhofquai 6, CH-6004 Luzern</Adresse>
+                <Kammer>III. öffentlich-rechtliche Abteilung</Kammer>
+                <Zusammensetzung>
+                    <Mitglied role="presiding judge">Bundesrichter Parrino, Präsident</Mitglied>
+                    <Mitglied role="judge">Bundesrichterin Moser-Szeless</Mitglied>
+                    <Mitglied role="judge">Bundesrichterin Scherrer Reber</Mitglied>
+                    <Mitglied role="clerk">Gerichtsschreiberin Bögli</Mitglied>
+                </Zusammensetzung>
+            </Spruchkoerper>
+        </Dokument>
+    </Rubrum>
+
+    <Main>
+        <Dispositiv>
+            <DispositivZiffer id="cbdb4aa8-454c-47bc-a333-53e30c6b8457" type="hauptsache">Die Beschwerde wird teilweise gutgeheissen. Der Einspracheentscheid der [pseudonymisiert] vom 5. Januar 2023 sowie das Urteil des Versicherungsgerichts des Kantons Aargau vom 26. September 2023 werden aufgehoben. Die Sache wird zur weiteren Abklärung und neuer Entscheidung im Sinne der Erwägungen an die Beschwerdegegnerin zurückgewiesen. Im Übrigen wird die Beschwerde abgewiesen.</DispositivZiffer>
+            <DispositivZiffer id="3e5b1ec0-2576-4fc3-b53a-91f755e2af9c" type="kosten">Die Gerichtskosten von Fr. 500.- werden der Beschwerdegegnerin auferlegt.</DispositivZiffer>
+            <DispositivZiffer id="7b811dc4-3387-48fb-95f5-8ba1730e175f" type="kosten">Die Beschwerdegegnerin hat den Beschwerdeführer für das bundesgerichtliche Verfahren mit Fr. 2'800.- zu entschädigen.</DispositivZiffer>
+            <DispositivZiffer id="b041f808-c0b4-4365-bed5-0888557bc41e" type="hauptsache">Die Sache wird zur Neuverlegung der Kosten des vorangegangenen Verfahrens an das Versicherungsgericht des Kantons Aargau zurückgewiesen.</DispositivZiffer>
+            <DispositivZiffer id="ddcb5337-806c-47f9-b70e-ebe08e7a4ae9" type="hauptsache">Dieses Urteil wird den Parteien, dem Versicherungsgericht des Kantons Aargau und dem Bundesamt für Gesundheit schriftlich mitgeteilt.</DispositivZiffer>
+        </Dispositiv>
+
+        <Eroeffnung>
+            <EroeffnungZiffer adrid="6f2f6644-2902-4924-87c2-0dd8bf5a9d71">[pseudonymisiert]</EroeffnungZiffer>
+            <EroeffnungZiffer adrid="53ded2d6-11a7-450a-9793-b47ef6886cd4">[pseudonymisiert]</EroeffnungZiffer>
+            <EroeffnungZiffer adrname="Versicherungsgericht des Kantons Aargau"></EroeffnungZiffer>
+            <EroeffnungZiffer adrname="Bundesamt für Gesundheit"></EroeffnungZiffer>
+        </Eroeffnung>
+
+        <Begruendung>
+            <Prozessuales>
+                <Section title="Sachverhalt A – Versicherungsverhältnis und Vorverfahren">
+                    <Absatz id="d0c0f8f6-14ce-4241-931f-34cf0ee04b10" tag="facts" ref="372c73e4-be31-4809-8ec8-11f3538945b0">[pseudonymisiert] ist im Rahmen der obligatorischen Krankenpflegeversicherung nach KVG bei der [pseudonymisiert] versichert. Am 22. Februar 2022 stellte er ein Gesuch um Kostenübernahme für eine H.E.L.P.-Apherese zur Behandlung der Folgen einer Post-Covid-19-Erkrankung. Mit Verfügung vom 14. Juni 2022 verneinte die [pseudonymisiert] ihre Leistungspflicht. Die dagegen erhobene Einsprache wies sie mit Einspracheentscheid vom 5. Januar 2023 ab, nachdem sie eine Stellungnahme ihres vertrauensärztlichen Dienstes vom 12. Dezember 2022 eingeholt hatte.</Absatz>
+                </Section>
+                <Section title="Sachverhalt B – Vorinstanzliches Urteil">
+                    <Absatz id="aa6fc079-a812-4b6f-a92d-ebb10901c6d1" tag="facts" ref="1e3bc6e0-a908-45f0-a222-e18a4f80995c">Das Versicherungsgericht des Kantons Aargau wies die dagegen erhobene Beschwerde mit Urteil vom 26. September 2023 ab.</Absatz>
+                </Section>
+                <Section title="Sachverhalt C – Verfahren vor Bundesgericht">
+                    <Absatz id="738c966e-63ea-4767-b840-f019982a3eb7" tag="facts" ref="b3bc6c4e-7b18-4703-bf8d-73b2c61c29b3">[pseudonymisiert] lässt dagegen Beschwerde führen und die Zusprache der gesetzlichen Leistungen, insbesondere die Übernahme der Kosten der H.E.L.P.-Apherese beantragen.</Absatz>
+                    <Absatz id="c526323b-515a-415b-8f3a-5ad93f3ed59e" tag="facts" ref="488900b7-8503-4de7-8db7-a74df1c2f9d4">Die [pseudonymisiert] beantragt mit Stellungnahme vom 6. Februar 2024 die Abweisung der Beschwerde. Das Bundesamt für Gesundheit lässt sich nicht vernehmen.</Absatz>
+                    <Absatz id="4af01e2b-82d6-4814-a48b-d4016ddb748e" tag="facts">Mit Eingabe vom 13. Februar 2024 verweist [pseudonymisiert] auf jüngere Fachliteratur.</Absatz>
+                </Section>
+            </Prozessuales>
+
+            <Formelles>
+                <Section title="Erwägung 1 – Beschwerdegrund und Kognition">
+                    <Absatz id="ff94f70c-627b-424f-ac74-21967d580d50" tag="legal">Mit der Beschwerde in öffentlich-rechtlichen Angelegenheiten kann eine Rechtsverletzung nach Art. 95 f. BGG gerügt werden. Das Bundesgericht wendet das Recht von Amtes wegen an (Art. 106 Abs. 1 BGG). Es legt seinem Urteil den Sachverhalt zugrunde, den die Vorinstanz festgestellt hat (Art. 105 Abs. 1 BGG). Es kann deren Sachverhaltsfeststellung von Amtes wegen berichtigen oder ergänzen, wenn sie offensichtlich unrichtig ist oder auf einer Rechtsverletzung im Sinne von Art. 95 BGG beruht und wenn die Behebung des Mangels für den Verfahrensausgang entscheidend sein kann (Art. 97 Abs. 1, Art. 105 Abs. 2 BGG).</Absatz>
+                </Section>
+                <Section title="Erwägung 2 – Rüge der Befangenheit">
+                    <Absatz id="2caacafb-e2f4-4d11-ad40-520dd661ecb0" tag="legal">Der Beschwerdeführer rügt diverse angebliche Aussagen der Oberrichterin Gössi, welche das vorinstanzliche Verfahren präsidiert hat, in Bezug auf Covid-19. Gemäss diversen Zeitungsartikeln sei sie der Auffassung, Covid-19 stelle keine grössere Gefahr dar als eine Grippe und Langzeitfolgen seien auszuschliessen. Falls er damit Befangenheitsgründe zu implizieren versucht, ist festzuhalten, dass er, soweit ersichtlich, im kantonalen Verfahren zu keinem Zeitpunkt ein Ausstandsgesuch gestellt hat. Entsprechend ist nicht weiter auf die Ausführungen einzugehen.</Absatz>
+                </Section>
+                <Section title="Erwägung 3 – Streitgegenstand">
+                    <Absatz id="83da4bb2-ad97-4852-b40b-93c23869ca0e" tag="legal" ref="f85f68ed-e8da-4bac-92c3-e00c3634011b">Streitig und zu prüfen ist, ob die Vorinstanz Bundesrecht verletzte, als sie die Leistungspflicht der Beschwerdegegnerin für die bereits durchgeführte H.E.L.P.-Apherese verneinte.</Absatz>
+                </Section>
+            </Formelles>
+
+            <Materielles>
+                <Section type="ruege" title="Erwägung 4 – Grundsätze der Leistungspflicht im KVG">
+                    <Absatz id="1629cbad-67aa-4e1d-ba82-031e251c77d8" tag="legal" ref="3eea9961-965e-446e-b9cd-e656417f2a0e">4.1 Die obligatorische Krankenpflegeversicherung übernimmt die Kosten für die Leistungen gemäss den Art. 25-31 KVG nach Massgabe der in den Art. 32-34 KVG festgelegten Voraussetzungen (Art. 24 Abs. 1 KVG). Darunter fallen in erster Linie die Leistungen, die der Diagnose oder Behandlung einer Krankheit und ihrer Folgen dienen (Art. 25 Abs. 1 KVG).</Absatz>
+                    <Absatz id="b529d3eb-7e17-4d31-badb-4f67a816a646" tag="legal" ref="3eea9961-965e-446e-b9cd-e656417f2a0e">4.2 Gemäss Art. 32 Abs. 1 KVG müssen die Leistungen nach den Art. 25-31 KVG wirksam, zweckmässig und wirtschaftlich sein (Satz 1). Die Wirksamkeit muss nach wissenschaftlichen Methoden nachgewiesen sein (Satz 2). Es handelt sich bei den in dieser Bestimmung statuierten Kriterien der Wirksamkeit, Zweckmässigkeit und Wirtschaftlichkeit (sog. WZW-Kriterien) um die grundlegenden, kumulativ zu erfüllenden Voraussetzungen jeder Leistung. Ihr Zweck ist es, eine effiziente, qualitativ hochstehende und zweckmässige Gesundheitsversorgung zu möglichst günstigen Kosten sicherzustellen. An diesem Ziel haben sich alle Akteure im Bereich der obligatorischen Krankenpflegeversicherung (d.h. neben den Versicherten insbesondere auch die Leistungserbringer und die Tarifgenehmigungsbehörden) zu orientieren (BGE 127 V 80 E. 3c/aa; Urteil 9C_176/2016 vom 21. Februar 2017 E. 6.2.1 in fine, in: SVR 2017 KV Nr. 13 S. 59). Die Wirksamkeit, Zweckmässigkeit und Wirtschaftlichkeit der Leistungen werden periodisch überprüft (Art. 32 Abs. 2 KVG).</Absatz>
+                    <Absatz id="336fba31-f6f0-4e5a-a39a-301805ae1c56" tag="legal" ref="4400a59b-2790-4787-ad6d-9580b2256853">4.3 Zur Wahrung dieser für das Leistungsrecht der obligatorischen Krankenpflegeversicherung fundamentalen Prinzipien der wissenschaftlich nachgewiesenen Wirksamkeit, Zweckmässigkeit und Wirtschaftlichkeit sieht Art. 33 KVG ein System zur Bezeichnung der vergütungsfähigen Leistungen vor. Die in Art. 33 KVG verankerte gesetzliche Ordnung unterscheidet dabei danach, um welche Art von Leistungserbringern und/oder um welche Art von erbrachten Leistungen (Leistungsarten) es geht (BGE 129 V 167 E. 3.2). Nach Art. 33 Abs. 1 KVG kann der Bundesrat die von Ärzten und Ärztinnen oder von Chiropraktoren und Chiropraktorinnen erbrachten Leistungen bezeichnen, deren Kosten von der obligatorischen Krankenpflegeversicherung nicht oder nur unter bestimmten Bedingungen übernommen werden (vgl. Art. 33 lit. a KVV [SR 832.102] und Art. 1 KLV [SR 832.112.31] in Verbindung mit Anhang 1 KLV). Art. 33 Abs. 1 KVG erteilt dem Bundesrat somit im Bereich der ärztlichen und chiropraktorischen Heilanwendungen die Befugnis zur Bezeichnung einer Negativliste, die abschliessend ist (BGE 125 V 21 E. 5b). Die von Ärzten (und Chiropraktoren) als Angehörige eines freien Berufes applizierten Heilanwendungen haben somit die gesetzliche Vermutung für sich, dass sie den Voraussetzungen für eine Kostenübernahme durch die obligatorische Krankenpflegeversicherung entsprechen (BGE 125 V 21 E. 5b). Hält ein Krankenversicherer dafür, dass eine bestimmte nicht ausgeschlossene ärztliche (oder chiropraktorische) Therapie unwirksam, unzweckmässig oder unwirtschaftlich sei (Art. 32 Abs. 1 KVG), hat er im Rahmen des Untersuchungsgrundsatzes die Verhältnisse abzuklären (z.B. durch Einholung eines Gutachtens) und hernach über die Leistungspflicht im Einzelfall zu verfügen (BGE 129 V 167 E. 3.2 und 4; vgl. auch BGE 136 V 84 E. 2.1). Die Pflichtleistungsvermutung kann somit im Einzelfall durch den Krankenversicherer im Rahmen einer Verfügung oder gestützt auf Art. 33 Abs. 1 KVG durch den Verordnungsgeber im Sinne einer abschliessenden Negativliste umgestossen werden (Urteile 9C_41/2022 vom 8. September 2022 E. 3.2, in: SVR, 2023 KV Nr. 2 S. 6; 9C_712/2020 vom 24. Januar 2022 E. 3.3, in: SVR, 2022 KV Nr. 13 S. 75; KERSTIN NOËLLE VOKINGER/MARTIN ZOBL, in: Basler Kommentar Krankenversicherungsgesetz/Krankenversicherungsaufsichtsgesetz, 2020, N. 2 zu Art. 33 KVG).</Absatz>
+                    <Absatz id="221bb259-0174-403f-b8af-d59b64931512" tag="legal" ref="4400a59b-2790-4787-ad6d-9580b2256853">4.4 Der Sozialversicherungsprozess ist vom Untersuchungsgrundsatz beherrscht. Danach hat das Gericht von Amtes wegen für die richtige und vollständige Feststellung des rechtserheblichen Sachverhalts zu sorgen. Die Verwaltung als verfügende Instanz und – im Beschwerdefall – das Gericht dürfen eine Tatsache nur dann als bewiesen annehmen, wenn sie von ihrem Bestehen überzeugt sind. Im Sozialversicherungsrecht hat das Gericht seinen Entscheid, sofern das Gesetz nicht etwas Abweichendes vorsieht, nach dem Beweisgrad der überwiegenden Wahrscheinlichkeit zu fällen. Die blosse Möglichkeit eines bestimmten Sachverhalts genügt den Beweisanforderungen nicht. Der Richter und die Richterin haben vielmehr jener Sachverhaltsdarstellung zu folgen, die sie von allen möglichen Geschehensabläufen als die wahrscheinlichste würdigen (BGE 138 V 218 E. 6 mit Hinweisen). Der Untersuchungsgrundsatz schliesst die Beweislast im Sinne der Beweisführungslast begriffsnotwendig aus, da es Sache des Sozialversicherungsgerichts (oder der verfügenden Verwaltungsstelle) ist, für die Zusammentragung des Beweismaterials besorgt zu sein. Im Sozialversicherungsprozess tragen mithin die Parteien in der Regel eine Beweislast nur insofern, als im Falle der Beweislosigkeit der Entscheid zu Ungunsten jener Partei ausfällt, die aus dem unbewiesen gebliebenen Sachverhalt Rechte ableiten wollte. Diese Beweisregel greift allerdings erst Platz, wenn es sich als unmöglich erweist, im Rahmen des Untersuchungsgrundsatzes auf Grund einer Beweiswürdigung einen Sachverhalt zu ermitteln, der zumindest die Wahrscheinlichkeit für sich hat, der Wirklichkeit zu entsprechen (BGE 138 V 218 E. 6 mit Hinweisen).</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Erwägung 5 – Würdigung der Vorinstanz">
+                    <Absatz id="db9ec825-cd2c-4087-92bc-afd0ffdf2d66" tag="legal" ref="4400a59b-2790-4787-ad6d-9580b2256853,98cc55e1-3843-4930-99c6-02ddeac15526">Das kantonale Gericht hat zutreffend erkannt, dass die durchgeführte H.E.L.P.-Apherese in Anhang 1 KLV nicht geregelt ist. Zur Frage, ob es sich bei einer Post-Covid-19-Erkrankung um ein Leiden mit Krankheitswert handelt, hat es sich nicht explizit geäussert. Es scheint jedoch davon ausgegangen zu sein, dass grundsätzlich eine Leistungspflicht des Krankenversicherers vorliege, es sei denn, ihm gelinge im Einzelfall der Nachweis, dass die Therapie entgegen der gesetzlichen Vermutung unwirksam, unzweckmässig oder unwirtschaftlich wäre (vgl. E. 4.3).</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Erwägung 6 – Verkennung der Beweisregeln durch die Vorinstanz">
+                    <Absatz id="ba941f5f-3d77-463c-b6a4-e370c1567b2c" tag="legal" ref="15606162-9dc0-4298-a66b-98ff51f7ca17,da45ece9-22c6-4c43-8a16-7a3d40e55a11">6.1 Die Vorinstanz legt im angefochtenen Urteil gestützt auf die Stellungnahme der Vertrauensärztin der Beschwerdegegnerin, med. pract. Müller, Zürich, dar, dass (noch) keine Studien zur Wirksamkeit einer H.E.L.P.-Apherese zur Behandlung von Post-Covid-19-Erkrankungen vorlägen und es lediglich theoretische Hinweise auf eine Wirksamkeit gäbe. Diese – nicht offensichtlich unrichtige und damit für das Bundesgericht verbindliche (vgl. E. 2) – Feststellung wird auch durch den Beschwerdeführer bestätigt.</Absatz>
+                    <Absatz id="99efa3b3-f1f4-4f1b-a0d5-559b425b2ac8" tag="legal" ref="98cc55e1-3843-4930-99c6-02ddeac15526">6.2 Aus dem Dargelegten erhellt, dass die Vorinstanz die Wirksamkeit der H.E.L.P.-Apherese zur Behandlung einer Post-Covid-19-Erkrankung als (noch) nicht genügend erwiesen erachtet und die Leistungspflicht der Beschwerdegegnerin verneint hat. Damit übersieht sie, dass es in Anwendung von Art. 33 Abs. 1 KVG für die Leistungsablehnung des Krankenversicherers nicht ausreicht, die Wirksamkeit (resp. die weiteren WZW-Kriterien) in Zweifel zu ziehen. Im Falle einer Beweislosigkeit käme die gesetzliche Vermutung zum Tragen, wonach die von einem Arzt durchgeführte Behandlung als wirksam, zweckmässig und wirtschaftlich gilt, wenn sie – wie vorliegend – nicht in der abschliessenden Negativliste gemäss Anhang 1 KLV von der Leistungspflicht ausgenommen ist (vgl. E. 3.3). Das kantonale Gericht hält zwar fest, das Verneinen eines Wirksamkeitsnachweises führe nicht zu einer Beweislosigkeit, sondern die Wirksamkeitsvermutung werde damit umgestossen. Allerdings ist diese Argumentation widersprüchlich, denn die Vorinstanz legt lediglich dar, die Wirksamkeit sei nicht erwiesen. Dass die H.E.L.P.-Apherese zur Behandlung von Post-Covid-19-Erkrankungen unwirksam oder gar schädlich sei, stellt sie nicht fest. Den Akten sind auch keine Hinweise darauf zu entnehmen, dass ein breiter wissenschaftlicher Konsens darüber herrschen würde, dass die H.E.L.P.-Apherese offensichtlich unwirksam, unzweckmässig oder unwirtschaftlich sei (vgl. Urteil 9C_108/2014 vom 26. September 2014 E. 3.5).</Absatz>
+                    <Absatz id="d33faa2b-c0d3-4489-991f-6f1c9b411d9a" tag="legal" ref="15606162-9dc0-4298-a66b-98ff51f7ca17,da45ece9-22c6-4c43-8a16-7a3d40e55a11">6.3 Vorliegend wurde die Wirksamkeit der H.E.L.P.-Apherese zur Behandlung von Post-Covid-19-Erkrankungen nicht ausreichend untersucht. Die Beschwerdegegnerin hat kein fachspezifisches Gutachten in Auftrag gegeben, sondern lediglich ihren medizinischen Dienst um eine Stellungnahme gebeten. Es handelt sich nicht um eine Situation, in der die Überprüfung der Wirksamkeit der Behandlung an einem Mangel an Beweisen scheitern würde (vgl. vorne E. 4.4).</Absatz>
+                    <Absatz id="c482d594-7db5-4931-8f9f-f970430381d1" tag="legal" ref="98cc55e1-3843-4930-99c6-02ddeac15526">Das Versicherungsgericht verstiess somit gegen Bundesrecht, wenn es die Leistungspflicht der Beschwerdegegnerin mit der Begründung verneinte, die Wirksamkeit der Behandlung sei (noch) nicht genügend nachgewiesen (vgl. Urteil 9C_712/2020 vom 24. Januar 2022, in: SVR, 2022 KV Nr. 13 S. 75). Die Beschwerdegegnerin hat die Wirksamkeit der H.E.L.P.-Apherese zur Behandlung von Post-Covid-19-Erkrankungen abzuklären, beispielsweise durch ein Gutachten, und danach neu über ihre Leistungspflicht zu entscheiden.</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Erwägung 7 – Kosten- und Entschädigungsfolgen">
+                    <Absatz id="ea838f49-4872-4e21-ab7e-dd998e88590a" tag="legal">7.1 Die Rückweisung der Sache an die Verwaltung (mit noch offenem Ausgang) gilt für die Frage der Auferlegung der Gerichtskosten wie auch der Parteientschädigung als vollständiges Obsiegen im Sinne von Art. 66 Abs. 1 und Art. 68 Abs. 1 und 2 BGG, unabhängig davon, ob sie beantragt und ob das entsprechende Begehren im Haupt- oder im Eventualantrag gestellt wird (BGE 141 V 281 E. 11.1; 137 V 210 E. 7.1).</Absatz>
+                    <Absatz id="f6a898fb-454d-4d83-95d0-2450f9bd20a3" tag="legal" ref="4415a1a4-34c2-4fad-836a-c6db36fe27b9">7.2 Bei dieser Sachlage sind die Gerichtskosten der unterliegenden Beschwerdegegnerin aufzuerlegen. Diese hat dem anwaltlich vertretenen Beschwerdeführer zudem eine Parteientschädigung auszurichten.</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Erwägung 8 – Rückweisung an Vorinstanz für Kostenneuverlegung">
+                    <Absatz id="59edda19-5f56-4b48-8c65-8a984deb6960" tag="legal" ref="4415a1a4-34c2-4fad-836a-c6db36fe27b9">Die Sache ist zur Neuverlegung der Parteientschädigung des vorangegangenen Verfahrens an die Vorinstanz zurückzuweisen (Art. 67 und Art. 68 Abs. 5 BGG).</Absatz>
+                </Section>
+            </Materielles>
+        </Begruendung>
+
+        <Entscheid>Das Bundesgericht heisst die Beschwerde teilweise gut, hebt den Einspracheentscheid und das vorinstanzliche Urteil auf und weist die Sache zur weiteren Abklärung der Wirksamkeit der H.E.L.P.-Apherese (insbesondere mittels fachspezifischen Gutachtens) und neuer Entscheidung an die Beschwerdegegnerin zurück. Die Beschwerdegegnerin hat es versäumt, den ihr obliegenden Beweis der Unwirksamkeit zu erbringen; in Anwendung der Pflichtleistungsvermutung nach Art. 33 KVG genügt das blosse Fehlen eines Wirksamkeitsnachweises nicht, um die Leistungspflicht zu verneinen.</Entscheid>
+
+    </Main>
+</Dok>
