@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dok doctype="entscheid">
+    <Rubrum>
+        <Verfahren>
+            <Aktenzeichen>9C_702/2023</Aktenzeichen>
+            <Parteien>
+                <Partei id="8b32c32c-94a5-48b4-ad22-d51ef1032b23">
+                    <Rollen>
+                        <Rolle>Beschwerdeführer</Rolle>
+                    </Rollen>
+                    <Name>A.________</Name>
+                    <Anschrift>4803 Vordemwald</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>Sebastian Lorentz, Rechtsanwalt, schadenanwaelte AG, Postfach, 8034 Zürich</Rechtsvertretung>
+                </Partei>
+                <Partei id="5d51943f-c03a-49dd-a328-9d3ef1055aa5">
+                    <Rollen>
+                        <Rolle>Beschwerdegegnerin</Rolle>
+                    </Rollen>
+                    <Name>Helsana Versicherungen AG</Name>
+                    <Anschrift>Legal, Postfach, 8081 Zürich</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung></Rechtsvertretung>
+                </Partei>
+            </Parteien>
+        </Verfahren>
+        <Dokument>
+            <DokumentUeberschrift>Verfügung – Anzeige der Vernehmlassungsantworten</DokumentUeberschrift>
+            <Datum>2024-02-07</Datum>
+            <Spruchkoerper>
+                <Gericht>Bundesgericht</Gericht>
+                <Adresse>Schweizerhofquai 6, CH-6004 Luzern</Adresse>
+                <Kammer>III. öffentlich-rechtliche Abteilung</Kammer>
+                <Zusammensetzung>
+                    <Mitglied role="presiding judge">Instruktionsrichterin</Mitglied>
+                    <Mitglied role="clerk">Bundesgerichtskanzlei</Mitglied>
+                </Zusammensetzung>
+            </Spruchkoerper>
+        </Dokument>
+    </Rubrum>
+
+    <Main>
+        <Dispositiv>
+        </Dispositiv>
+
+        <Eroeffnung>
+            <EroeffnungZiffer adrid="8b32c32c-94a5-48b4-ad22-d51ef1032b23">A.________ (Beschwerdeführer), vertreten durch RA Sebastian Lorentz, schadenanwaelte AG</EroeffnungZiffer>
+            <EroeffnungZiffer adrid="5d51943f-c03a-49dd-a328-9d3ef1055aa5">Helsana Versicherungen AG (Beschwerdegegnerin)</EroeffnungZiffer>
+            <EroeffnungZiffer adrname="Versicherungsgericht des Kantons Aargau (Vorinstanz)"></EroeffnungZiffer>
+            <EroeffnungZiffer adrname="Bundesamt für Gesundheit (Aufsichtsbehörde)"></EroeffnungZiffer>
+        </Eroeffnung>
+
+        <Begruendung>
+            <Prozessuales>
+                <Section title="Anzeige der Vernehmlassungsantworten">
+                    <Absatz id="525f0d04-c641-4406-b092-5850141455f0" tag="facts">Anzeige der Vernehmlassungsantworten in Sachen A.________ gegen die Helsana Versicherungen AG, Beschwerde gegen das Urteil des Versicherungsgerichts des Kantons Aargau vom 26. September 2023 (VBE.2023.70).</Absatz>
+                    <Absatz id="a4ef8fe2-a7b1-49c3-9f33-e5eed6fa4327" tag="facts">Die Beteiligten sind eingeladen worden, sich zur Beschwerde vernehmen zu lassen. Anbei erhalten Sie in Kopie zur Kenntnisnahme: die Antwort der Gegenpartei (act. 15) sowie die Stellungnahme der Vorinstanz (act. 14). Die Aufsichtsbehörde hat keine Vernehmlassung eingereicht.</Absatz>
+                    <Absatz id="5c112b84-fd43-4c76-8e08-4c88bed5f002" tag="legal">Ein weiterer Schriftenwechsel wird nicht angeordnet. Allfällige Bemerkungen hätten bis zum 19. Februar 2024 zu erfolgen (vgl. dazu die Mitteilung des Bundesgerichts „Schriftenwechsel und freiwillige Bemerkungen" unter www.bger.ch, Rubrik Rechtsprechung).</Absatz>
+                </Section>
+            </Prozessuales>
+        </Begruendung>
+
+        <Entscheid>Ein weiterer Schriftenwechsel wird nicht angeordnet; allfällige freiwillige Bemerkungen sind bis zum 19. Februar 2024 zu erfolgen.</Entscheid>
+
+    </Main>
+</Dok>

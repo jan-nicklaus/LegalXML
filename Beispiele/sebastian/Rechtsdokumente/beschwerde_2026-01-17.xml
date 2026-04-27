@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dok doctype="rechtsschrift">
+    <Rubrum>
+        <Verfahren>
+            <Aktenzeichen></Aktenzeichen>
+            <Parteien>
+                <Partei id="8b32c32c-94a5-48b4-ad22-d51ef1032b23">
+                    <Rollen>
+                        <Rolle>Beschwerdeführer</Rolle>
+                    </Rollen>
+                    <Name>A.________</Name>
+                    <Anschrift>4803 Vordemwald</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>Sebastian Lorentz, Rechtsanwalt, schadenanwaelte AG, Alderstrasse 40, Postfach, 8034 Zürich</Rechtsvertretung>
+                </Partei>
+                <Partei id="5d51943f-c03a-49dd-a328-9d3ef1055aa5">
+                    <Rollen>
+                        <Rolle>Beschwerdegegnerin</Rolle>
+                    </Rollen>
+                    <Name>Helsana Versicherungen AG</Name>
+                    <Anschrift>Legal, Postfach, 8081 Zürich</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung></Rechtsvertretung>
+                </Partei>
+            </Parteien>
+            <Vorinstanz>
+                <Name>Helsana Versicherungen AG (Einspracheentscheid vom 08.12.2025)</Name>
+                <Anschrift>Legal, Postfach, 8081 Zürich</Anschrift>
+            </Vorinstanz>
+        </Verfahren>
+        <Dokument>
+            <DokumentUeberschrift>Beschwerde</DokumentUeberschrift>
+            <Datum>2026-01-17</Datum>
+            <Spruchkoerper>
+                <Gericht>Obergericht des Kantons Aargau, Versicherungsgericht</Gericht>
+                <Adresse>Obere Vorstadt 40, 5000 Aarau</Adresse>
+            </Spruchkoerper>
+        </Dokument>
+    </Rubrum>
+
+    <Main>
+        <Dispositiv>
+            <DispositivZiffer id="6c86ca09-c246-4bc4-8528-6875ca48f71e" type="hauptsache">Es sei der Einspracheentscheid vom 08.12.2025 aufzuheben.</DispositivZiffer>
+            <DispositivZiffer id="e0ed414a-f639-41a2-9cfb-022fe9ec35c5" type="hauptsache">Es seien dem Beschwerdeführer die gesetzlichen Leistungen, insbesondere die Kosten der H.E.L.P.-Apherese und eine Parteientschädigung für das Einspracheverfahren, zuzusprechen.</DispositivZiffer>
+            <DispositivZiffer id="38051681-9e43-43f6-9bbe-dce6a160e7e2" type="kosten">Unter Kosten- und Entschädigungsfolge zzgl. MWST.</DispositivZiffer>
+            <DispositivZiffer id="f0b3ad22-af89-421e-a6f3-540f766748e8" type="verfahrensantrag">Es sei ein zweiter Schriftenwechsel zu bewilligen.</DispositivZiffer>
+        </Dispositiv>
+
+        <Begruendung>
+            <Formelles>
+                <Section title="Formelles">
+                    <Absatz id="f74a001c-e93e-44c1-92c6-bf17a01dc314" tag="legal">Der Unterzeichnende ist gehörig bevollmächtigt.</Absatz>
+                    <Absatz id="a2ed8f4a-48e0-49da-9479-ea7d81ac240a" tag="legal">Gemäss Art. 56 Abs. 1 ATSG kann gegen Einspracheentscheide Beschwerde erhoben werden. Vorliegende Beschwerde richtet sich gegen einen Einspracheentscheid, folglich liegt ein taugliches Anfechtungsobjekt vor, und die sachliche Zuständigkeit eines Versicherungsgerichts ist gegeben.</Absatz>
+                    <Absatz id="e43b76a7-189a-4b29-b2b7-0f56814385c7" tag="legal">Laut Art. 58 Abs. 1 ATSG richtet sich die örtliche Zuständigkeit nach dem Wohnsitz der versicherten Person. Die beschwerdeführende Partei hat Wohnsitz in Vordemwald / AG, somit ist die örtliche Zuständigkeit des angerufenen Versicherungsgerichts des Kantons Aargau gegeben.</Absatz>
+                    <Absatz id="6754467e-1ba2-49bb-9ef3-d78164abef95" tag="legal">Die beschwerdeführende Partei ist Adressatin des Einspracheentscheides und somit zweifellos durch diesen berührt. Genannter Einspracheentscheid bestätigt die leistungsverweigernde Verfügung vom 21.02.2025, folglich sind die wirtschaftlichen Interessen tangiert, weshalb ein schutzwürdiges Interesse vorliegt. Die Beschwerdelegitimation gemäss Art. 59 ATSG ist folglich gegeben.</Absatz>
+                    <Absatz id="52b47bd2-9667-4e3b-aa32-0ab9b36b3468" tag="legal">Der angefochtene Einspracheentscheid datiert vom 08.12.2025 und wurde am 11.12.2025 zugestellt. Gemäss Art. 60 Abs. 1 ATSG ist innert 30 Tagen nach Eröffnung des Einspracheentscheids oder der Verfügung Beschwerde zu erheben. Art. 60 Abs. 2 ATSG verweist zur Fristberechnung auf Art. 38 – 41 ATSG. Art. 38 Abs. 4 lit. c ATSG normiert, dass die Fristen vom 18. Dezember bis und mit dem 2. Januar stillstehen. Vorliegende Beschwerde erfolgt somit fristgerecht und gemäss Art. 61 lit. b formgerecht.</Absatz>
+                </Section>
+            </Formelles>
+
+            <Prozessuales>
+                <Section title="Begründung des Verfahrensantrages">
+                    <Absatz id="b459fd3d-ea7c-45a9-9cf8-af557f142bba" tag="legal">Der Anspruch auf Gewährung des rechtlichen Gehörs gemäss Art. 42 ATSG hat zur Folge, dass die beschwerdeführende Person sich zu allen neuen Tatsachen, Beweismitteln oder Rechtsgründen der Vorinstanz äussern kann, soweit sie nicht damit zu rechnen hatte. In BGE 133 I 98 anerkennt das Bundesgericht, dass sich die Parteien in gerichtlichen Verfahren aufgrund Art. 29 Abs. 2 BV und Art. 6 EMRK immer zu den Vorbringungen der Gegenpartei äussern können müssen. Deshalb ist der beschwerdeführenden Person das Replikrecht und damit das rechtliche Gehör in jedem Falle zu gewähren. Das unbedingte Replikrecht ist freiwillig. Es ist der Entscheid der jeweiligen Partei, ob sie einer Eingabe der Gegenpartei entgegnen will und eine weitere Äusserung als notwendig erachtet oder darauf verzichtet.</Absatz>
+                </Section>
+                <Section title="Vorbemerkung I">
+                    <Absatz id="4e572964-ad26-4215-b4e7-2ee614b72596" tag="facts">Dem angerufenen Gericht ist der Sachverhalt durch das Verfahren VBE.2023.70 schon bestens bekannt, d. h. der Sachverhalt ist gerichtsnotorisch. Um Redundanzen zu vermeiden, wird auf eine nochmalige Darstellung des Sachverhaltes verzichtet.</Absatz>
+                </Section>
+            </Prozessuales>
+
+            <Materielles>
+                <Heading>III. MATERIELLES</Heading>
+
+                <Section type="vorbemerkung" title="Vorbemerkung II – Evidenzklassen">
+                    <Absatz id="ec9d9c10-85f3-4526-a475-a1e37aad8ab6" tag="legal">Bei der universitären Medizin handelt es sich um eine Heilkunst, die mit naturwissenschaftlichen Methoden arbeitet. Der wissenschaftliche Erkenntnisstand wird in Evidenzklassen unterteilt. Nachfolgend wird mit folgenden Evidenzklassen gearbeitet: Klasse Ia (Meta-Analysen randomisierter, kontrollierter Studien), Klasse Ib (mindestens eine randomisierte, kontrollierte Studie), Klasse IIa (mindestens eine gut angelegte, jedoch nicht randomisierte und kontrollierte Studie), Klasse IIb (gut angelegte quasi-experimentelle Studie), Klasse III (gut angelegte, nicht-experimentelle deskriptive Studien wie Vergleichsstudien, Korrelationsstudien oder Fall-Kontroll-Studien), Klasse IV (Berichte der Experten-Ausschüsse oder Expertenmeinungen bzw. klinischer Erfahrung anerkannter Autoritäten), Klasse V (Fallserien oder mehrere Expertenmeinungen).</Absatz>
+                    <Absatz id="741eee95-299c-4e1d-a392-fbee2e8d81d8" tag="legal">Diese Evidenzklassen zeigen auch den Erforschungsgrad eines gesundheitlichen Phänomens. Forschung braucht Zeit. Daraus folgt zwangsläufig, dass je niedriger die Evidenzklasse ist, desto mehr Zeit war erforderlich, um den Erkenntnisstand zu erreichen. Gerade bei jungen Erkrankungen - wie LC - ist deshalb die Evidenzklasse immer hoch, weil ja offensichtlich nicht ausreichend Zeit vorhanden war, eine Erkrankung zu studieren.</Absatz>
+                    <Absatz id="96ae633e-b4e3-44e2-a72c-010a3f186255" tag="legal">Dies ändert aber nichts daran, dass eine erkrankte Person Anspruch darauf hat, dass seine Erkrankung nach der zum Zeitpunkt der Erkrankung - hier 2022 - bestmöglichen Evidenz behandelt wird. Diese Binsenweisheit zeigt sich etwa daran, dass Corona-Patienten beatmet wurden, ohne dass Erkenntnisse der Klasse Ia/b vorlagen, jedoch schon damals klar war, dass Personen mit Atemschwierigkeiten zu beatmen sind (Evidenzklasse V).</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Fehlerhafte Anwendung der Beweislast und Verkennung der Evidenzlage zum Behandlungszeitpunkt">
+                    <Absatz id="9ff5df15-44d4-4697-a00c-c15953e5cc0b" tag="legal">Die angefochtene Verfügung und der Einspracheentscheid basieren auf einer Verkennung der Beweislastverteilung im KVG. Gemäss BGE 129 V 167 E. 3.2 gilt für ärztliche Leistungen die Pflichtleistungsvermutung. Das Bundesgericht hat im Urteil 9C_702/2023 vom 15. Februar 2024 in einem Fall gegen die Beschwerdegegnerin bereits klargestellt, dass das Fehlen von grossen Studien nicht ausreicht, um die Pflichtleistungsvermutung umzustossen. Die Beschwerdegegnerin ignoriert diese höchstrichterliche Rüge und wiederholt im vorliegenden Fall exakt dieselben Fehler. Solange eine ärztliche Leistung nicht in der Negativliste (Anhang 1 KLV) aufgeführt ist, wird vermutet, dass sie die WZW-Kriterien erfüllt. Die H.E.L.P.-Apherese zur Behandlung von Long Covid ist nicht in der Negativliste aufgeführt. Folglich greift die Vermutung der Leistungspflicht.</Absatz>
+                    <Absatz id="cdcfc43a-5d2f-4952-933b-c38f58a1ab51" tag="legal">Diese Vermutung kann nur umgestossen werden, wenn die Krankenversicherung den Beweis der Unwirksamkeit oder Unzweckmässigkeit erbringt (BGE 9C_712/2020). Die Beschwerdegegnerin und ihr Gutachter Prof. Günthard argumentieren jedoch ausschliesslich mit dem Fehlen von Wirksamkeitsnachweisen (keine RCTs). Prof. Günthard hält in seinem Gutachten selbst fest: "Aufgrund der fehlenden randomisierten Studien gebe es auch keine Datenlage zur Unwirksamkeit dieser Methode" (Einspracheentscheid Ziff. 11). Damit gesteht die Beschwerdegegnerin selbst ein, dass sie den ihr obliegenden Beweis der Unwirksamkeit nicht erbracht hat. In einer Situation der wissenschaftlichen Ungewissheit ("Beweislosigkeit") hat nach bundesgerichtlicher Rechtsprechung die Versicherung die Folgen zu tragen. Eine Ablehnung der Leistungspflicht mangels Studien ("Absence of Evidence") ist bei ärztlichen Leistungen unzulässig; erforderlich wäre die Evidenz der Unwirksamkeit ("Evidence of Absence").</Absatz>
+                    <Absatz id="882f31bf-3b2a-4266-8b08-0d0c1951ded2" tag="legal">Die Beschwerdegegnerin legt die Kriterien für den Wirksamkeitsnachweis unzulässig aus und ignoriert dabei den wissenschaftlichen Kontext zum Zeitpunkt der Behandlung im Jahr 2022.</Absatz>
+                    <Absatz id="a5c72a57-af61-4f9c-90f0-76a2587eba61" tag="legal">Die Beschwerdegegnerin muss den Gegenbeweis erbringen, dass eine Behandlung «mit überwiegender Wahrscheinlichkeit unwirksam» ist. Die blosse Abwesenheit von Studien der Klasse Ia (Meta-Analysen) oder Ib (randomisierte, kontrollierte Studien) reicht hierfür nicht aus, insbesondere bei einem neuen Krankheitsbild wie Long Covid, für das zum Behandlungszeitpunkt weltweit keine Therapien mit solch hoher Evidenz existierten.</Absatz>
+                    <Absatz id="92955270-614d-4817-8063-3b31fa8335d9" tag="legal">Zum Zeitpunkt, als die Behandlung des Beschwerdeführers begann (Anfang 2022), befand sich die Forschung zu Long Covid global in einem frühen Stadium. Für keine Behandlungsmethode – auch nicht für die später von der Beschwerdegegnerin selbst ins Spiel gebrachte Immunadsorption (IA) – lag Evidenz vor, die über Klasse IV (Expertenmeinungen) oder Klasse V (Fallserien) hinausging. Die Forderung der Beschwerdegegnerin nach Klasse-I-Evidenz ist somit ein anachronistischer Massstab, der die damalige Realität ignoriert.</Absatz>
+                    <Absatz id="4aa7c59e-2f7c-4087-b028-dbad511de6c7" tag="legal">Die von Dr. Jaeger vorgebrachten Argumente, gestützt auf Fall-Kontroll-Studien und ihre klinische Erfahrung, repräsentieren gültige Evidenz der Klassen III, IV und V. Angesichts der Tatsache, dass zum Behandlungszeitpunkt keine höhere Evidenz für irgendeine Therapie verfügbar war, hätten diese zwingend für die Beurteilung im Einzelfall herangezogen werden müssen. Eine Expertenmeinung (Prof. Günthard, Klasse IV), die lediglich das Fehlen von Klasse-I-Studien bemängelt, kann die Gesamtheit der damals verfügbaren Evidenz nicht entkräften.</Absatz>
+                    <Absatz id="4be5cc84-1461-4b0f-bfc4-1dbc93eb10be" tag="legal">Die Beschwerdegegnerin hat es versäumt, die Wirksamkeit der H.E.L.P.-Apherese nach dem Massstab zu beurteilen, der zum Behandlungszeitpunkt galt. Sie wendet heutige Wissensansprüche rückwirkend an, um ihre Leistungspflicht zu verneinen, und stösst die Pflichtleistungsvermutung damit nicht rechtsgenüglich um.</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Unzulässige Ex-post-Betrachtung und Verkennung der &quot;Beweisnot&quot;">
+                    <Absatz id="746487f0-e7b6-4c41-b337-54d138d354a7" tag="legal">Die Beurteilung der WZW-Kriterien hat nach dem Wissensstand im Zeitpunkt der Behandlung (Anfang 2022) zu erfolgen (Urteil 9C_41/2022). Die Beschwerdegegnerin stützt sich in ihrer Argumentation jedoch auf Leitlinien (DGN, Cochrane) und Expertenmeinungen aus den Jahren 2023 bis 2025. Diese Rückschau ("Hindsight Bias") ist rechtlich unzulässig. Im Jahr 2022 handelte es sich bei Long Covid um ein neuartiges Krankheitsbild ("Young Disease"), für das naturgemäss noch keine Studien der Evidenzklasse I vorliegen konnten.</Absatz>
+                    <Absatz id="60da73c1-51f5-4a16-aced-3e34f201c705" tag="legal">Das Beharren auf RCTs (Randomized Controlled Trials) in dieser Phase kommt einer Forderung nach dem Unmöglichen gleich und begründet einen faktischen Therapienotstand. Die Rechtsprechung anerkennt in solchen Fällen eine Beweisnot, die es erlaubt, sich auf niedrigere Evidenzklassen (Fallserien, Expertenmeinungen, pathophysiologische Plausibilität) zu stützen. Die von Dr. Jaeger vorgelegten Daten (Evidenzklasse IV/V) sowie die plausible pathophysiologische Herleitung (Verbesserung der Mikrozirkulation durch Fibrinogen-Reduktion) stellten im Jahr 2022 die bestmögliche verfügbare Evidenz dar. Indem die Beschwerdegegnerin diese Evidenz mit dem pauschalen Ruf nach RCTs vom Tisch wischt, verletzt sie das Gebot der Sachverhaltsfeststellung unter Berücksichtigung, dass Forschung Zeit braucht.</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Widersprüchliche Argumentation zur Wirtschaftlichkeit">
+                    <Absatz id="8f29438c-03cb-4313-bee8-65cf9dcc99c0" tag="legal">In Ziff. 22 stellt die Beschwerdegegnerin die H.E.L.P.-Apherese der Immunadsorption (IA) gegenüber und behauptet, für letztere liege eine «hohe Evidenz» vor. Damit vergleicht sie den Evidenzstand der H.E.L.P.-Apherese von 2022 mit einem (bestenfalls) heutigen, behaupteten Evidenzstand für eine Alternative. Zum Behandlungszeitpunkt 2022 lag jedoch auch für die Immunadsorption bei Long Covid keine Evidenz vor, die über Klasse V hinausging. Die Methoden waren also bezüglich der wissenschaftlichen Evidenz als gleichwertig zu betrachten.</Absatz>
+                    <Absatz id="fa25fe3f-c1c8-4e9a-8a5e-03d229a9174e" tag="legal">Die Beschwerdegegnerin verstrickt sich in einen unauflösbaren Widerspruch: Entweder war die Immunadsorption schon 2022 eine evidenzbasierte, wirtschaftlichere Alternative – dann hätte sie den Beschwerdeführer aktiv darauf hinweisen müssen und hätte ihre Beratungspflicht schwer verletzt. Oder sie war es nicht – dann bricht das gesamte Argument der Wirtschaftlichkeit in Ziff. 22 in sich zusammen, weil es auf einer falschen, zeitlich verschobenen Prämisse beruht.</Absatz>
+                    <Absatz id="150bd000-e4b1-4325-ad97-213934b8cddd" tag="legal">Der Wirtschaftlichkeitsvergleich ist falsch. Die Beschwerdegegnerin kann nicht eine Behandlung von 2022 mit der Begründung ablehnen, dass eine andere Methode Jahre später möglicherweise eine bessere Evidenzlage aufweist.</Absatz>
+                    <Absatz id="e5f6193a-0e50-4d6a-9307-e2c219912361" tag="legal">Sollte die Beschwerdegegnerin tatsächlich der Meinung sein, die IA sei 2022 die gebotene Therapie gewesen, so hätte sie ihre Beratungspflicht nach Art. 27 ATSG verletzt. Sie hätte den Beschwerdeführer auf diese (angeblich bezahlte) Alternative hinweisen müssen, als dieser die Kostengutsprache für die Apherese beantragte. Da sie dies unterliess, kann sie sich nun nicht zu seinem Nachteil auf diese Alternative berufen.</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Breiter wissenschaftlicher Konsens der Unwirksamkeit">
+                    <Absatz id="dc1f9049-1562-467f-87fc-098be6430375" tag="legal">Die Pflichtleistungsvermutung entfällt nur dann, wenn ein breiter wissenschaftlicher Konsens darüber besteht, dass eine Methode wirkungslos oder schädlich ist. Die Beschwerdegegnerin versucht diesen Konsens zu konstruieren, indem sie auf Leitlinien der DGN (Deutsche Gesellschaft für Neurologie) und Cochrane-Reviews verweist. Die Darstellung seitens der Beschwerdegegnerin ist jedoch mehr als undifferenziert:</Absatz>
+                    <Absatz id="892c782d-1d6d-4289-8bc1-53dede54a7a2" tag="legal">Cochrane Reviews: Diese Reviews stellen in der Regel fest, dass die Datenlage "unsicher" oder "unklar" ist ("uncertainty"), nicht dass die Methode definitiv unwirksam ist (vgl. https://meassociation.org.uk/2023/07/long-covid-cochrane-review-of-microclots-and-apheresis/ / https://www.probiologists.com/article/apheresis-methods-in-covid-19-era-what-about-long-covid). Sie mahnen zur Vorsicht und empfehlen den Einsatz im Rahmen von Studien, was ein Standardvorgehen bei Evidenzlücken ist, aber kein Beweis für Unwirksamkeit.</Absatz>
+                    <Absatz id="6035557c-5d7a-45fb-9193-06385820737c" tag="legal">Fachgesellschaften (DGN, DGfN): Die Stellungnahmen warnen vor dem unkontrollierten Einsatz, betonen aber gleichzeitig die pathophysiologische Plausibilität (Autoantikörper, Mikrozirkulation) und fordern mehr Forschung. Dies ist ein Ausdruck von wissenschaftlicher Skepsis und Vorsicht, nicht von festgestellter Wirkungslosigkeit. Dementsprechend ist auch festzuhalten, dass im Ausland die entsprechenden Therapien für die Krankenkassen leistungspflichtig sind (vgl. https://www.medsach.de/berichte-informationen/krankenkasse-muss-apherese-therapie-bei-patientin-mit-long-covid-vorlaeufig).</Absatz>
+                    <Absatz id="23856393-d61f-4b22-8e54-67e64433b930" tag="legal">Dementsprechend ist entgegen der Darstellung der Beschwerdegegnerin festzuhalten, dass eben kein breiter Konsens der Unwirksamkeit vorliegt. Vielmehr existiert ein Konsens darüber, dass die Datenlage unvollständig ist. In dieser Situation der "Beweislosigkeit" hat nach dem Willen des Gesetzgebers (Negativlistenprinzip) der Versicherer das Risiko zu tragen.</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Unsachliche Abwertung der zum Behandlungszeitpunkt entscheidenden Evidenzklasse IV (Expertenmeinung)">
+                    <Absatz id="d7f11da8-6fcf-4327-a33a-937a13f6076b" tag="legal">Gerade weil 2022 keine Studien höherer Evidenzklassen verfügbar waren, kam der klinischen Erfahrung von Spezialisten eine entscheidende Bedeutung zu.</Absatz>
+                    <Absatz id="58d5b0e3-2cc4-4b59-91e9-61eebeeabe60" tag="legal">Die Expertise von Dr. Jaeger als Pionierin der Methode stellt eine zentrale Quelle der Evidenzklasse IV ("klinische Erfahrung anerkannter Autoritäten") dar. In einer Situation ohne Klasse-I- oder II-Studien ist eine solche Expertise die bestmögliche Entscheidungsgrundlage.</Absatz>
+                    <Absatz id="f455d032-6737-4745-971d-604cc3f6e76c" tag="legal">Der Versuch der Beschwerdegegnerin, Dr. Jaeger aufgrund ihrer Publikationstätigkeit zu disqualifizieren, ist der Versuch, sich der Auseinandersetzung mit der zum Behandlungszeitpunkt relevantesten Evidenzquelle zu entziehen. Dies ist ein unsachliches Ablenkungsmanöver.</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Parteientschädigung im Einspracheverfahren">
+                    <Absatz id="d0fdb89b-f7c6-43f3-a0fc-35fcc9140cd9" tag="legal">Die Beschwerdegegnerin weist den Anspruch auf eine Parteientschädigung im Einspracheverfahren in Ziff. 24 des angefochtenen Einspracheentscheides ab. Dazu verweist sie auf mehrere Bundesgerichtsurteile.</Absatz>
+                    <Absatz id="c91b410d-3055-49aa-9da7-793285da2839" tag="legal">Der Beschwerdeführer hat im Rahmen der Einsprache auf die Urteile I 329/05 vom 10.02.2006 E. 2.3.2 und Urteil U 150/02 vom 11.11.2002 E. 2.1 verwiesen. Wie die Beschwerdegegnerin richtig bemerkt, ist auch die Literatur der Auffassung, dass ein Anspruch auf Parteientschädigung im Einspracheverfahren zwar in der Regel ausgeschlossen ist, jedoch - ausnahmsweise - ein solcher gegeben sein kann, wenn das Einspracheverfahren in unzulässigerweise verursacht wurde (SK-Kieser [4. Aufl.], Art. 52 N 85; und Seiler, in: Schaffhauser/Schlauri, Sozialversicherungsrechtstagung 2007, 107).</Absatz>
+                    <Absatz id="677556fd-e37e-4dc3-bcfa-ff46c302d1bf" tag="legal">In allen Rechtsbereichen ist es üblich, dass die Kosten nach Verursacherprinzip verlegt werden (vgl. für das Bundesgericht Art. 66 Abs. 3 BGG). So ist auch etwa vorliegendes Verfahren in der Regel kostenlos, ausser der Beschwerdeführer verhält sich mutwillig oder leichtsinnig.</Absatz>
+                    <Absatz id="e61c9803-9477-489a-b360-cd65bbd56a70" tag="legal">Gleiches hat auch für das Einspracheverfahren betreffend Parteientschädigung zu gelten. Die Beschwerdegegnerin konnte anhand ihres eigenen Gutachtens ohne weiteres erkennen, dass der ihr obliegende Beweis der Unwirksamkeit nicht gelingen kann. Es dennoch zu versuchen, muss als mutwillig und leichtsinnig qualifiziert werden.</Absatz>
+                    <Absatz id="2e84e444-09af-4ca6-b806-2ad604e77c93" tag="legal">Art. 52 Abs. 3 ATSG sieht vor, dass Parteientschädigungen im Einspracheverfahren "in der Regel" nicht ausgerichtet werden. Die Beschwerdegegnerin beruft sich zu Unrecht auf die restriktive Rechtsprechung des Bundesgerichts (BGer 9C_877/2017). Diese Rechtsprechung bezieht sich auf die Kostenverteilung in Verfahren, die durch die Komplexität der Sache oder unterschiedliche rechtliche Würdigungen notwendig wurden.</Absatz>
+                    <Absatz id="4dc00d5e-be8b-4088-99c6-5ed9d34f56a2" tag="legal">Im vorliegenden Fall wurde das Einspracheverfahren jedoch nicht durch eine komplexe Sachlage notwendig, sondern einzig und allein durch ein qualifiziertes Fehlverhalten der Verwaltung. Die Verfügung war aktenwidrig (vgl. BGE 129 I 8). Die Beschwerdegegnerin hat den Inhalt des Schlüsseldokuments (Gutachten Günthard) in sein Gegenteil verkehrt. Dies stellt keinen "formellen Fehler" dar, wie die Beschwerdegegnerin behauptet, sondern eine materielle Rechtsverweigerung und Willkür (Art. 9 BV).</Absatz>
+                    <Absatz id="9d409e06-9ed3-4a14-b256-57c1b5669c60" tag="legal">Es verstösst gegen Treu und Glauben (Art. 5 Abs. 3 BV), wenn der Staat durch grobe Verletzung seiner Untersuchungspflicht (Art. 43 ATSG) Kosten beim Bürger verursacht und sich anschliessend unter Berufung auf die "Kostenlosigkeit" des Verfahrens der Entschädigungspflicht entzieht. Die Anwendung der Regel von Art. 52 Abs. 3 ATSG auf Fälle staatlicher Willkür würde den Rechtsschutz aushöhlen.</Absatz>
+                    <Absatz id="90730f9b-1953-48c3-a041-145b3079b4d5" tag="legal">In diesem Zusammenhang ist darauf hinzuweisen, dass die Beschwerdegegnerin quasi «Wiederholungstäterin» ist. Da die Beschwerdegegnerin das Urteil 9C_702/2023 kannte (oder kennen musste, da es ja gegen sie selbst ergangen war/ist), war das erneute Ablehnen mit derselben Begründung ("keine Studien") wider besseres Wissen und damit qualifiziert vorwerfbar. Dieses Verhalten ist mehr als leichtsinnig und mutwillig im Sinne einer bewussten Inkaufnahme rechtswidriger Zustände.</Absatz>
+                </Section>
+
+                <Section title="Kosten">
+                    <Absatz id="8b461b66-ab3a-4a0d-8c60-06320a8a2df0" tag="legal">Gemäss Art. 61 lit. fbis ATSG ist bei Streitigkeiten über Leistungen das Verfahren kostenpflichtig, wenn dies im jeweiligen Einzelgesetz vorgesehen ist; sieht das Einzelgesetz keine Kostenpflicht bei solchen Streitigkeiten vor, so kann das Gericht einer Partei, die sich mutwillig oder leichtsinnig verhält, Gerichtskosten auferlegen. Das KVG sieht keine Gerichtskosten vor. Die Beschwerde ist weder mutwillig noch leichtsinnig. Deshalb ist vorliegendes Verfahren kostenlos.</Absatz>
+                    <Absatz id="9af17d80-923a-4dcc-8060-d608b3da8ba1" tag="legal">Gemäss Art. 61 lit. g ATSG hat die obsiegende beschwerdeführende Person Anspruch auf Ersatz der Parteikosten, welche vom Versicherungsgericht ohne Rücksicht auf den Streitwert nach der Bedeutung der Streitsache und nach der Schwierigkeit des Prozesses bemessen wird.</Absatz>
+                </Section>
+            </Materielles>
+        </Begruendung>
+
+        <Postfix>Damit sind eingangs gestellte Rechtsbegehren hinreichend begründet und um deren Gutheissung wird ersucht.</Postfix>
+
+    </Main>
+    <Attachments>
+        <Attachment id="0c990dde-8d04-46c7-a3de-94db85b2bb4c">Beilage 1: Vollmacht vom 17.05.2022</Attachment>
+        <Attachment id="f33581f3-c58d-4e6e-969b-f11e37983f0c">Beilage 2: Einspracheentscheid vom 08.12.2025</Attachment>
+        <Attachment id="e3b8b8dc-10e0-4ea5-bea8-39061478f11c">Beilage 3: Sendungsverlauf</Attachment>
+    </Attachments>
+</Dok>
