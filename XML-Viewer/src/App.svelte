@@ -44,6 +44,11 @@
     let tagRegex = /tag="([a-zA-Z\-)]+)"/g;
     tags = new Set([...xml1.matchAll(tagRegex).map(m => m[1])]);
     tag_filter = Object.fromEntries([...tags].map(v => [v, true]));
+    xmlTree1.querySelectorAll("Attachment[id]").forEach(
+      attachment => {
+        attachments_dict[attachment["id"]] = attachment.textContent.trim();
+      }
+    )
   }
   function scrollAndMark(ref_id) {
     let par = document.getElementById(ref_id);
@@ -131,8 +136,8 @@
                     {/if}
                     {#if xmlTree1.getElementsByTagName("Spruchkoerper").length > 0}
                       <p class="mt-2"><b>{xmlTree1.getElementsByTagName("Gericht")[0].textContent.trim()}</b>, 
-                      {xmlTree1.getElementsByTagName("Kammer").length > 0 ? xmlTree2.getElementsByTagName("Kammer")[0].textContent.trim() : ""},
-                      {xmlTree1.getElementsByTagName("Adresse").length > 0 ? xmlTree2.getElementsByTagName("Adresse")[0].textContent.trim() : ""}</p>
+                      {xmlTree1.getElementsByTagName("Kammer").length > 0 ? xmlTree1.getElementsByTagName("Kammer")[0].textContent.trim() : ""},
+                      {xmlTree1.getElementsByTagName("Adresse").length > 0 ? xmlTree1.getElementsByTagName("Adresse")[0].textContent.trim() : ""}</p>
                       {#each xmlTree1.getElementsByTagName("Mitglied") as member}
                         <div class="flex flex-row items-center mt-2">
                           <div class="badge badge-accent mr-2">{member.getAttribute("role")}</div>
@@ -157,8 +162,18 @@
       </details>
     </div>
     <div class="flex-grow h-full ml-4 flex flex-row">
-        {#each [[xmlBegruendung1, xmlMain1, xmlTree1], [xmlBegruendung2, xmlMain2, xmlTree2]] as [xmlBegruendung, xmlMain, xmlTree], j}
-          <div class="h-full overflow-y-auto w-1/2 mx-2 prose prose-lg ">
+        {#each single_mode ? [[xmlBegruendung1, xmlMain1, xmlTree1]] :
+          [[xmlBegruendung1, xmlMain1, xmlTree1], [xmlBegruendung2, xmlMain2, xmlTree2]] as [xmlBegruendung, xmlMain, xmlTree], j}
+          <div class={`h-full overflow-y-auto mx-2 prose prose-lg ${single_mode ? "" : "w-1/2"}`}>
+            <details class="collapse collapse-plus bg-base-100 border border-base-300 mt-4" name={`accordion-${j}-dispositiv`} open>
+                <summary class="collapse-title font-semibold">{xmlTree.firstChild.getAttribute("doctype") === "rechtsschrift" ? 
+                "Anträge" : "Dispositiv"}</summary>
+                <div class="collapse-content">
+                  {#each xmlTree.getElementsByTagName("DispositivZiffer") as dis, o}
+                    <p>{o + 1}. {dis.textContent} <span class="badge badge-accent badge-sm ml-2">{dis.getAttribute("type")}</span></p>
+                  {/each}
+                </div>
+            </details>
             {#each xmlBegruendung.children as child}
               <details class="collapse collapse-plus bg-base-100 border border-base-300 mt-4" name={`accordion-${j}-${child.tagName}`} open>
                 <summary class="collapse-title font-semibold">{child.tagName}</summary>
@@ -169,6 +184,7 @@
                         par => !par.hasAttribute("tag") || tag_filter[par.getAttribute("tag")]
                       ) as par}
                       <p id={par.getAttribute("id")} class="p-2 rounded-lg" class:bg-red-200={
+                            !single_mode && 
                             j === 0 &&
                             (!par.hasAttribute("id") ||
                             !reverse_ref_dict[par.getAttribute("id")])
@@ -179,12 +195,12 @@
                           </span>
                         {/if}  
                         {@html par.innerHTML}
-                        {#if par.hasAttribute("ref")}
+                        {#if !single_mode && par.hasAttribute("ref")}
                           {#each par.getAttribute("ref").split(",") as ref}
                             <button class="btn btn-warning btn-sm mx-2" onclick={() => scrollAndMark(ref)}>=></button>
                           {/each}
                         {/if}
-                        {#if reverse_ref_dict[par.getAttribute("id")]}
+                        {#if !single_mode && reverse_ref_dict[par.getAttribute("id")]}
                           {#each reverse_ref_dict[par.getAttribute("id")] as id}
                             <button class="btn btn-warning btn-sm" onclick={() => scrollAndMark(id)}>=></button>
                           {/each}
@@ -212,6 +228,7 @@
                       <div class="collapse-content">
                         {#each [...sec.getElementsByTagName("Absatz")].filter(par => !par.hasAttribute("tag") || tag_filter[par.getAttribute("tag")]) as par}
                           <p id={par.getAttribute("id")} class="p-2 rounded-lg" class:bg-red-200={
+                            !single_mode &&
                             j === 0 &&
                             (!par.hasAttribute("id") ||
                             !reverse_ref_dict[par.getAttribute("id")])
@@ -222,12 +239,12 @@
                             </span>
                           {/if}
                           {@html par.innerHTML}
-                          {#if par.hasAttribute("ref")}
+                          {#if !single_mode && par.hasAttribute("ref")}
                             {#each par.getAttribute("ref").split(",") as ref}
                               <button class="btn btn-warning btn-sm mx-2" onclick={() => scrollAndMark(ref)}>=></button>
                             {/each}
                           {/if}
-                          {#if reverse_ref_dict[par.getAttribute("id")]}
+                          {#if !single_mode && reverse_ref_dict[par.getAttribute("id")]}
                           {#each reverse_ref_dict[par.getAttribute("id")] as id}
                             <button class="btn btn-warning btn-sm" onclick={() => scrollAndMark(id)}>=></button>
                           {/each}
