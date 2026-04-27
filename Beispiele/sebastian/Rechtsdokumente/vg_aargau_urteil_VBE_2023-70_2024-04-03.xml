@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dok doctype="entscheid">
+    <Rubrum>
+        <Verfahren>
+            <Aktenzeichen>VBE.2023.70</Aktenzeichen>
+            <Parteien>
+                <Partei id="8b32c32c-94a5-48b4-ad22-d51ef1032b23">
+                    <Rollen>
+                        <Rolle>Beschwerdeführer</Rolle>
+                    </Rollen>
+                    <Name>A.________</Name>
+                    <Anschrift>4803 Vordemwald</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>lic. iur. Sebastian Lorentz, Rechtsanwalt, Alderstrasse 40, Postfach, 8034 Zürich</Rechtsvertretung>
+                </Partei>
+                <Partei id="5d51943f-c03a-49dd-a328-9d3ef1055aa5">
+                    <Rollen>
+                        <Rolle>Beschwerdegegnerin</Rolle>
+                    </Rollen>
+                    <Name>Helsana Versicherungen AG</Name>
+                    <Anschrift>Recht &amp; Compliance, Postfach, 8081 Zürich</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung></Rechtsvertretung>
+                </Partei>
+            </Parteien>
+        </Verfahren>
+        <Dokument>
+            <DokumentUeberschrift>Urteil – Beschwerdeverfahren betreffend KVG (Einspracheentscheid vom 5. Januar 2023)</DokumentUeberschrift>
+            <Datum>2024-04-03</Datum>
+            <Spruchkoerper>
+                <Gericht>Versicherungsgericht des Kantons Aargau</Gericht>
+                <Adresse>Obere Vorstadt 40, 5000 Aarau</Adresse>
+                <Kammer>3. Kammer</Kammer>
+                <Zusammensetzung>
+                    <Mitglied role="presiding judge">Oberrichterin Gössi, Präsidentin</Mitglied>
+                    <Mitglied role="judge">Oberrichterin Fischer</Mitglied>
+                    <Mitglied role="judge">Oberrichter Kathriner</Mitglied>
+                    <Mitglied role="clerk">Gerichtsschreiberin i.V. Comiotto</Mitglied>
+                </Zusammensetzung>
+            </Spruchkoerper>
+        </Dokument>
+    </Rubrum>
+
+    <Main>
+        <Dispositiv>
+            <DispositivZiffer id="a7a86213-07e4-46ed-bdf7-2815c9f5708a" type="kosten">Die Beschwerdegegnerin wird verpflichtet, dem Beschwerdeführer eine Parteientschädigung in richterlich festgesetzter Höhe von Fr. 2'500.00 zu bezahlen.</DispositivZiffer>
+        </Dispositiv>
+
+        <Eroeffnung>
+            <EroeffnungZiffer adrid="8b32c32c-94a5-48b4-ad22-d51ef1032b23">A.________ (Beschwerdeführer, vertreten durch RA Sebastian Lorentz, 2-fach)</EroeffnungZiffer>
+            <EroeffnungZiffer adrid="5d51943f-c03a-49dd-a328-9d3ef1055aa5">Helsana Versicherungen AG (Beschwerdegegnerin)</EroeffnungZiffer>
+            <EroeffnungZiffer adrname="Bundesamt für Gesundheit"></EroeffnungZiffer>
+        </Eroeffnung>
+
+        <Begruendung>
+            <Prozessuales>
+                <Section title="Das Versicherungsgericht entnimmt den Akten">
+                    <Absatz id="b3ff1b70-1907-4e69-8c0f-21bca630db8e" tag="facts">Mit Urteil VBE.2023.70 vom 26. September 2023 in Sachen des Beschwerdeführers gegen die Beschwerdegegnerin erkannte das Versicherungsgericht des Kantons Aargau, 3. Kammer, Folgendes: "1. Die Beschwerde wird abgewiesen. 2. Es werden keine Verfahrenskosten erhoben. 3. Es werden keine Parteientschädigungen zugesprochen."</Absatz>
+                    <Absatz id="573f1b2f-2db8-42f6-8325-682dc2daf14c" tag="facts">Gegen dieses Urteil führte der Beschwerdeführer beim Bundesgericht Beschwerde in öffentlich-rechtlichen Angelegenheiten und beantragte die Zusprache der gesetzlichen Leistungen, insbesondere die Übernahme der Kosten der H.E.L.P.-Apherese.</Absatz>
+                    <Absatz id="f75c6520-cbaf-4c53-9005-6a15e0411bf2" tag="facts">Mit Urteil 9C_702/2023 vom 15. Februar 2024 erkannte das Bundesgericht Folgendes: "1. Die Beschwerde wird teilweise gutgeheissen. Der Einspracheentscheid der Helsana Versicherungen AG vom 5. Januar 2023 sowie das Urteil des Versicherungsgerichts des Kantons Aargau vom 26. September 2023 werden aufgehoben. Die Sache wird zur weiteren Abklärung an die Beschwerdegegnerin zurückgewiesen. Im Übrigen wird die Beschwerde abgewiesen. 2. Die Gerichtskosten von Fr. 500.- werden der Beschwerdegegnerin auferlegt. 3. Die Beschwerdegegnerin hat den Beschwerdeführer für das bundesgerichtliche Verfahren mit Fr. 2'800.- zu entschädigen. 4. Die Sache wird zur Neuverlegung der Kosten des vorangegangenen Verfahrens an das Versicherungsgericht des Kantons Aargau zurückgewiesen. 5. Dieses Urteil wird den Parteien, dem Versicherungsgericht des Kantons Aargau und dem Bundesamt für Gesundheit schriftlich mitgeteilt."</Absatz>
+                </Section>
+            </Prozessuales>
+
+            <Materielles>
+                <Heading>Das Versicherungsgericht zieht in Erwägung</Heading>
+                <Section type="ruege" title="Erwägung 1 – Anweisung des Bundesgerichts">
+                    <Absatz id="c0153ab5-26a5-4608-8669-7ed0479f6b2a" tag="legal">Das Bundesgericht wies das Versicherungsgericht mit Urteil 9C_702/2023 vom 15. Februar 2024 an, über die Verlegung der Kosten für das Verfahren VBE.2023.70 neu zu entscheiden.</Absatz>
+                </Section>
+                <Section type="ruege" title="Erwägung 2 – Vollumfängliches Obsiegen und Parteientschädigung">
+                    <Absatz id="a949dcb4-fbf0-49f3-8f85-c28a44657c42" tag="legal">Angesichts der Tatsache, dass der Beschwerdeführer im Verfahren vor Versicherungsgericht die Aufhebung des Einspracheentscheids vom 5. Januar 2023 und die Verpflichtung der Beschwerdegegnerin zur Gewährung der gesetzlich geschuldeten Leistungen, insbesondere die Kostenübernahme der H.E.L.P.-Apherese, beantragte, obsiegt er im kantonalen Verfahren gemäss Verfahrensausgang vor Bundesgericht, in welchem der Einspracheentscheid der Helsana Versicherungen AG vom 5. Januar 2023 aufgehoben und die Sache zur weiteren Abklärung und neuer Entscheidung im Sinne der bundesgerichtlichen Erwägungen an die Beschwerdegegnerin zurückgewiesen wurde, vollumfänglich (vgl. BGE 132 V 215 E. 6.1 S. 235 mit Hinweisen). Dementsprechend hat der anwaltlich vertretene Beschwerdeführer zu Lasten der Beschwerdegegnerin Anspruch auf Ersatz der richterlich festzusetzenden Parteikosten (Art. 61 lit. g ATSG).</Absatz>
+                </Section>
+            </Materielles>
+        </Begruendung>
+
+        <Entscheid>Im Anschluss an das bundesgerichtliche Rückweisungsurteil 9C_702/2023 vom 15. Februar 2024 verpflichtet das Versicherungsgericht die Beschwerdegegnerin, dem vollumfänglich obsiegenden Beschwerdeführer eine Parteientschädigung von Fr. 2'500.00 zu bezahlen.</Entscheid>
+
+    </Main>
+</Dok>

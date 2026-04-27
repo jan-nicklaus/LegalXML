@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dok doctype="rechtsschrift">
+    <Rubrum>
+        <Verfahren>
+            <Aktenzeichen>9C_702/2023</Aktenzeichen>
+            <Parteien>
+                <Partei id="8b32c32c-94a5-48b4-ad22-d51ef1032b23">
+                    <Rollen>
+                        <Rolle>Beschwerdeführer</Rolle>
+                    </Rollen>
+                    <Name>A.________</Name>
+                    <Anschrift>4803 Vordemwald</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>Lorentz Schmidt Partner, lic. iur. Sebastian Lorentz, Weinbergstrasse 29, 8006 Zürich</Rechtsvertretung>
+                </Partei>
+                <Partei id="5d51943f-c03a-49dd-a328-9d3ef1055aa5">
+                    <Rollen>
+                        <Rolle>Beschwerdegegnerin</Rolle>
+                    </Rollen>
+                    <Name>Helsana Versicherungen AG</Name>
+                    <Anschrift>Legal, Postfach, 8081 Zürich</Anschrift>
+                    <Stellvertretung>Barbara Wörsching-Würmli, MLaw (Helsana Legal); unterzeichnet von Beat Hunziker (Leiter Human Resources) und Jan-Michael Hübenthal (Leiter Compliance &amp; Datenschutz)</Stellvertretung>
+                    <Rechtsvertretung></Rechtsvertretung>
+                </Partei>
+            </Parteien>
+            <Vorinstanz>
+                <Name>Versicherungsgericht des Kantons Aargau (Urteil VBE.2023.70 vom 26. September 2023)</Name>
+                <Anschrift>Obere Vorstadt 40, 5000 Aarau</Anschrift>
+            </Vorinstanz>
+        </Verfahren>
+        <Dokument>
+            <DokumentUeberschrift>Beschwerdeantwort</DokumentUeberschrift>
+            <Datum>2024-02-06</Datum>
+            <Spruchkoerper>
+                <Gericht>Bundesgericht</Gericht>
+                <Adresse>Schweizerhofquai 6, 6004 Luzern</Adresse>
+            </Spruchkoerper>
+        </Dokument>
+    </Rubrum>
+
+    <Main>
+        <Dispositiv>
+            <DispositivZiffer id="2828c2be-7502-4a94-99f2-f4af54c868bb" type="hauptsache">Die Beschwerde vom 7. November 2023 sei abzuweisen, soweit darauf einzutreten ist, und das Urteil des Versicherungsgerichts des Kantons Aargau vom 26. September 2023 sei zu stützen.</DispositivZiffer>
+            <DispositivZiffer id="241c7e0c-4921-43cc-bebb-dc4ef67882b5" type="kosten">Unter Kosten- und Entschädigungsfolgen zu Lasten des Beschwerdeführers.</DispositivZiffer>
+        </Dispositiv>
+
+        <Begruendung>
+            <Formelles>
+                <Section title="Fristwahrung">
+                    <Absatz id="6e6d0298-af09-49f8-a967-b727cab9a65b" tag="facts">Die Beschwerde des Beschwerdeführers gegen das Urteil des Versicherungsgerichts des Kantons Aargau vom 26. September 2023, VBE.2023.70, ging der Beschwerdegegnerin am 9. November 2023 zu. Mit Verfügung vom 16. Januar 2024 ging die Einladung ein, eine Vernehmlassung bis zum 6. Februar 2024 einzureichen. Mit heutiger Postaufgabe ist die Frist zur Einreichung der Beschwerdeantwort gewahrt.</Absatz>
+                </Section>
+            </Formelles>
+
+            <Prozessuales>
+                <Section title="Bestreitung und Verweis">
+                    <Absatz id="49db63b5-c932-4e8e-9e8c-a515fb27abb4" tag="legal">Die Ausführungen des Beschwerdeführers in tatsächlicher und rechtlicher Art werden bestritten, solange und soweit sie nachfolgend nicht ausdrücklich als richtig anerkannt werden und soweit sie nicht mit der Darstellung der Beschwerdegegnerin übereinstimmen. An den im vorinstanzlichen Verfahren gemachten Ausführungen wird vollumfänglich festgehalten.</Absatz>
+                    <Absatz id="bdb76e0f-dbab-41fb-b588-9494eb8dfd09" tag="facts">Bezüglich des Sachverhalts wird auf die ausführliche Darstellung im Einspracheentscheid vom 5. Januar 2023 (Beilage B 17), welcher hiermit zum integrierenden Bestandteil der vorliegenden Beschwerdeantwort erklärt wird, verwiesen. Zudem wird auf die Darstellung im vorinstanzlichen Entscheid vom 26. September 2023 verwiesen.</Absatz>
+                    <Absatz id="b4618cca-44c8-4d71-b4da-30d9a6ef0260" tag="legal">Bezüglich der rechtlichen Erwägungen wird ebenfalls auf den Einspracheentscheid vom 5. Januar 2023 (Beilage B 17), auf die bei der Vorinstanz eingereichte Beschwerdeantwort vom 28. März 2023 sowie insbesondere auf den Entscheid der Vorinstanz vom 26. September 2023 verwiesen.</Absatz>
+                </Section>
+            </Prozessuales>
+
+            <Materielles>
+                <Section type="ruege" title="Pflichtleistungsvermutung – Wirksamkeit der H.E.L.P.-Apherese">
+                    <Absatz id="0cdd508f-de8b-45c1-b399-ba9d45e7a95c" tag="legal">Für die in Art. 25 KVG umschriebenen ärztlichen und chiropraktischen Leistungen im Krankheitsfall gilt – wie es der Beschwerdeführer ausführt – die Pflichtleistungsvermutung. Diese Vermutung stösst dort an ihre Grenzen, wo eine Behandlungsform als experimentell und damit nicht wirksam im Sinne des Gesetzes zu betrachten ist. In der klassischen universitären Medizin gilt der Wirksamkeitsnachweis als erbracht, wenn die Behandlungsmethode für das infrage stehende Behandlungsziel wissenschaftlich anerkannt ist (BGE 133 V 115 E. 3.2; BGE 125 V 21 E. 5a). Dem Umstand, dass es bei neuen Therapiemethoden zuweilen an aufwändigen, wissenschaftlich fundierten (Vorab-)Langzeitstudien fehlt, ist sodann Rechnung zu tragen, es ändert aber nichts daran, dass die in Frage stehende Behandlung, um als wirksam im krankenversicherungsrechtlichen Sinne gelten zu können, im betroffenen medizinischen Wissenschaftsbereich grossmehrheitlich als grundsätzlich geeignet eingestuft werden muss (BGE 133 V 115 E 3.2.2.). Dieser Nachweis fehlt hier gänzlich. Laut der Vertrauensärztin der Beschwerdegegnerin, Frau med. pract. Eveline Müller, vermögen die vom Versicherten resp. dessen Rechtsvertreter vorgelegten Studien eine klinische Evidenz nicht belegen. Weiter bringt sie vor, dass die verordnende Ärztin selbst bei der B. Braun Medical angestellt ist, welche die Apherese durchführt, wodurch die Pflichtleistungsvermutung unter Berücksichtigung dieser Interessenkollision ebenfalls zu hinterfragen ist, zumal – wie erwähnt – die vom Beschwerdeführer vorgelegten, wissenschaftlichen Studien, keine Wirksamkeit beweisen können. Zusammengefasst kann festgehalten werden, dass es sich bei der H.E.L.P.-Apherese um eine experimentelle, wissenschaftlich noch nicht gefestigte Behandlung handelt und die Wirksamkeit nicht als grossmehrheitlich anerkannt betrachtet werden kann. Die Wirksamkeitsvermutung ist somit umgestossen und eine Pflichtleistung ist zu verneinen.</Absatz>
+                </Section>
+            </Materielles>
+        </Begruendung>
+
+        <Postfix>Aufgrund obiger Ausführungen ersuchen wir Sie, sehr geehrter Herr Präsident, sehr geehrte Mitglieder des Eidgenössischen Bundesgerichts, den eingangs gestellten Anträgen der Beschwerdegegnerin zu folgen.</Postfix>
+
+    </Main>
+</Dok>
