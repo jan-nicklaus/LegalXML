@@ -8,8 +8,8 @@
                     <Rollen>
                         <Rolle>Beschwerdeführer</Rolle>
                     </Rollen>
-                    <Name>Christian Salzmann</Name>
-                    <Anschrift>Grubenweg 3, 4803 Vordemwald</Anschrift>
+                    <Name>A.________</Name>
+                    <Anschrift>4803 Vordemwald</Anschrift>
                     <Stellvertretung></Stellvertretung>
                     <Rechtsvertretung>Rechtsanwalt Sebastian Lorentz, Alderstrasse 40, 8008 Zürich</Rechtsvertretung>
                 </Partei>
@@ -51,7 +51,7 @@
         </Dispositiv>
 
         <Eroeffnung>
-            <EroeffnungZiffer adrid="6f2f6644-2902-4924-87c2-0dd8bf5a9d71">Christian Salzmann (Beschwerdeführer)</EroeffnungZiffer>
+            <EroeffnungZiffer adrid="6f2f6644-2902-4924-87c2-0dd8bf5a9d71">A.________ (Beschwerdeführer)</EroeffnungZiffer>
             <EroeffnungZiffer adrid="53ded2d6-11a7-450a-9793-b47ef6886cd4">Helsana Versicherungen AG (Beschwerdegegnerin)</EroeffnungZiffer>
             <EroeffnungZiffer adrname="Versicherungsgericht des Kantons Aargau"></EroeffnungZiffer>
             <EroeffnungZiffer adrname="Bundesamt für Gesundheit"></EroeffnungZiffer>
@@ -60,15 +60,15 @@
         <Begruendung>
             <Prozessuales>
                 <Section title="Sachverhalt A – Versicherungsverhältnis und Vorverfahren">
-                    <Absatz id="d0c0f8f6-14ce-4241-931f-34cf0ee04b10" tag="facts" ref="372c73e4-be31-4809-8ec8-11f3538945b0">Christian Salzmann, geb. 1969, ist im Rahmen der obligatorischen Krankenpflegeversicherung nach KVG bei der Helsana Versicherungen AG versichert. Am 22. Februar 2022 stellte er ein Gesuch um Kostenübernahme für eine H.E.L.P.-Apherese zur Behandlung der Folgen einer Post-Covid-19-Erkrankung. Mit Verfügung vom 14. Juni 2022 verneinte die Helsana Versicherungen AG ihre Leistungspflicht. Die dagegen erhobene Einsprache wies sie mit Einspracheentscheid vom 5. Januar 2023 ab, nachdem sie eine Stellungnahme ihres vertrauensärztlichen Dienstes vom 12. Dezember 2022 eingeholt hatte.</Absatz>
+                    <Absatz id="d0c0f8f6-14ce-4241-931f-34cf0ee04b10" tag="facts" ref="372c73e4-be31-4809-8ec8-11f3538945b0">A.________, geb. 1969, ist im Rahmen der obligatorischen Krankenpflegeversicherung nach KVG bei der Helsana Versicherungen AG versichert. Am 22. Februar 2022 stellte er ein Gesuch um Kostenübernahme für eine H.E.L.P.-Apherese zur Behandlung der Folgen einer Post-Covid-19-Erkrankung. Mit Verfügung vom 14. Juni 2022 verneinte die Helsana Versicherungen AG ihre Leistungspflicht. Die dagegen erhobene Einsprache wies sie mit Einspracheentscheid vom 5. Januar 2023 ab, nachdem sie eine Stellungnahme ihres vertrauensärztlichen Dienstes vom 12. Dezember 2022 eingeholt hatte.</Absatz>
                 </Section>
                 <Section title="Sachverhalt B – Vorinstanzliches Urteil">
                     <Absatz id="aa6fc079-a812-4b6f-a92d-ebb10901c6d1" tag="facts" ref="1e3bc6e0-a908-45f0-a222-e18a4f80995c">Das Versicherungsgericht des Kantons Aargau wies die dagegen erhobene Beschwerde mit Urteil vom 26. September 2023 ab.</Absatz>
                 </Section>
                 <Section title="Sachverhalt C – Verfahren vor Bundesgericht">
-                    <Absatz id="738c966e-63ea-4767-b840-f019982a3eb7" tag="facts" ref="b3bc6c4e-7b18-4703-bf8d-73b2c61c29b3">Christian Salzmann lässt dagegen Beschwerde führen und die Zusprache der gesetzlichen Leistungen, insbesondere die Übernahme der Kosten der H.E.L.P.-Apherese beantragen.</Absatz>
+                    <Absatz id="738c966e-63ea-4767-b840-f019982a3eb7" tag="facts" ref="b3bc6c4e-7b18-4703-bf8d-73b2c61c29b3">A.________ lässt dagegen Beschwerde führen und die Zusprache der gesetzlichen Leistungen, insbesondere die Übernahme der Kosten der H.E.L.P.-Apherese beantragen.</Absatz>
                     <Absatz id="c526323b-515a-415b-8f3a-5ad93f3ed59e" tag="facts" ref="488900b7-8503-4de7-8db7-a74df1c2f9d4">Die Helsana Versicherungen AG beantragt mit Stellungnahme vom 6. Februar 2024 die Abweisung der Beschwerde. Das Bundesamt für Gesundheit lässt sich nicht vernehmen.</Absatz>
-                    <Absatz id="4af01e2b-82d6-4814-a48b-d4016ddb748e" tag="facts">Mit Eingabe vom 13. Februar 2024 verweist Christian Salzmann auf jüngere Fachliteratur.</Absatz>
+                    <Absatz id="4af01e2b-82d6-4814-a48b-d4016ddb748e" tag="facts">Mit Eingabe vom 13. Februar 2024 verweist A.________ auf jüngere Fachliteratur.</Absatz>
                 </Section>
             </Prozessuales>
 
