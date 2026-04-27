@@ -54,7 +54,7 @@
             <Prozessuales>
                 <Section title="Anzeige der Vernehmlassungsantworten">
                     <Absatz id="525f0d04-c641-4406-b092-5850141455f0" tag="facts">Anzeige der Vernehmlassungsantworten in Sachen A.________ gegen die Helsana Versicherungen AG, Beschwerde gegen das Urteil des Versicherungsgerichts des Kantons Aargau vom 26. September 2023 (VBE.2023.70).</Absatz>
-                    <Absatz id="a4ef8fe2-a7b1-49c3-9f33-e5eed6fa4327" tag="facts">Die Beteiligten sind eingeladen worden, sich zur Beschwerde vernehmen zu lassen. Anbei erhalten Sie in Kopie zur Kenntnisnahme: die Antwort der Gegenpartei (act. 15) sowie die Stellungnahme der Vorinstanz (act. 14). Die Aufsichtsbehörde hat keine Vernehmlassung eingereicht.</Absatz>
+                    <Absatz id="a4ef8fe2-a7b1-49c3-9f33-e5eed6fa4327" tag="facts" ref="6e6d0298-af09-49f8-a967-b727cab9a65b">Die Beteiligten sind eingeladen worden, sich zur Beschwerde vernehmen zu lassen. Anbei erhalten Sie in Kopie zur Kenntnisnahme: die Antwort der Gegenpartei (act. 15) sowie die Stellungnahme der Vorinstanz (act. 14). Die Aufsichtsbehörde hat keine Vernehmlassung eingereicht.</Absatz>
                     <Absatz id="5c112b84-fd43-4c76-8e08-4c88bed5f002" tag="legal">Ein weiterer Schriftenwechsel wird nicht angeordnet. Allfällige Bemerkungen hätten bis zum 19. Februar 2024 zu erfolgen (vgl. dazu die Mitteilung des Bundesgerichts „Schriftenwechsel und freiwillige Bemerkungen" unter www.bger.ch, Rubrik Rechtsprechung).</Absatz>
                 </Section>
             </Prozessuales>
