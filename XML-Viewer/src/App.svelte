@@ -2,6 +2,7 @@
   let xmlTree1, xmlTree2, xmlMain1, xmlMain2, xmlBegruendung1, xmlBegruendung2;
   let tags, tag_filter, old_ref_id, reverse_ref_dict;
   let xml1, xml2;
+  let attachments_dict = {}
   function load_xml_files(xml1, xml2) {
     let parser = new DOMParser();
     xmlTree1 = parser.parseFromString(xml1, "text/xml");
@@ -28,6 +29,21 @@
         }
       }
     )
+    xmlTree1.querySelectorAll("Attachment[id]").forEach(
+      attachment => {
+        attachments_dict[attachment["id"]] = attachment.textContent.trim();
+      }
+    )
+  }
+  function load_single_xml(xml1) {
+    let parser = new DOMParser();
+    xmlTree1 = parser.parseFromString(xml1, "text/xml");
+    xmlMain1 = xmlTree1.getElementsByTagName("Main")[0]; //Main muss existieren
+    xmlBegruendung1 = xmlMain1.getElementsByTagName("Begruendung")[0]; //Begruendung muss existieren
+    
+    let tagRegex = /tag="([a-zA-Z\-)]+)"/g;
+    tags = new Set([...xml1.matchAll(tagRegex).map(m => m[1])]);
+    tag_filter = Object.fromEntries([...tags].map(v => [v, true]));
   }
   function scrollAndMark(ref_id) {
     let par = document.getElementById(ref_id);
@@ -50,10 +66,13 @@
     const reader = new FileReader();
     reader.onload = function(e) {
       if(num === 1) xml1 = e.target.result;
-      else load_xml_files(xml1, e.target.result);
+      else xml2 = e.target.result;
     };
     reader.readAsText(file);
   }
+
+
+  let single_mode = true;
 </script>
 
 
@@ -110,10 +129,10 @@
                         day: 'numeric'
                       })}</p>
                     {/if}
-                    {#if xmlTree2.getElementsByTagName("Spruchkoerper").length > 0}
+                    {#if xmlTree1.getElementsByTagName("Spruchkoerper").length > 0}
                       <p class="mt-2"><b>{xmlTree1.getElementsByTagName("Gericht")[0].textContent.trim()}</b>, 
-                      {xmlTree2.getElementsByTagName("Kammer").length > 0 ? xmlTree2.getElementsByTagName("Kammer")[0].textContent.trim() : ""},
-                      {xmlTree2.getElementsByTagName("Adresse").length > 0 ? xmlTree2.getElementsByTagName("Adresse")[0].textContent.trim() : ""}</p>
+                      {xmlTree1.getElementsByTagName("Kammer").length > 0 ? xmlTree2.getElementsByTagName("Kammer")[0].textContent.trim() : ""},
+                      {xmlTree1.getElementsByTagName("Adresse").length > 0 ? xmlTree2.getElementsByTagName("Adresse")[0].textContent.trim() : ""}</p>
                       {#each xmlTree1.getElementsByTagName("Mitglied") as member}
                         <div class="flex flex-row items-center mt-2">
                           <div class="badge badge-accent mr-2">{member.getAttribute("role")}</div>
@@ -174,7 +193,7 @@
                       {#if par.hasAttribute("evidence")}
                         <div class="flex flex-row items-center">
                           {#each par.getAttribute("evidence").split(",") as ev}
-                            <div class="badge badge-accent badge-sm">{ev}</div>
+                            <div class="badge badge-accent badge-md mr-2">{attachments_dict[ev]}</div>
                           {/each}
                         </div>
                       {/if}
@@ -214,6 +233,13 @@
                           {/each}
                         {/if}
                           </p>
+                          {#if par.hasAttribute("evidence")}
+                            <div class="flex flex-row items-center">
+                              {#each par.getAttribute("evidence").split(",") as ev}
+                                <div class="badge badge-accent badge-md mr-2">{attachments_dict[ev]}</div>
+                              {/each}
+                            </div>
+                          {/if}
                         {/each}
                         </div>
                     </details>
@@ -229,11 +255,24 @@
     <div class="card w-96 bg-base-100 card-lg shadow-sm place-self-center justify-self-center">
       <div class="card-body">
         <h2 class="card-title">XML-Vergleich</h2>
+        <div class="w-full flex flex-row items-center h-12">
+          <button class="btn w-1/2 h-full rounded-r-none" class:btn-primary={single_mode} onclick={() => single_mode = true}>Einzeldokument</button>
+          <button class="btn w-1/2 h-full rounded-l-none" class:btn-primary={!single_mode} onclick={() => single_mode = false}>Vergleich</button>
+        </div>
         <p>Bitte laden Sie zwei XML-Dateien hoch, in der zeitlichen Reihenfolge.</p>
         <div class="justify-end card-actions flex flex-row items-center justify-between">
           <input type="file" class="file-input file-input-secondary" onchange={e => setXML(1, e.target.files[0])} />
-          <input type="file" class="file-input file-input-primary" onchange={e => setXML(2, e.target.files[0])} />
+          {#if !single_mode}
+            <input type="file" class="file-input file-input-primary" onchange={e => setXML(2, e.target.files[0])} />
+          {/if}
         </div>
+        <button class="btn btn-primary w-full" onclick={() => single_mode ? load_single_xml(xml1) : load_xml_files(xml1, xml2)}>
+          {#if single_mode}
+            Ansehen
+          {:else}
+            Vergleichen
+          {/if}
+        </button>
       </div>
     </div>
   {/if}
