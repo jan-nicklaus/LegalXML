@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dok doctype="entscheid">
+    <Rubrum>
+        <Verfahren>
+            <Aktenzeichen>VBE.2023.70</Aktenzeichen>
+            <Parteien>
+                <Partei id="6f2f6644-2902-4924-87c2-0dd8bf5a9d71">
+                    <Rollen>
+                        <Rolle>Beschwerdeführer</Rolle>
+                    </Rollen>
+                    <Name>Christian Salzmann</Name>
+                    <Anschrift>Grubenweg 3, 4803 Vordemwald</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung>lic. iur. Sebastian Lorentz, Rechtsanwalt, Weinbergstrasse 29, 8006 Zürich</Rechtsvertretung>
+                </Partei>
+                <Partei id="53ded2d6-11a7-450a-9793-b47ef6886cd4">
+                    <Rollen>
+                        <Rolle>Beschwerdegegnerin</Rolle>
+                    </Rollen>
+                    <Name>Helsana Versicherungen AG</Name>
+                    <Anschrift>Recht &amp; Compliance, Postfach, 8081 Zürich</Anschrift>
+                    <Stellvertretung></Stellvertretung>
+                    <Rechtsvertretung></Rechtsvertretung>
+                </Partei>
+            </Parteien>
+        </Verfahren>
+        <Dokument>
+            <DokumentUeberschrift>Urteil – Beschwerdeverfahren betreffend KVG (Einspracheentscheid vom 5. Januar 2023)</DokumentUeberschrift>
+            <Datum>2023-09-26</Datum>
+            <Spruchkoerper>
+                <Gericht>Versicherungsgericht des Kantons Aargau</Gericht>
+                <Adresse>Aarau</Adresse>
+                <Kammer>3. Kammer</Kammer>
+                <Zusammensetzung>
+                    <Mitglied role="presiding judge">Oberrichterin Gössi, Präsidentin</Mitglied>
+                    <Mitglied role="judge">Oberrichterin Fischer</Mitglied>
+                    <Mitglied role="judge">Oberrichter Kathriner</Mitglied>
+                    <Mitglied role="clerk">Gerichtsschreiber Berner</Mitglied>
+                </Zusammensetzung>
+            </Spruchkoerper>
+        </Dokument>
+    </Rubrum>
+
+    <Main>
+        <Dispositiv>
+            <DispositivZiffer id="7463872a-b025-4f18-ad7d-fed488a64546" type="hauptsache">Die Beschwerde wird abgewiesen.</DispositivZiffer>
+            <DispositivZiffer id="10a30e29-bdbb-4ee5-9073-7f2253d53842" type="kosten">Es werden keine Verfahrenskosten erhoben.</DispositivZiffer>
+            <DispositivZiffer id="cd626829-2b2a-4040-af84-a0ac0a759d8a" type="kosten">Es werden keine Parteientschädigungen zugesprochen.</DispositivZiffer>
+        </Dispositiv>
+
+        <Eroeffnung>
+            <EroeffnungZiffer adrid="6f2f6644-2902-4924-87c2-0dd8bf5a9d71">den Beschwerdeführer (Vertreter; 2-fach)</EroeffnungZiffer>
+            <EroeffnungZiffer adrid="53ded2d6-11a7-450a-9793-b47ef6886cd4">die Beschwerdegegnerin</EroeffnungZiffer>
+            <EroeffnungZiffer adrname="Bundesamt für Gesundheit"></EroeffnungZiffer>
+        </Eroeffnung>
+
+        <Begruendung>
+            <Prozessuales>
+                <Section title="Sachverhalt 1 – Versicherungsverhältnis und Vorverfahren">
+                    <Absatz id="372c73e4-be31-4809-8ec8-11f3538945b0" tag="facts">Der 1969 geborene Beschwerdeführer ist bei der Beschwerdegegnerin im Rahmen der obligatorischen Krankenpflegeversicherung (OKP) nach KVG versichert. Am 22. Februar 2022 stellte er ein Gesuch um Kostenübernahme für eine H.E.L.P.-Apherese zur Behandlung der Folgen einer Long-Covid-Symptomatik. Mit Verfügung vom 14. Juni 2022 verneinte die Beschwerdegegnerin ihre diesbezügliche Leistungspflicht. Die vom Beschwerdeführer dagegen erhobene Einsprache vom 1. Juli 2022 wies die Beschwerdegegnerin mit Einspracheentscheid vom 5. Januar 2023 ab.</Absatz>
+                </Section>
+                <Section title="Sachverhalt 2.1 – Beschwerdeerhebung und Anträge">
+                    <Absatz id="b3bc6c4e-7b18-4703-bf8d-73b2c61c29b3" tag="facts">Gegen diesen Entscheid erhob der Beschwerdeführer am 7. Februar 2023 fristgerecht Beschwerde und stellte folgende Anträge: «1. Es sei der Einspracheentscheid vom 05.01.2023 aufzuheben. 2. Es seien dem Beschwerdeführer die gesetzlichen Leistungen, insbesondere die Kosten der H.E.L.P.-Apherese, zuzusprechen. 3. Unter Kosten- und Entschädigungsfolge zzgl. MWST.» In verfahrensrechtlicher Hinsicht beantragte der Beschwerdeführer weiter, es sei ein zweiter Schriftenwechsel durchzuführen.</Absatz>
+                </Section>
+                <Section title="Sachverhalt 2.2 – Vernehmlassung">
+                    <Absatz id="488900b7-8503-4de7-8db7-a74df1c2f9d4" tag="facts">Mit Vernehmlassung vom 28. März 2023 beantragte die Beschwerdegegnerin die Abweisung der Beschwerde. Der Beschwerdeführer liess sich nicht mehr vernehmen.</Absatz>
+                </Section>
+            </Prozessuales>
+
+            <Formelles>
+                <Section title="Erwägung 1 – Replikrecht / zweiter Schriftenwechsel">
+                    <Absatz id="fad71af9-cf70-4c51-a35d-46374eda59c7" tag="legal">Was die vom Beschwerdeführer beantragte Durchführung eines zweiten Schriftenwechsels anbelangt, haben die Parteien eines Gerichtsverfahrens gemäss Art. 29 Abs. 1 und 2 BV sowie Art. 6 Ziff. 1 EMRK (in Bezug auf zivilrechtliche Ansprüche und Verpflichtungen und strafrechtliche Anklagen) Anspruch auf rechtliches Gehör und auf ein faires Gerichtsverfahren, unter Beachtung des Grundsatzes der Waffengleichheit. Diese Garantien umfassen das Recht, von allen bei Gericht eingereichten Stellungnahmen Kenntnis zu erhalten und sich dazu äussern zu können, unabhängig davon, ob die Eingaben neue und/oder wesentliche Vorbringen enthalten. Es ist Sache der Parteien zu beurteilen, ob eine Entgegnung erforderlich ist oder nicht (Replikrecht). Zur Wahrung des Replikrechts genügt es, dass den Parteien die Eingaben zur Information (Kenntnisnahme, Orientierung) zugestellt werden, wenn von ihnen, namentlich von anwaltlich Vertretenen oder von Rechtskundigen, erwartet werden kann, dass sie unaufgefordert Stellung nehmen. Da der anwaltlich vertretene Beschwerdeführer keine Stellung zur ihm mit Verfügung vom 4. April 2023 zugestellten Vernehmlassung der Beschwerdegegnerin vom 28. März 2023 genommen hat, ist von seinem Verzicht auf das Replikrecht auszugehen.</Absatz>
+                </Section>
+                <Section title="Erwägung 2 – Streitgegenstand">
+                    <Absatz id="f85f68ed-e8da-4bac-92c3-e00c3634011b" tag="legal">Streitig und zu prüfen ist, ob die Beschwerdegegnerin die Kosten der H.E.L.P.-Apherese im Rahmen der OKP nach KVG zu übernehmen hat.</Absatz>
+                </Section>
+            </Formelles>
+
+            <Materielles>
+                <Section type="ruege" title="Erwägung 3 – Rechtliche Grundlagen (KVG, KLV)">
+                    <Absatz id="3eea9961-965e-446e-b9cd-e656417f2a0e" tag="legal">3.1 Die obligatorische Krankenpflegeversicherung übernimmt die Kosten für die Leistungen, die der Diagnose oder Behandlung einer Krankheit und ihrer Folgen dienen (Art. 25 Abs. 1 KVG). Die Leistungen nach Art. 25 KVG müssen wirksam, zweckmässig und wirtschaftlich sein (Art. 32 Abs. 1 KVG; sog. WZW-Kriterien).</Absatz>
+                    <Absatz id="4400a59b-2790-4787-ad6d-9580b2256853" tag="legal">3.2 Anhang 1 der KLV enthält einen (nicht abschliessenden; vgl. Art. 1 des Anhangs 1 zur KLV) Katalog von ärztlichen Leistungen, für welche eine Vergütungspflicht der Krankenversicherung besteht. Bei nicht in Anhang 1 der KLV angeführte Leistungen entfällt die Leistungspflicht der OKP jedoch nicht ohne Weiteres. Vielmehr besteht hier die gesetzliche Vermutung, dass die ärztliche Behandlung die WZW-Kriterien erfüllt. Verneint ein Krankenversicherer die Kostenvergütungspflicht für eine in Anhang 1 der KLV nicht enthaltene Leistung mit der Begründung der fehlenden Wirksamkeit, Zweckmässigkeit oder Wirtschaftlichkeit, so liegt es im Rahmen des Untersuchungsgrundsatzes an ihm, die Verhältnisse – beispielsweise durch Einholen eines Gutachtens – abzuklären und hernach über die Leistungspflicht im Einzelfall zu verfügen (BGE 129 V 167 E. 3.2 S. 170 und 125 V 21 E. 5b S. 28; siehe zum Ganzen ferner BGE 136 V 84 E. 2.1 S. 86 und Urteil des Bundesgerichts 9C_712/2020 vom 24. Januar 2022 E. 3.3 sowie VOKINGER/ZOBL, in: Blechta/Colatrella/Rüedi/Staffelbach [Hrsg.], Basler Kommentar zum Krankenversicherungsgesetz/Krankenversicherungsaufsichtsgesetz, 2020, N. 2 zu Art. 33 KVG).</Absatz>
+                    <Absatz id="d754a349-794c-47a3-a432-b4cb83ce2268" tag="legal">3.3 Eine Leistung gilt als wirksam, wenn sie objektiv geeignet ist, auf den angestrebten medizinischen Nutzen hinzuwirken (BGE 133 V 115 E. 3.1 S. 116 und 128 V 159 E. 5c/aa S. 165). Entscheidend ist nicht in erster Linie die möglichst vollständige Beseitigung der körperlichen oder psychischen Beeinträchtigung. Massgebend ist vielmehr, ob das Ziel der Behandlung im Sinne einer Beschwerdefreiheit oder einer Wiederherstellung der körperlichen, geistigen und psychischen Funktionalität namentlich im Hinblick auf die Arbeitsfähigkeit, objektiv erreichbar ist (BGE 130 V 299 E. 6.2.1.1 S. 305). Der Wirksamkeitsnachweis gilt in der klassischen universitären Medizin als erbracht, wenn die Behandlungsmethode für das infrage stehende Behandlungsziel wissenschaftlich anerkannt ist. Sie muss von Forschung und Praxis der medizinischen Wissenschaft auf breiter Basis akzeptiert sein, wobei das Ergebnis und die Erfahrungen sowie der Erfolg einer bestimmten Therapie entscheidend sind. Hierfür sind in der Regel nach international anerkannten Richtlinien verfasste wissenschaftliche (Langzeit-)Studien erforderlich (vgl. statt vieler GEBHART EUGSTER, Rechtsprechung des Bundesgerichts zum KVG, 2. Aufl. 2018, N. 5 zu Art. 32 KVG mit Hinweis auf BGE 133 V 115 E. 3.1 f. S. 117).</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Erwägung 4 – Beweiswürdigung Stellungnahme med. pract. Müller">
+                    <Absatz id="15606162-9dc0-4298-a66b-98ff51f7ca17" tag="legal">4.1 Die Beschwerdegegnerin stützt sich in ihrem Einspracheentscheid vom 5. Januar 2023 auf eine Stellungnahme ihrer Vertrauensärztin med. pract. Müller vom 12. Dezember 2022. Darin hielt diese fest, die Ursache von Long-Covid sei nach wie vor ungeklärt. Es existierten einige Theorien, die jedoch noch nicht bestätigt seien. Die Behandlung von Long-Covid sei somit noch immer Gegenstand der Forschung (VB 16). Der im Rahmen des Beschwerdeverfahrens von der Beschwerdegegnerin eingeholten Beurteilung von med. pract. Müller vom 17. März 2023 ist sodann im Wesentlichen zu entnehmen, dass unter dem Begriff «Long-Covid» «ein Sammelsurium an Symptomen» zusammengefasst werde, die sämtliche Organe des Körpers betreffen könnten und deren Ursache nach wie vor unklar sei. Die Pathogenese gelte als multifaktoriell und sei bei verschiedenen Patienten unterschiedlich. Diese Umstände würden die Entwicklung von wirksamen Behandlungen erschweren (VB 18, S. 1). Hinsichtlich der hier in Frage stehenden H.E.L.P.-Apherese zur Behandlung von Long-Covid bestehe «kein wissenschaftlicher Nachweis». So existierten keine klinischen Studien, welche die Wirksamkeit der H.E.L.P.-Apherese zur Behandlung von Long-Covid belegen würden. Die vom Beschwerdeführer angeführten Publikationen beträfen andere Fragestellungen (Hyperlipidämie, Pathomechanismen bei akutem Covid und seltener Long-Covid), seien reine Laborstudien ohne klinischen Wirksamkeitsnachweis oder würden Wirkmechanismen ohne klinische Erprobung der Methode diskutieren. Insgesamt sei damit vom Bestehen gewisser theoretischer Hinweise für eine mögliche Wirksamkeit der H.E.L.P.-Apherese zur Long-Covid-Behandlung auszugehen. Entsprechende Nachweise mittels klinischer Studien würden indes fehlen, so dass die H.E.L.P.-Apherese aktuell als experimentelle Therapie zu gelten habe, deren Wirksamkeit bei Long-Covid nicht nachgewiesen sei (VB 18, S. 2). Entsprechend finde die fragliche Therapie denn auch in verschiedenen (internationalen) Richtlinien die Behandlung von Long-Covid betreffend keine Erwähnung (VB 18, S. 2 f.).</Absatz>
+                    <Absatz id="da45ece9-22c6-4c43-8a16-7a3d40e55a11" tag="legal">4.2 Die Stellungnahme von med. pract. Müller vom 17. März 2023 basiert auf einer umfassenden Auswertung von einschlägigen Publikationen (vgl. die Übersicht im Anhang der Stellungnahme in VB 18, S. 4 ff.) und berücksichtigt zudem weitere medizinische Fachliteratur (vgl. das Literaturverzeichnis in VB 18, S. 3). Vor diesem Hintergrund wird einlässlich sowie nachvollziehbar begründet aufgezeigt, dass die Wirksamkeit der H.E.L.P.-Apherese zur Long-Covid-Behandlung aktuell nicht nachgewiesen ist. Die Stellungnahme erfüllt damit die gemäss Rechtsprechung massgebenden Kriterien (vgl. hierzu statt vieler BGE 134 V 231 E. 5.1, 125 V 351 E. 3a mit Hinweis). Der Beschwerdeführer macht denn auch nicht geltend, dass die Schlussfolgerungen von med. pract. Müller nicht plausibel seien. Vielmehr führt er lediglich an, es würden Publikationen existieren, welche «die Wirkungsweise bzw. den verwertbaren Nutzen der Therapieform belegen» würden (Rz. 22 der Beschwerde), was indes lediglich die Einschätzung von med. pract. Müller bestätigt, wonach es an einem Wirksamkeitsnachweis gerade fehle. Abweichende Beurteilungen anderer medizinischer Fachpersonen liegen nicht vor. Insgesamt bestehen damit keine auch nur geringen Zweifel an der Zuverlässigkeit und Schlüssigkeit der Beurteilungen von med. pract. Müller. Diese sind damit als beweiskräftig anzusehen (vgl. BGE 145 V 97 E. 8.5 S. 105, 142 V 58 E. 5.1 S. 65 und 135 V 465 E. 4.4 S. 469 f.).</Absatz>
+                    <Absatz id="98cc55e1-3843-4930-99c6-02ddeac15526" tag="legal">4.3 Zusammengefasst fehlt es damit an einem mit dem Regelbeweisgrad der überwiegenden Wahrscheinlichkeit (vgl. hierzu statt vieler BGE 134 V 109 E. 9.5 S. 125 mit Hinweis auf BGE 129 V 177 E. 3.1 S. 181) erbrachten Nachweis der Wirksamkeit der H.E.L.P.-Apherese zur Long-Covid-Behandlung. Dieses Fehlen eines Wirksamkeitsnachweises führt zur Verneinung des nach Art. 32 Abs. 1 KVG für eine Kostenübernahme zu erfüllenden Kriteriums der Wirksamkeit und nicht etwa zur Annahme einer Beweislosigkeit (vgl. vorne E. 3.3). Damit ist die Wirksamkeitsvermutung (vgl. vorne E. 3.2) umgestossen, was indes offenkundig nicht mit einem eigentlichen generellen Verbot der Behandlung von Long-Covid mittels H.E.L.P.-Apherese gleichzusetzen ist, wie dies der Beschwerdeführer geltend macht (Rz. 28 der Beschwerde). Die Beschwerdegegnerin hat die Kostenübernahme für die H.E.L.P.-Apherese zur Long-Covid-Behandlung demnach zu Recht verweigert.</Absatz>
+                </Section>
+
+                <Section type="ruege" title="Erwägung 5 – Verfahrensausgang und Kostenfolgen">
+                    <Absatz id="1e3bc6e0-a908-45f0-a222-e18a4f80995c" tag="legal">5.1 Nach dem Dargelegten ist die Beschwerde abzuweisen.</Absatz>
+                    <Absatz id="89f4cf0c-86bb-408f-aea4-a472cdec2725" tag="legal">5.2 Das Verfahren ist kostenlos (Art. 61 lit. f^bis ATSG).</Absatz>
+                    <Absatz id="4415a1a4-34c2-4fad-836a-c6db36fe27b9" tag="legal">5.3 Dem Beschwerdeführer steht nach dem Ausgang des Verfahrens (Art. 61 lit. g ATSG) und der Beschwerdegegnerin aufgrund ihrer Stellung als Sozialversicherungsträgerin (BGE 126 V 143 E. 4 S. 149) kein Anspruch auf Parteientschädigung zu.</Absatz>
+                </Section>
+            </Materielles>
+        </Begruendung>
+
+        <Entscheid>Das Versicherungsgericht weist die Beschwerde ab, weil die Wirksamkeitsvermutung der H.E.L.P.-Apherese zur Long-Covid-Behandlung mangels Nachweises der Wirksamkeit nach Art. 32 Abs. 1 KVG umgestossen sei (Erw. 4.3). Die Stellungnahme der Vertrauensärztin med. pract. Müller wird als beweiskräftig erachtet. Das Verfahren ist kostenlos; eine Parteientschädigung wird nicht zugesprochen.</Entscheid>
+
+    </Main>
+</Dok>
