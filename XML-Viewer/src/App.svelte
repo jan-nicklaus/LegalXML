@@ -187,7 +187,7 @@
                             !single_mode && 
                             j === 0 &&
                             (!par.hasAttribute("id") ||
-                            !reverse_ref_dict[par.getAttribute("id")])
+                            !Object.keys(reverse_ref_dict).includes(par.getAttribute("id")))
                           }>
                         {#if par.hasAttribute("tag")}
                           <span class="badge badge-accent">
@@ -228,10 +228,11 @@
                       <div class="collapse-content">
                         {#each [...sec.getElementsByTagName("Absatz")].filter(par => !par.hasAttribute("tag") || tag_filter[par.getAttribute("tag")]) as par}
                           <p id={par.getAttribute("id")} class="p-2 rounded-lg" class:bg-red-200={
-                            !single_mode &&
+                            !single_mode && 
                             j === 0 &&
-                            (!par.hasAttribute("id") ||
-                            !reverse_ref_dict[par.getAttribute("id")])
+                            (
+                              !par.hasAttribute("id") ||
+                            !Object.keys(reverse_ref_dict).includes(par.getAttribute("id")))
                           }>
                           {#if par.hasAttribute("tag")}
                             <span class="badge badge-accent">
